@@ -1,0 +1,40 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  bishe
+* Top Cell Name: Ramp
+* View Name:     schematic
+* Netlisted on:  May 17 11:41:16 2021
+************************************************************************
+
+.INCLUDE  /home/designer/PDK/PDK/tsmc18_1p5m_1fF/tsmc18/../Calibre/lvs/source.added
+*.EQUATION
+*.LDD
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: bishe
+* Cell Name:    Ramp
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Ramp GND IN OUT VDD
+*.PININFO GND:I IN:I VDD:I OUT:O
+MM1 net16 net13 IN IN N l=600n w=3u m=1
+MMb net13 IN GND GND N l=200n w=7u m=1
+MM3 net18 net012 GND GND N l=200n w=4u m=1
+MM2 VDD net16 net012 net012 N l=200n w=1.5u m=1
+MM4 VDD net18 OUT OUT N l=200n w=10u m=1
+RR3 VDD net18 5.25079K m=4 $.MODEL=WR
+RR5 IN GND 2.73906K m=3 $.MODEL=WR
+RR1q VDD net16 2.73906K m=2 $.MODEL=WR
+RR4 OUT GND 5.93721K m=4 $.MODEL=WR
+RRf OUT net16 5.93721K m=4 $.MODEL=WR
+RR2 net012 GND 3.65282K m=4 $.MODEL=WR
+RRb VDD net13 3.65282K m=5 $.MODEL=WR
+.ENDS
+

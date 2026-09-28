@@ -1,0 +1,50 @@
+
+Revision	Date		        Comments
+--------	----		        --------
+
+1.0a            2007/4/16               *New Create
+1.1a            2009/1/20               *Remove nmoscap and pmoscap
+                                        *Add AMS view
+                                        *Add Utility
+
+1.1b            2009/7/31               * Fix HspiceD view propMapping with multi segment
+                                        * The modified devices are as following list.
+                                        -rnplus
+                                        -rnlplus
+                                        -rplplus
+                                        -rpplus
+                                        -rnhpoly_dis
+                                        -rphpoly_dis
+                                        -rnlpoly_dis
+                                        -rplpoly_dis
+                                        -rphripoly_dis
+                                        
+                                        * Removal of number of segments option                                          
+                                        * The modified devices are as following list.                                        
+                                        -rnwsti_m 
+                                        -rnwell
+                                        -rnwod_2t
+                                        -rnwod
+                                        
+                                        * Add DMN2V or DMP2V on layout views                                         
+                                        * The modified devices are as following list.                                        
+                                        -rpplus
+                                        -rnplus
+                                        
+                                        * change netlist parameter from "m" to "mf"                   
+                                        * The modified devices are as following list.                                        
+                                          -crtmom
+                                          -mimcap_1p0_sin
+                                          -mimcap_1p0_sin_3t                                             
+                                          -mimcap_2p0_sin
+                                          -mimcap_2p0_sin_3t                                          
+                                          
+                                        * Update CDF call-back and back-annotation equation                                                                                                          
+                                        * The modified devices are as following list.                                                                                  
+                                          -crtmom
+
+1.1c            2010/02/08              * Add nmo2vdnw_mac / nmo3vdnw_mac
+                                        * WPE auto
+                    					* Update basic <-> mac utility with mismatchflag option
+
+1.2a            2014/04/22              * Update model card, drc, lvs, and rcx deck      

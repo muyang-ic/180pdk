@@ -1,0 +1,71 @@
+;************************************************************
+;* Assura DRC RUN-SPECIFIC(RSF) FILE - DRC.rsf
+;************************************************************
+
+avParameters(
+;  ?inputLayout ("gds2" "<gdsFileName>") ;Enable it for batch mode GDSII flow
+; ?inputLayout ("df2" "<LibraryName>")   ;Enable it for batch mode DFII flow
+; ?viewName "layout"                     ;Enable it for batch mode DFII flow
+
+; ?cellName "<cellName>"                 ;Enable it for batch mode 
+; ?runName "<runName>"                   ;Enable it for batch mode 
+; ?workingDirectory "<workingDirectory>"
+; ?rulesFile "<ruleFile>"                ;Enable it for batch mode
+
+  ?avrpt t
+  ?multiCPU  t
+  ?autoStamp t
+  ?flagNon45 t		; it can be disabled for Antenna check
+  ?flagAcuteAngle t	       ; it can be disabled for Antenna check
+  ?maintain45     nil	; it can be disabled for Antenna check
+  ?diskListAuto   100	; it can be disabled for simple case
+  ?widenThinErrorRegions t
+)
+
+
+;****************************************************************************************************
+;    OPTION SETTING INFORMATION
+;****************************************************************************************************
+;
+; 1. ?avrpt  t
+;    Reads the VDB, analyzes the error layers and drc layers hierarchically, and reports errors.
+;
+; 2. ?multiCPU t
+;    Let a DRC run take advantage of Assura MP on a multi-processor machine. 
+;    User can specify the number of processors on the machine if user want to use Assura MP.
+;
+; 3. ?autoStamp t
+;    Lets Assura search the list of commands and find nodal information that can be automatically 
+;    passed from the connected layers to the layer that requires connectivity.
+;    Assura automatically adds geomStamp tasks in order to pass nodal information.
+;
+; 4. ?flagNon45 t 
+;    Directs the input translators to check for non-45-degree edges.
+;    Errors are written to a layer named "non45Errors" and also appear in the avrpt report file.
+;
+; 5. ?flagAcuteAngle t
+;    Directs the input translators to check for acute angles. 
+;    Assura checks each input object separately without taking into consideration whether it 
+;    abuts or overlaps any other shapes. 
+;    Errors are written to a layer named "acuteAngleErrors" and also appear in the avrpt report file.
+;
+; 6. ?maintain45 nil
+;    By default, Assura corrects all near-45 and near-90 degree angels to true-45 and true-90 
+;    degree angels during the writting of internal database.
+;    Set "?maintain45 nil" to let Assura not modify any near near-45 or near-90 shapes on any layer.
+;
+; 7. ?diskListAuto 100
+;    Automatically creates a diskList in the run directory. 
+;    The value quota is the percentage of the partition size which is used to save Assura data.
+;    User can specify a value from 10 to 100. It is split into subdirectories of up to 2G each. 
+;    Sub-directories with the names nameRun.number are created automatically in the run directory,
+;    where nameRun stands for the ?runName option. 
+;
+; 8. ?widenThinErrorRegions t
+;    DRC operations can produce error marker shapes that have zero area, i.e. degenerate shapes.
+;    If the layers are used as input in subsequent rules, these shapes will usually be ignored.
+;    Set "?widenThinErrorRegions t" to provide zero area regions expansion for all drc commands. 
+;    The widened shapes will be processed as normal shapes in subsequent rules. 
+;
+;****************************************************************************************************
+

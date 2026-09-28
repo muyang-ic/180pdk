@@ -1,0 +1,6 @@
+TDMCHECKPOINT="1.0"
+tsmc18/npn type="cell"
+tsmc18/npn_mis type="cell"
+tsmc18/vpnp type="cell"
+tsmc18/vpnp3 type="cell"
+tsmc18/vpnp_mis type="cell"

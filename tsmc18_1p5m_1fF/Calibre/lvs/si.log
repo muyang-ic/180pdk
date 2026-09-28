@@ -1,0 +1,64 @@
+Successfully checked out Virtuoso Mixed Signal License.
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.07s.
+
+*WARNING* LIB basic from File /eda/cadence/tsmc18_1p5m_1fF/cds.lib Line 1 redefines
+LIB basic from File /eda/cadence/IC617/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+Insert UNDEFINE basic
+before DEFINE basic
+    in /eda/cadence/tsmc18_1p5m_1fF/cds.lib
+Or remove or comment out DEFINE basic
+    in /eda/cadence/IC617/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+to suppress this warning message.
+
+*WARNING* LIB analogLib from File /eda/cadence/tsmc18_1p5m_1fF/cds.lib Line 2 redefines
+LIB analogLib from File /eda/cadence/IC617/tools.lnx86/dfII/etc/cdsDotLibs/artist/cds.lib
+Insert UNDEFINE analogLib
+before DEFINE analogLib
+    in /eda/cadence/tsmc18_1p5m_1fF/cds.lib
+Or remove or comment out DEFINE analogLib
+    in /eda/cadence/IC617/tools.lnx86/dfII/etc/cdsDotLibs/artist/cds.lib
+to suppress this warning message.
+
+*WARNING* The directory: '/home/chris/myself' does not exist
+	but was defined in libFile '/home/chris/cds.lib' for Lib 'myself'.
+
+*WARNING* LIB basic from File /eda/cadence/tsmc18_1p5m_1fF/cds.lib Line 1 redefines
+LIB basic from File /eda/cadence/IC617/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+Insert UNDEFINE basic
+before DEFINE basic
+    in /eda/cadence/tsmc18_1p5m_1fF/cds.lib
+Or remove or comment out DEFINE basic
+    in /eda/cadence/IC617/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+to suppress this warning message.
+
+*WARNING* LIB analogLib from File /eda/cadence/tsmc18_1p5m_1fF/cds.lib Line 2 redefines
+LIB analogLib from File /eda/cadence/IC617/tools.lnx86/dfII/etc/cdsDotLibs/artist/cds.lib
+Insert UNDEFINE analogLib
+before DEFINE analogLib
+    in /eda/cadence/tsmc18_1p5m_1fF/cds.lib
+Or remove or comment out DEFINE analogLib
+    in /eda/cadence/IC617/tools.lnx86/dfII/etc/cdsDotLibs/artist/cds.lib
+to suppress this warning message.
+
+*WARNING* The directory: '/home/chris/myself' does not exist
+	but was defined in libFile '/home/chris/cds.lib' for Lib 'myself'.
+
+Initializing from libInit.il for library tsmc18...
+   --  /eda/cadence/tsmc18_1p5m_1fF/tsmc18/../skill/pcellCode.cdn
+   --  /eda/cadence/tsmc18_1p5m_1fF/tsmc18/../skill/mom.cdn
+   --  tsmc18.cxt
+   --  tsmcTool2.cxt
+
+Running Artist Hierarchical Netlisting ...
+
+ERROR (OSSHNL-108): The property, 'connectivityLastUpdated', specified on library 'mywork', cell '2_02_2inv_duizhao',
+view 'schematic', does not have an integer value. Re-extract the design (File->Check
+and Save menu option) to correct this error.
+
+End netlisting Dec 19 23:41:33 2018
+ERROR (OSSHNL-514): Netlist generation failed because of the errors reported above. The netlist might not have been generated at all, or the generated netlist could be corrupt. Fix the reported errors and regenerate the netlist.
+*WARNING* (ilRemoveProtect): could not find pointer; FILE hnl/hnl.c LINE 5394
+*WARNING* (ilRemoveProtect): could not find pointer; FILE hnl/hnl.c LINE 5395
+
+*WARNING* (ilRemoveProtect): could not find pointer; FILE hnl/hnl.c LINE 5396
+

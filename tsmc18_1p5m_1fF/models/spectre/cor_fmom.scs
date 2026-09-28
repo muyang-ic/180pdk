@@ -1,0 +1,16 @@
+library fmom_cor 
+
+section ff_fmom 
+include "cmn018_assp_v1d2.scs" section = ff_fmom 
+endsection ff_fmom 
+
+section ss_fmom 
+include "cmn018_assp_v1d2.scs" section = ss_fmom 
+endsection ss_fmom 
+
+section tt_fmom 
+include "cmn018_assp_v1d2.scs" section = tt_fmom 
+endsection tt_fmom 
+
+
+endlibrary fmom_cor 

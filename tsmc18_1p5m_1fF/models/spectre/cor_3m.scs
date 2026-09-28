@@ -1,0 +1,24 @@
+library 3m_cor 
+
+section ff_3m 
+include "cmn018_assp_v1d2.scs" section = ff_3m 
+endsection ff_3m 
+
+section fs_3m 
+include "cmn018_assp_v1d2.scs" section = fs_3m 
+endsection fs_3m 
+
+section sf_3m 
+include "cmn018_assp_v1d2.scs" section = sf_3m 
+endsection sf_3m 
+
+section ss_3m 
+include "cmn018_assp_v1d2.scs" section = ss_3m 
+endsection ss_3m 
+
+section tt_3m 
+include "cmn018_assp_v1d2.scs" section = tt_3m 
+endsection tt_3m 
+
+
+endlibrary 3m_cor 

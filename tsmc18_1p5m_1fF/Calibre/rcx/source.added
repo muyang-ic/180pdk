@@ -1,0 +1,573 @@
+***************************************
+* SPICE NETLIST
+***************************************
+.SUBCKT mimcap_3t PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT mimcap_2p0_3t PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rpodrpo_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT nvmrpodrpo_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnodrpo_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rpod_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnod_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnodw_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rpodw_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnwod_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnwsti_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnpo1rpo_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppo1rpo_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppolyhri_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnpo1w_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnpo1_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppo1w_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppo1_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT pmos_rf33 D G S B
+.ENDS
+***************************************
+.SUBCKT pmos_rf33_nw D G S B
+.ENDS
+***************************************
+.SUBCKT pmos_rf D G S B
+.ENDS
+***************************************
+.SUBCKT pmos_rf_nw D G S B
+.ENDS
+***************************************
+.SUBCKT nmos_rf33 D G S B
+.ENDS
+***************************************
+.SUBCKT nmos_rf D G S B
+.ENDS
+***************************************
+.SUBCKT moscap_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT moscap_rf33 PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT moscap_rf_nw PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT moscap_rf33_nw PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT xjvar_nr36 PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT xjvar_w40 PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT mimcap_wos PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT mimcap_2p0_wos PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT mimcap_2p0_shield PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT mimcap_shield PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rppolyhri_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rppolywo_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rppolyl_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rppolys_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_s2_std PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_s3_std PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_std_40k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_s2_sym PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_s3_sym PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_sym_40k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_s2_sym_ct PLUS MINUS BULK CTAP 
+.ENDS
+***************************************
+.SUBCKT spiral_s3_sym_ct PLUS MINUS BULK CTAP
+.ENDS
+***************************************
+.SUBCKT spiral_sym_ct_40k PLUS MINUS BULK CTAP
+.ENDS
+***************************************
+.SUBCKT nmoscap PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT nmoscap_mis PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT nmoscap_33 PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT nmoscap_33_mis PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT sbd_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT sbd_rf_nw PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT lcesd1_rf PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT lcesd2_rf PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT mimcap_1p0_sin TOP BOT
+.ENDS
+***************************************
+.SUBCKT mimcap_1p0_sin_3t PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT mimcap_1p5_sin TOP BOT
+.ENDS
+***************************************
+.SUBCKT mimcap_1p5_sin_3t PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT mimcap_2p0_sin TOP BOT
+.ENDS
+***************************************
+.SUBCKT mimcap_2p0_sin_3t PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT ndio_sbd_mac PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT nmoscap_5 PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT nmoscap_5_mis PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT pch_5t D G S B SUB
+.ENDS
+***************************************
+.SUBCKT rnodrpo_pure5v_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnodrpo_pure5v PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rnpo1rpo_pure5v_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnpo1rpo_pure5v PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rnwod_pure5v_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnwod_pure5v PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rnwsti_pure5v_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnwsti_pure5v PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rpodrpo_pure5v_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rpodrpo_pure5v PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rppo1rpo_pure5v_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppo1rpo_pure5v PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rppolyhri3k PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rppolyhri3k_dis PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT nmos_rf33_6t D G S B NG PG
+.ENDS
+***************************************
+.SUBCKT nmos_rf_6t D G S B NG PG
+.ENDS
+***************************************
+.SUBCKT pmos_rf33_5t D G S B PG
+.ENDS
+***************************************
+.SUBCKT pmos_rf33_nw_5t D G S B PG
+.ENDS
+***************************************
+.SUBCKT pmos_rf_5t D G S B PG
+.ENDS
+***************************************
+.SUBCKT pmos_rf_nw_5t D G S B PG
+.ENDS
+***************************************
+.SUBCKT rmap PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT spiral_std_mu_a_33k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_std_mu_x_33k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_sym_ct_mu_x_33k PLUS MINUS BULK CTAP
+.ENDS
+***************************************
+.SUBCKT spiral_sym_ct_mu_x_a_33k PLUS MINUS BULK CTAP
+.ENDS
+***************************************
+.SUBCKT spiral_sym_mu_x_33k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_std_m2u_a_33k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_std_m2u_x_33k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_sym_ct_m2u_u_x_33k PLUS MINUS BULK CTAP
+.ENDS
+***************************************
+.SUBCKT spiral_sym_ct_m2u_u_a_33k PLUS MINUS BULK CTAP
+.ENDS
+***************************************
+.SUBCKT spiral_sym_m2u_u_33k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT lowcpad_rf APAD AVSS
+.ENDS
+***************************************
+.SUBCKT ndio_hia_rf PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT pdio_hia_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT crtmom PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT crtmom_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT cfmom PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT cfmom_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT cfmom_mx PLUS1 MINUS1 PLUS2 MINUS2 BULK
+.ENDS
+***************************************
+.SUBCKT spiral_std_mu_x_20k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_sym_ct_mu_x_20k PLUS MINUS BULK CTAP
+.ENDS
+***************************************
+.SUBCKT spiral_sym_mu_x_20k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_std_mu_x_40k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_sym_ct_mu_x_40k PLUS MINUS BULK CTAP
+.ENDS
+***************************************
+.SUBCKT spiral_sym_mu_x_40k PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT efuse PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT nch_hv5_5vnw_ac D G S B
+.ENDS
+***************************************
+.SUBCKT rpod_ull PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rpodw_ull PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rpodrpo_ull PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rnwod_ull PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rnwsti_ull PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rpod_ell PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rpodw_ell PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rpodrpo_ell PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rnwod_ell PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rnwsti_ell PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rpod_ull_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rpodw_ull_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rpodrpo_ull_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnwod_ull_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnwsti_ull_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rpod_ell_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rpodw_ell_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rpodrpo_ell_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnwod_ell_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnwsti_ell_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rhvnw PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rhvpw PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rhvnw_60 PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rhvpw_60 PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rhvnwhvpw PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rnddhvpw PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rpddhvnw PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT zd_dio_4t PLUS MINUS NBL_ISO SUB
+.ENDS
+***************************************
+.SUBCKT ndld24_g5_ac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT nld18_g5_ac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT nld24_g5_ac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT nld32_g5_ac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT nld40_g5_ac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT pa18_g5_ac D G S B SUB
+.ENDS
+**************************************
+.SUBCKT pa24_g5_ac D G S B SUB
+.ENDS
+**************************************
+.SUBCKT pa32_g5_ac D G S B SUB
+.ENDS
+**************************************
+.SUBCKT pa40_g5_low_ron_ac D G S B SUB
+.ENDS
+**************************************
+.SUBCKT pa40_g5_full_soa_ac D G S B SUB
+.ENDS
+**************************************
+.SUBCKT ndld40_g5_ac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT nld60_g5_ac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT pa50_g5_ac D G S B SUB
+.ENDS
+**************************************
+.SUBCKT pa60_g5_full_soa_ac D G S B SUB
+.ENDS
+**************************************
+.SUBCKT sbd_dio_60 PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT nld12_g2_mac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT nld12_g12_mac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT nld14_g2_mac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT nld14_g12_mac D G BS SUB
+.ENDS
+***************************************
+.SUBCKT nch_hvnw_6t D G S B HVNW_ISO SUB
+.ENDS
+***************************************
+.SUBCKT rpbody PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rldpwsti PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rldpwod PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT nch_hva_ndd_mac D G S B
+.ENDS
+***************************************
+.SUBCKT nch_hvau_ndd_mac D G S B
+.ENDS
+***************************************
+.SUBCKT nch_hvs_ndd_mac D G S B
+.ENDS
+***************************************
+.SUBCKT nch_hvsu_ndd_mac D G S B
+.ENDS
+***************************************
+.SUBCKT nch_hviah_ndd_mac D G S B
+.ENDS
+***************************************
+.SUBCKT nch_hvish_ndd_mac D G S B
+.ENDS
+***************************************
+.SUBCKT nch_hvsl_mac D G S B
+.ENDS
+***************************************
+.SUBCKT nch_hvisl_mac D G S B
+.ENDS
+***************************************
+.SUBCKT pch_hva_pdd_mac D G S B
+.ENDS
+***************************************
+.SUBCKT pch_hvau_pdd_mac D G S B
+.ENDS
+***************************************
+.SUBCKT pch_hvs_pdd_mac D G S B
+.ENDS
+***************************************
+.SUBCKT pch_hvsu_pdd_mac D G S B
+.ENDS
+***************************************
+.SUBCKT pch_hvsl_mac D G S B
+.ENDS
+***************************************
+.SUBCKT nch_hvish_nbl_mac D G S B NBL_ISO SUB
+.ENDS
+***************************************
+.SUBCKT mimcap_1p0_sin_hl TOP BOT
+.ENDS
+***************************************
+.SUBCKT mimcap_1p0_sin_hl_3t PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rhim PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT NHVPWDNW10_4T C B E SUB
+.ENDS
+***************************************
+.SUBCKT NHVPWDNW5_4T C B E SUB
+.ENDS
+***************************************
+.SUBCKT HVPWDNWHVNW_DIO_HVPW_3T PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT LVPWDNWHVNW_DIO_HVPW_3T PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT PHVNW_DIO_HVPW_3T PLUS MINUS SUB
+.ENDS
+***************************************
+.SUBCKT NCH_HVA_MAC D G S B
+.ENDS
+***************************************
+.SUBCKT NCH_HVI_MAC D G BS SUB
+.ENDS
+***************************************
+.SUBCKT NCH_HVS_MAC D G S B
+.ENDS
+***************************************
+.SUBCKT PCH_HVS_MAC D G S B SUB
+.ENDS
+***************************************
+.SUBCKT PCH_HVA_MAC D G S B SUB
+.ENDS
+***************************************

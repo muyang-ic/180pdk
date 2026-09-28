@@ -1,0 +1,85 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream Out
+Program   : @(#)$CDS: strmout version 6.1.5 09/25/2012 22:05 (sjfnl007) $
+          : sub-version  IC6.1.5.500.132 
+Started at: 17-May-2021  11:41:13
+User Name : designer
+Host Name : IC_DESIGN
+Directory : /home/designer/PDK/PDK
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+WARNING (XSTRM-20): Output Stream file '/home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs/Ramp.calibre.db' already exists. It will be overwritten.
+INFO (XSTRM-217): Reading the layer map file, /home/designer/PDK/PDK/tsmc18_1p5m_1fF/tsmc18/tsmc18.layermap
+INFO (XSTRM-162): You have not used the viaMap option. If the OpenAccess design has native oaVia instances, use the -viaMap option for preserving oaVia instances in a Stream Out - Stream In round trip. Using the -viaMap option improves performance and VM usage of applications using the Streamed-In design.  For details on the viaMap option, refer to the "Design Data Translator's Reference" guide for XStream.
+
+Summary of Options :
+library                                 bishe
+strmFile                                /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs/Ramp.calibre.db
+topCell                                 Ramp
+view                                    layout
+runDir                                  /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs/
+logFile                                 PIPO.LOG.Ramp
+layerMap                                /home/designer/PDK/PDK/tsmc18_1p5m_1fF/tsmc18/tsmc18.layermap
+case                                    Preserve
+convertDot                              node
+
+INFO (XSTRM-223): 1. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_0
+INFO (XSTRM-223): 2. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_1
+INFO (XSTRM-223): 3. Translating cellView tsmc18/M1_POLY1/layout as STRUCTURE M1_POLY1_2
+INFO (XSTRM-223): 4. Translating cellView tsmc18/M1_POLY1/layout as STRUCTURE M1_POLY1_3
+INFO (XSTRM-223): 5. Translating cellView tsmc18/M2_M1/layout as STRUCTURE M2_M1_4
+INFO (XSTRM-223): 6. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_5
+INFO (XSTRM-223): 7. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_6
+INFO (XSTRM-223): 8. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_7
+INFO (XSTRM-223): 9. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_8
+INFO (XSTRM-223): 10. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_9
+INFO (XSTRM-223): 11. Translating cellView tsmc18/M2_M1/layout as STRUCTURE M2_M1_10
+INFO (XSTRM-223): 12. Translating cellView tsmc18/M2_M1/layout as STRUCTURE M2_M1_11
+INFO (XSTRM-223): 13. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_12
+INFO (XSTRM-223): 14. Translating cellView tsmc18/M2_M1/layout as STRUCTURE M2_M1_13
+INFO (XSTRM-223): 15. Translating cellView tsmc18/M1_POLY1/layout as STRUCTURE M1_POLY1_14
+INFO (XSTRM-223): 16. Translating cellView tsmc18/M2_M1/layout as STRUCTURE M2_M1_15
+INFO (XSTRM-223): 17. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_16
+INFO (XSTRM-223): 18. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_17
+INFO (XSTRM-223): 19. Translating cellView tsmc18/M1_DIFF/layout as STRUCTURE M1_DIFF_18
+INFO (XSTRM-223): 20. Translating cellView bishe/Ramp/layout as STRUCTURE Ramp
+INFO (XSTRM-223): 21. Translating cellView tsmc18/nmos2v/layout as STRUCTURE nmos2v_0
+WARNING (XSTRM-35): The objects in the layer-purpose pair 'text:drawing' are ignored. This is because the layer-purpose pair used in the design is not specified in the layer map file. Specify the layer-purpose pair in the layer map file and try again.
+WARNING (XSTRM-35): The objects in the layer-purpose pair 'instance:drawing' are ignored. This is because the layer-purpose pair used in the design is not specified in the layer map file. Specify the layer-purpose pair in the layer map file and try again.
+INFO (XSTRM-223): 22. Translating cellView tsmc18/nmos2v/layout as STRUCTURE nmos2v_1
+INFO (XSTRM-223): 23. Translating cellView tsmc18/nmos2v/layout as STRUCTURE nmos2v_2
+INFO (XSTRM-223): 24. Translating cellView tsmc18/nmos2v/layout as STRUCTURE nmos2v_3
+INFO (XSTRM-223): 25. Translating cellView tsmc18/rnwell/layout as STRUCTURE rnwell_4
+INFO (XSTRM-223): 26. Translating cellView tsmc18/rnwell/layout as STRUCTURE rnwell_5
+INFO (XSTRM-223): 27. Translating cellView tsmc18/rnwell/layout as STRUCTURE rnwell_6
+INFO (XSTRM-223): 28. Translating cellView tsmc18/nmos2v/layout as STRUCTURE nmos2v_7
+INFO (XSTRM-223): 29. Translating cellView tsmc18/rnwell/layout as STRUCTURE rnwell_8
+INFO (XSTRM-223): 30. Translating cellView tsmc18/rnwell/layout as STRUCTURE rnwell_9
+
+Summary of Objects Translated:
+	Scalar Instances:                       31
+	Array Instances:                        0
+	Polygons:                               4
+	Paths:                                  1
+	Rectangles:                             1166
+	Lines:                                  0
+	Arcs:                                   0
+	Donuts:                                 0
+	Dots:                                   0
+	Ellipses:                               0
+	Boundaries:                             0
+	Area Blockages:                         0
+	Layer Blockages:                        0
+	Area Halos:                             0
+	Markers:                                0
+	Rows:                                   0
+	Standard Vias                           73
+	Custom Vias:                            0
+	Pathsegs:                               83
+	Text:                                   70
+	Cells:                                  30
+
+Elapsed Time: 1.1s   User Time: 1.3s   CPU Time: 0.1s   Peak VM: 1194KB
+INFO (XSTRM-234): Translation completed. '0' error(s) and '3' warning(s) found.

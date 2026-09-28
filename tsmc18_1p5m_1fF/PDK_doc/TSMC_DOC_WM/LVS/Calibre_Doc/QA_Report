@@ -1,0 +1,275 @@
+ @(#) TSMC 0.18UM CALIBRE LVS/RC COMMAND FILE V1.1A 10/01/2008   
+ @(#) TSMC 0.18UM MIXED-SIGNAL 1P6M SALICIDE 1.8V/3.3V 
+ @(#) SPICE MODEL DOCUMENT:  T-018-CM-SP-007 V1.1  
+ @(#) COMMAND FILE DOCUMENT: T-018-CM-SP-007-C1 
+ @(#) EDA TOOL VERSION: Calibre v2008.2_11.12  
+ @(#)  
+ @(#) COMMAND FILE DOCUMENT: T-018-CM-SP-007-C1 
+ @(#) COMMAND FILE VERSION: 1.1A  
+ @(#) COMMAND FILE METAL SCHEME: 1P6M  
+ @(#) COMMAND FILE DATE: 10/01/2008  
+
+                                CALIBRE QA REPORT FILE 
+************************************************************************************************************** 
+                               INFORMATION AND WARNINGS
+**************************************************************************************************************
+
+
+                  Matched    Matched    Unmatched    Unmatched    Component
+                   Layout     Source       Layout       Source    Type
+                  -------    -------    ---------    ---------    ---------
+   Ports:              18         18            0            0
+
+   Nets:               18         18            0            0
+
+   Instances:           1          1            0            0    MN(N)
+                        1          1            0            0    MN(N1)
+                        1          1            0            0    MN(N2)
+                        1          1            0            0    MN(NA)
+                        1          1            0            0    MN(NB)
+                        1          1            0            0    MN(ND)
+                        1          1            0            0    MN(NL)
+                        1          1            0            0    MN(NN)
+                        1          1            0            0    MP(P)
+                        1          1            0            0    MP(PA)
+                        1          1            0            0    MP(PD)
+                        3          3            0            0    Q(NV)
+                        3          3            0            0    Q(NV_MIS)
+                        3          3            0            0    Q(P1)
+                        3          3            0            0    Q(PV)
+                        3          3            0            0    Q(PV_MIS)
+                        1          1            0            0    R(LR)
+                        1          1            0            0    R(M1)
+                        1          1            0            0    R(M2)
+                        1          1            0            0    R(M3)
+                        1          1            0            0    R(M4)
+                        1          1            0            0    R(MT)
+                        1          1            0            0    R(ND)
+                        2          2            0            0    R(NI)
+                        1          1            0            0    R(NR)
+                        2          2            0            0    R(NS)
+                        1          1            0            0    R(PD)
+                        2          2            0            0    R(PI)
+                        1          1            0            0    R(PR)
+                        2          2            0            0    R(PS)
+                        1          1            0            0    R(WO)
+                        1          1            0            0    R(WR)
+                        1          1            0            0    rnod_m
+                        1          1            0            0    rnodrpo_m
+                        1          1            0            0    rnodw_m
+                        1          1            0            0    rnpo1_dis
+                        1          1            0            0    rnpo1rpo_dis
+                        1          1            0            0    rnpo1w_dis
+                        1          1            0            0    rnwod_m
+                        1          1            0            0    rnwsti_m
+                        1          1            0            0    rpod_m
+                        1          1            0            0    rpodrpo_m
+                        1          1            0            0    rpodw_m
+                        1          1            0            0    rppo1_dis
+                        1          1            0            0    rppo1rpo_dis
+                        1          1            0            0    rppo1w_dis
+                        1          1            0            0    rppolyhri_dis
+                        1          1            0            0    D(D1)
+                        1          1            0            0    D(D2)
+                        1          1            0            0    D(D3)
+                        1          1            0            0    D(DB)
+                        1          1            0            0    D(DN)
+                        1          1            0            0    D(DP)
+                        1          1            0            0    D(DW)
+                        1          1            0            0    D(NDIO_3M)
+                        1          1            0            0    D(NDIO_M)
+                        1          1            0            0    D(PDIO_M)
+                        6          6            0            0    crtmom
+                        1          1            0            0    mimcap_2p0_sin
+                        1          1            0            0    mimcap_2p0_sin_3t
+                        1          1            0            0    nmoscap
+                        1          1            0            0    nmoscap_33
+                        1          1            0            0    _smn2b
+                  -------    -------    ---------    ---------
+   Total Inst:         82         82            0            0
+
+	***********************************************
+	******************** MATCH ********************
+	***********************************************
+
+
+                               INFORMATION AND WARNINGS
+**************************************************************************************************************
+
+
+                  Matched    Matched    Unmatched    Unmatched    Component
+                   Layout     Source       Layout       Source    Type
+                  -------    -------    ---------    ---------    ---------
+   Ports:              18         18            0            0
+
+   Nets:               18         18            0            0
+
+   Instances:           1          1            0            0    MN(N)
+                        1          1            0            0    MN(N1)
+                        1          1            0            0    MN(N2)
+                        1          1            0            0    MN(NA)
+                        1          1            0            0    MN(NB)
+                        1          1            0            0    MN(ND)
+                        1          1            0            0    MN(NL)
+                        1          1            0            0    MN(NN)
+                        1          1            0            0    MP(P)
+                        1          1            0            0    MP(PA)
+                        1          1            0            0    MP(PD)
+                        3          3            0            0    Q(NV)
+                        3          3            0            0    Q(NV_MIS)
+                        3          3            0            0    Q(P1)
+                        3          3            0            0    Q(PV)
+                        3          3            0            0    Q(PV_MIS)
+                        1          1            0            0    R(LR)
+                        1          1            0            0    R(M1)
+                        1          1            0            0    R(M2)
+                        1          1            0            0    R(M3)
+                        1          1            0            0    R(M4)
+                        1          1            0            0    R(M5)
+                        1          1            0            0    R(MT)
+                        1          1            0            0    R(ND)
+                        2          2            0            0    R(NI)
+                        1          1            0            0    R(NR)
+                        2          2            0            0    R(NS)
+                        1          1            0            0    R(PD)
+                        2          2            0            0    R(PI)
+                        1          1            0            0    R(PR)
+                        2          2            0            0    R(PS)
+                        1          1            0            0    R(WO)
+                        1          1            0            0    R(WR)
+                        1          1            0            0    rnod_m
+                        1          1            0            0    rnodrpo_m
+                        1          1            0            0    rnodw_m
+                        1          1            0            0    rnpo1_dis
+                        1          1            0            0    rnpo1rpo_dis
+                        1          1            0            0    rnpo1w_dis
+                        1          1            0            0    rnwod_m
+                        1          1            0            0    rnwsti_m
+                        1          1            0            0    rpod_m
+                        1          1            0            0    rpodrpo_m
+                        1          1            0            0    rpodw_m
+                        1          1            0            0    rppo1_dis
+                        1          1            0            0    rppo1rpo_dis
+                        1          1            0            0    rppo1w_dis
+                        1          1            0            0    rppolyhri_dis
+                        1          1            0            0    D(D1)
+                        1          1            0            0    D(D2)
+                        1          1            0            0    D(D3)
+                        1          1            0            0    D(DB)
+                        1          1            0            0    D(DN)
+                        1          1            0            0    D(DP)
+                        1          1            0            0    D(DW)
+                        1          1            0            0    D(NDIO_3M)
+                        1          1            0            0    D(NDIO_M)
+                        1          1            0            0    D(PDIO_M)
+                       12         12            0            0    crtmom
+                        1          1            0            0    mimcap_1p0_sin
+                        1          1            0            0    mimcap_1p0_sin_3t
+                        1          1            0            0    nmoscap
+                        1          1            0            0    nmoscap_33
+                        1          1            0            0    _smn2b
+                  -------    -------    ---------    ---------
+   Total Inst:         89         89            0            0
+
+	***********************************************
+	******************** MATCH ********************
+	***********************************************
+
+
+                               INFORMATION AND WARNINGS
+**************************************************************************************************************
+
+
+                  Matched    Matched    Unmatched    Unmatched    Component
+                   Layout     Source       Layout       Source    Type
+                  -------    -------    ---------    ---------    ---------
+   Ports:               3          3            0            0
+
+   Nets:                3          3            0            0
+
+   Instances:           1          1            0            0    D(dnwpsub)
+                        1          1            0            0    D(pwdnw)
+                  -------    -------    ---------    ---------
+   Total Inst:          2          2            0            0
+
+	***********************************************
+	******************** MATCH ********************
+	***********************************************
+
+
+*************************************************** 
+DECK_DEVICE_LIST	REP_DEVICE_LIST  
+*************************************************** 
+CRTMOM               CRTMOM                OK
+D(D1)                D(D1)                 OK
+D(D2)                D(D2)                 OK
+D(D3)                D(D3)                 OK
+D(DB)                D(DB)                 OK
+D(DN)                D(DN)                 OK
+D(DNWPSUB)           D(DNWPSUB)            OK
+D(DP)                D(DP)                 OK
+D(DW)                D(DW)                 OK
+D(NDIO_3M)           D(NDIO_3M)            OK
+D(NDIO_M)            D(NDIO_M)             OK
+D(PDIO_M)            D(PDIO_M)             OK
+D(PWDNW)             D(PWDNW)              OK
+MIMCAP_1P0_SIN       MIMCAP_1P0_SIN        OK
+MIMCAP_1P0_SIN_3T    MIMCAP_1P0_SIN_3T     OK
+MIMCAP_2P0_SIN       MIMCAP_2P0_SIN        OK
+MIMCAP_2P0_SIN_3T    MIMCAP_2P0_SIN_3T     OK
+MN(N)                MN(N)                 OK
+MN(N1)               MN(N1)                OK
+MN(N2)               MN(N2)                OK
+MN(NA)               MN(NA)                OK
+MN(NB)               MN(NB)                OK
+MN(ND)               MN(ND)                OK
+MN(NL)               MN(NL)                OK
+MN(NN)               MN(NN)                OK
+MP(P)                MP(P)                 OK
+MP(PA)               MP(PA)                OK
+MP(PD)               MP(PD)                OK
+NMOSCAP              NMOSCAP               OK
+NMOSCAP_33           NMOSCAP_33            OK
+Q(NV)                Q(NV)                 OK
+Q(NV_MIS)            Q(NV_MIS)             OK
+Q(P1)                Q(P1)                 OK
+Q(PV)                Q(PV)                 OK
+Q(PV_MIS)            Q(PV_MIS)             OK
+R(LR)                R(LR)                 OK
+R(M1)                R(M1)                 OK
+R(M2)                R(M2)                 OK
+R(M3)                R(M3)                 OK
+R(M4)                R(M4)                 OK
+R(M5)                R(M5)                 OK
+R(MT)                R(MT)                 OK
+R(ND)                R(ND)                 OK
+R(NI)                R(NI)                 OK
+R(NR)                R(NR)                 OK
+R(NS)                R(NS)                 OK
+R(PD)                R(PD)                 OK
+R(PI)                R(PI)                 OK
+R(PR)                R(PR)                 OK
+R(PS)                R(PS)                 OK
+R(WO)                R(WO)                 OK
+R(WR)                R(WR)                 OK
+RNODRPO_M            RNODRPO_M             OK
+RNODW_M              RNODW_M               OK
+RNOD_M               RNOD_M                OK
+RNPO1RPO_DIS         RNPO1RPO_DIS          OK
+RNPO1W_DIS           RNPO1W_DIS            OK
+RNPO1_DIS            RNPO1_DIS             OK
+RNWOD_M              RNWOD_M               OK
+RNWSTI_M             RNWSTI_M              OK
+RPODRPO_M            RPODRPO_M             OK
+RPODW_M              RPODW_M               OK
+RPOD_M               RPOD_M                OK
+RPPO1RPO_DIS         RPPO1RPO_DIS          OK
+RPPO1W_DIS           RPPO1W_DIS            OK
+RPPO1_DIS            RPPO1_DIS             OK
+RPPOLYHRI_DIS        RPPOLYHRI_DIS         OK
+***************************************************
+
+
+
+
+

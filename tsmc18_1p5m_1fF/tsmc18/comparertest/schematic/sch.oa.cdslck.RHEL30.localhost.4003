@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      designer
+HostName                       localhost
+ProcessIdentifier              4003
+ProcessCreationTime_UTC        1612239483
+ProcessCreationTime_Readable   Tue Feb  2 12:18:03 2021 CST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/designer/PDK/PDK/tsmc18_1p5m_1fF/tsmc18/comparertest/schematic/sch.oa.cdslck.dirlck
+TimeEditLocked                 Mon Feb  8 21:35:55 2021 CST

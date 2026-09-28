@@ -1,0 +1,22 @@
+*drcRulesFile: /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/drc/calibre.drc_no_recommend
+*drcRunDir: /home/designer/PDK/tsmc18_1p5m_1fF/Calibre/drc
+*drcLayoutPaths: Comparer.calibre.db
+*drcLayoutPrimary: Comparer
+*drcLayoutLibrary: bishe
+*drcLayoutView: layout
+*drcLayoutGetFromViewer: 1
+*drcResultsFile: Comparer.drc.results
+*drcCellName: 1
+*drcSummaryFile: Comparer.drc.summary
+*drcIncrDRCSlaveHosts: {use {}} {hostName {}} {cpuCount {}} {a32a64 {}} {rsh {}} {maxMem {}} {workingDir {}} {layerDir {}} {mgcLibPath {}} {launchName {}}
+*drcIncrDRCLSFSlaveTbl: {use 1} {totalCpus 1} {minCpus 1} {architecture {{}}} {minMemory {{}}} {resourceOptions {{}}} {submitOptions {{}}}
+*drcIncrDRCGridSlaveTbl: {use 1} {totalCpus 1} {minCpus 1} {architecture {{}}} {minMemory {{}}} {resourceOptions {{}}} {submitOptions {{}}}
+*cmnWarnLayoutOverwrite: 0
+*cmnShowOptions: 1
+*cmnSlaveHosts: {use {}} {hostName {}} {cpuCount {}} {a32a64 {}} {rsh {}} {maxMem {}} {workingDir {}} {layerDir {}} {mgcLibPath {}} {launchName {}}
+*cmnLSFSlaveTbl: {use 1} {totalCpus 1} {minCpus 1} {architecture {{}}} {minMemory {{}}} {resourceOptions {{}}} {submitOptions {{}}}
+*cmnGridSlaveTbl: {use 1} {totalCpus 1} {minCpus 1} {architecture {{}}} {minMemory {{}}} {resourceOptions {{}}} {submitOptions {{}}}
+*cmnFDILayoutLibrary: bishe
+*cmnFDILayoutView: layout
+*cmnFDIDEFLayoutPath: Comparer.def
+*cmnFDIViewListOA: 

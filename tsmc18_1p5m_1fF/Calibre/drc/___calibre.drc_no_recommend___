@@ -1,0 +1,27 @@
+//
+//  Rule file generated on Sun Dec 09 09:38:47 CST 2018
+//     by Calibre Interactive - DRC (v2018.1_27.18)
+//
+//      *** PLEASE DO NOT MODIFY THIS FILE ***
+//
+//
+
+LAYOUT PATH  "2inv_2_02.calibre.db"
+LAYOUT PRIMARY "2inv_2_02"
+LAYOUT SYSTEM GDSII
+
+DRC RESULTS DATABASE "2inv_2_02.drc.results" ASCII 
+DRC MAXIMUM RESULTS 1000
+DRC MAXIMUM VERTEX 4096
+
+DRC CELL NAME YES CELL SPACE XFORM
+DRC SUMMARY REPORT "2inv_2_02.drc.summary" REPLACE HIER
+
+VIRTUAL CONNECT COLON NO
+VIRTUAL CONNECT REPORT NO
+
+DRC ICSTATION YES
+
+
+INCLUDE "/eda/cadence/tsmc18_1p5m_1fF/Calibre/drc/__calibre.drc_no_recommend__"
+

@@ -1,0 +1,42 @@
+
+
+			README File for Calibre LVS/RCX
+		     =====================================
+
+ I. Files/Directories related to LVS/RCX
+
+     *Following are the descriptions for these files:
+
+  	LVS_RCX.README	     - LVS/RCX readme file (this file)
+	calibre.lvs	     - LVS deck (commad file) for layout VS. schematic checking
+	calibre.rcx	     - RCX deck (commad file) for RC extraction
+	source_adde   - subckt netlist to prepend to output of CDL netlist for LVS checking
+	rules		     - RCX technology file
+	calview.cellmap	     - The cellmap file for calibre-view users (for reference only)
+			       (Users are encouraged to modify this file as need)
+
+  Note:
+     1. First refer to the notice messages and status logs in the head of
+	each command file.
+     2. Some decks may contain several switches for different checking purpose.
+	(for example, the "#DEFINE RC_DECK" switch is to switch the deck to
+	 a LVS deck or a RCX deck)
+	Be careful to correctly set these switches to ensure you run these decks
+        in a correct way.(The detail description for each switch can be seen
+	in each command file header)
+     3. If you are considering to use calibre XRC with calibre-view, please
+        make sure to upgrade your calibre version to be greater than v2004.1_3.
+	Otherwise, some extracted information for BJT devices can't correctly
+        back annotate to the calibre-view.
+
+*******************************************************************************
+!!!!!!-IMPORTANT-IMPORTANT-IMPORTANT-!!!!!!!!!!!-IMPORTANT-IMPORTANT-IMPORTANT-!!!!!
+
+Before running LVS (flow for batch mode LVS):
+
+1. netlist your circuit as 'out.cdl' (cdl format)
+2. cat source_added out.cdl > chip.cdl ;makes the final netlist for LVS checking
+
+!!!!!!-IMPORTANT-IMPORTANT-IMPORTANT-!!!!!!!!!!!-IMPORTANT-IMPORTANT-IMPORTANT-!!!!!
+*******************************************************************************
+

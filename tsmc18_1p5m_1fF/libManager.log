@@ -1,0 +1,28 @@
+\o Program:		@(#)$CDS: libManager version 6.1.7 - CAT35 01/28/2016 23:41 (sjfnl179) $
+\o Sub version:		sub-version  IC6.1.7 - CAT35.15s004 
+\o Arguments:		-unmapped -mpssession virtuoso11459 -mpshost IC 
+\o Working Directory:	IC:/home/IC/work/tsmc18_1p5m_1fF
+\o 64-bit offsets
+\o Qt version: 		4.8.5
+\o changeWorkingDir("/home/IC/work/tsmc18_1p5m_1fF") unnecessary.
+\o ddSetForcedLib("") unnecessary.
+\o Log file is "/home/IC/work/tsmc18_1p5m_1fF/libManager.log".
+\o Opening libManager window.
+\a nrSetWindowVisibility(cdsLibManager "show")
+\o MPS service: map window
+\a nrSetCurrentWindow(cdsLibManager)
+\o Library Manager customization server connected.
+\a nrResizeWindow(cdsLibManager list(435 25 1033 784))
+\a cdsLibManager->libListBox->value = "US_8ths"
+\a cdsLibManager->libListBox->value = "ahdlLib"
+\a cdsLibManager->libListBox->value = "basic"
+\a cdsLibManager->libListBox->value = "functional"
+\a cdsLibManager->libListBox->value = "rfExamples"
+\a cdsLibManager->libListBox->value = "rfLib"
+\a cdsLibManager->libListBox->value = "tsmc18"
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\a cdsLibManager->libLineEdit->value = "tsmc18"
+\o MPS service: shutdown
+\o libManager is exiting.
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a exit(0)

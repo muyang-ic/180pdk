@@ -1,0 +1,7 @@
+# File Created by EDA at Sat Jul 15 21:01:07 2023
+# assisted by CdsLibEditor
+SOFTINCLUDE /opt/Cadence/IC617/share/cdssetup/dfII/cds.lib
+SOFTINCLUDE /opt/Cadence/IC617/share/cdssetup/hdl/cds.lib
+SOFTINCLUDE /opt/Cadence/IC617/share/cdssetup/pic/cds.lib
+SOFTINCLUDE /opt/Cadence/IC617/share/cdssetup/sg/cds.lib
+DEFINE tsmc18 ./tsmc18

@@ -1,0 +1,8 @@
+CADENCE IHNL01070
+$model
+bishe/Comparer/schematic Comparer
+$endmodel
+$net
+$endnet
+$param
+$endparam

@@ -1,0 +1,24 @@
+library std_mos_cor 
+
+section ff 
+include "cmn018_assp_v1d2.scs" section = ff 
+endsection ff 
+
+section fs 
+include "cmn018_assp_v1d2.scs" section = fs 
+endsection fs 
+
+section sf 
+include "cmn018_assp_v1d2.scs" section = sf 
+endsection sf 
+
+section ss 
+include "cmn018_assp_v1d2.scs" section = ss 
+endsection ss 
+
+section tt 
+include "cmn018_assp_v1d2.scs" section = tt 
+endsection tt 
+
+
+endlibrary std_mos_cor 

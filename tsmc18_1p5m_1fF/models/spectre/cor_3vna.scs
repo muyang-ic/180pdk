@@ -1,0 +1,24 @@
+library 3vna_cor 
+
+section ff_3vna 
+include "cmn018_assp_v1d2.scs" section = ff_3vna 
+endsection ff_3vna 
+
+section fs_3vna 
+include "cmn018_assp_v1d2.scs" section = fs_3vna 
+endsection fs_3vna 
+
+section sf_3vna 
+include "cmn018_assp_v1d2.scs" section = sf_3vna 
+endsection sf_3vna 
+
+section ss_3vna 
+include "cmn018_assp_v1d2.scs" section = ss_3vna 
+endsection ss_3vna 
+
+section tt_3vna 
+include "cmn018_assp_v1d2.scs" section = tt_3vna 
+endsection tt_3vna 
+
+
+endlibrary 3vna_cor 

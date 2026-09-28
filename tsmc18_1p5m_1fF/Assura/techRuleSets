@@ -1,0 +1,24 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Rule Set File generated/modified by Assura Code on Feb 25 14:54:29 2004
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+ruleSet( "default"
+     (DrcRules             "./drc/assura.drc" )
+     (DrcInclude           "./drc/drc.rsf" )
+     (LvsSwitchesFile      "./lvs_rcx/switches_PDK_LVS" )
+     (LvsExtractRules      "./lvs_rcx/extract.rul" )
+     (LvsCompareRules      "./lvs_rcx/compare.rul" )
+     (LvsBindingFile       "./lvs_rcx/bind.rul" )
+     (RcxSetupDir          "./lvs_rcx" )
+)
+
+ruleSet( "default_cdl"
+     (DrcRules             "./drc/assura.drc" )
+     (DrcInclude           "./drc/drc.rsf" )
+     (LvsSwitchesFile      "./lvs_rcx/switches_PDK_LVS" )
+     (LvsExtractRules      "./lvs_rcx/extract.rul" )
+     (LvsCompareRules      "./lvs_rcx/compare.rul" )
+     (LvsBindingFile       "./lvs_rcx/bind.rul_cdl" )
+     (RcxSetupDir          "./lvs_rcx" )
+)
+

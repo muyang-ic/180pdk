@@ -1,0 +1,24 @@
+
+
+			README File for Calibre DRC
+		     =================================
+
+ I. Files/Directories related to DRC
+
+     *Following are the descriptions for these files:
+
+	DRC.README	     - DRC readme file (this file)
+	calibre.drc	     - DRC deck for the main DRC rules
+	ant.drc	     	     - DRC deck for antenna rules
+
+  Note: 
+     1. First refer to the notice messages and status logs in the head of 
+	each command file.
+     2. Some decks may contain several switches for different checking purpose.
+	(for example, the "#DEFINE 3.3V" is for 3.3V I/O process variant)
+	Be careful to correctly set these switches to ensure you run these decks
+        in a correct way.(The detail description for each switch can be seen
+	in each command file header)
+     3. The most update of DRC decks should be download from TSMC-online as
+	possible to ensure the accuracy of physical verification.
+	

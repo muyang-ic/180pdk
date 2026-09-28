@@ -1,0 +1,16 @@
+library bip3_cor 
+
+section ff_bip3 
+include "cmn018_assp_v1d2.scs" section = ff_bip3 
+endsection ff_bip3 
+
+section ss_bip3 
+include "cmn018_assp_v1d2.scs" section = ss_bip3 
+endsection ss_bip3 
+
+section tt_bip3 
+include "cmn018_assp_v1d2.scs" section = tt_bip3 
+endsection tt_bip3 
+
+
+endlibrary bip3_cor 

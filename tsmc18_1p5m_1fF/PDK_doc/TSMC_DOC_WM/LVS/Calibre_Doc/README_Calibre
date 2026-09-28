@@ -1,0 +1,118 @@
+
+LVS/RCE DECK INTRODUCTION AND USER GUIDE
+
+I. INTRODUCTION
+
+    The command file that you just downloaded is a combination of LVS/RCE
+deck. You can run LVS or RC extraction using the same deck with minor
+modification (usually by setting the switch). 
+Currently, the combo deck is separated into two files:
+The device extraction rules file and the parasitic extraction rule file (the add-on deck #1).
+Following are the descriptions for these files:
+
+    a. The device extraction rules file :
+          This file usually contains the device extraction
+       rules for this process.
+
+    b. the add-on deck #1 :
+          This file contains the parasitic extraction information. Currently,
+       the capacitance/resistance specification statement output by XRC
+       is included in this file. Generally speaking, this file is for RC
+       extraction purpose only and has nothing matter to LVS. When running LVS,
+       you can ignore this file.
+
+  To correctly run the LVS/RCE on your design, you need to create a complete
+combo deck. The detailed description of how to create a complete combo deck is
+described in the following section.
+
+
+II. USER GUIDE
+
+    Since the complete combo deck is separated into a "main deck",and one 
+"add-on decks," you need to create a complete combo deck before 
+running a LVS check or RC extraction. In this section, we will guide you through how
+to create a complete combo deck. At the same time, we will also demonstrate how to set 
+the switch to make the complete combo deck into a LVS deck or RCE deck.
+
+
+  A. Creating a complete deck for LVS
+
+    Procedures:
+
+      Step 1. Please download the most update "LVS/RC combo deck" from TSMC-online system.
+
+      Step 2. Unpack the compressed file (from step 1)
+              The file "LVS_RC_Calibre_0.18um_MIX_RF_1p6m_1.8V+3.3V.13a" is "the LVS/RC combo file" for this process.
+	      
+      Step 3. Set the switch by undefining the "RC_DECK" variable. In the "complete command file" 
+              obtained from step 3, find the line "#DEFINE RC_DECK" and undefine it by adding a leading
+	      double slash. Your command file will look like this:
+
+              //#DEFINE RC_DECK   => this means the deck is an LVS main deck file
+	     			    (this is a default setting)
+	      
+      Step 4. Finally, run LVS on your design using the newly modified command file from step 4.
+ 
+
+  B. Creating a complete combo deck for RCE
+
+        The processing steps for creating a complete combo deck for RC extraction
+     are similar to creating that for LVS, except for the "add-on deck #1" and
+     switch setting. Following are the steps to create a complete combo deck for RCE:
+
+     Step 1~2 : Follow above steps 1~2 for getting a LVS/RC combo deck for LVS.
+
+     Step 3 : Set the switch by defining the "RC_DECK" variable. In the "LVS/RC combo file"
+              obtained from above step 3, define the "RC_DECK" variable in your file.
+              Your command file will look like this:
+	      
+               #DEFINE RC_DECK    => this means the deck is a RCE command file
+
+     Step 4 : Download the xCalibre RC technology file (add-on deck #1) 
+              corresponding to the process you used from TSMC online.
+
+     Step 5 : Unzip the zip file from step 4 and extract the capacitance rule
+              statement file (rules) and resistor statement file (File name looks like
+	      this: "t018s6ml.res").
+
+     Step 6 : Use the Unix command 'cat' to combine these two files into a
+              new rule file, and rename the new rule file "rules."
+
+              %cat t018s6ml.res >> rules
+
+	      Of course, concatenation in a text editor will also work.
+               
+     Step 7 : Finally, run RCE on your design using the newly created command
+               file from step 3. ***Make sure the "rules" file 
+               obtained from step 6 is also located in the working directory***.
+  
+  C. Extracted the DNW-PSUB diode
+        By default, the two diodes, PWDNW and DNWPSUB, are not extracted in this command  
+     file.  Please turn on the switch, "#DEFINE DNW_DIODE", 
+     to apply the extraction of these two diodes.
+
+III. Example on setting switch
+
+    A. Controlling "the complete command file" is LVS deck or RC extraction deck  
+       In "the complete command file", if the switch is set as:
+    
+       #DEFINE RC_DECK       => this means it is an RC extraction deck
+
+      //#DEFINE RC_DECK      => this means it is an LVS deck
+                                (This is the default setting)
+
+IV. Selecting Proper LVS Deck 
+
+    The Main_Deck directory is based on user-defined process settings to eliminate any unnecessary 
+    switch setting during LVS. These settings include:
+      Mimcap: 1P0, 1P5, 2P0
+      Top Metal Thickness: 8K, 20K, 40K
+      MOS model: MAC, nonMac
+    Since user can only use only one of these settings at any given time, the LVS deck has been 
+    preset based on the desired user settings. For example, if design utilizes 2.0fF mimcaps and
+    MOS macro models, then user can just obtain files in the 2P0_MAC folder and directly run LVS.
+    If design utilizes 1.0fF mimcaps and ultra thick 40k top metal, then user can use the LVS 
+    files in the 1P0_40K folder. It may be that only one or two settings are available for the user
+    to select from. Please use the key above to identify proper LVS deck.
+
+

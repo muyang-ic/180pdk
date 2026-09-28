@@ -1,0 +1,70 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream Out
+Program   : @(#)$CDS: strmout version 6.1.7-64b 08/21/2018 19:43 (sjfhw315) $
+          : sub-version  IC6.1.7-64b.500.22 
+Started at: 08-Dec-2018  03:27:39
+User Name : chris
+Host Name : chris
+Directory : /home/chris
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+
+                       Individual Cell Statistics - Basic Objects
+---------------------------------------------------------------------------------------------------------------------------------------
+Library/Cell/View               Instance Array   Polygon  Rect   Path   PathSeg   Text   TextDisplay   Line   Dot   Arc   Donut   Ellipse 
+---------------------------------------------------------------------------------------------------------------------------------------
+tsmc18/mynmos_20_02/layout      0        0       0        6      0      0         0      0             0      0     0     0       0       
+tsmc18/M1_DIFF/layout           0        0       0        44     0      0         0      0             0      0     0     0       0       
+---------------------------------------------------------------------------------------------------------------------------------------
+
+                       Individual Cell Statistics - Advanced Objects
+---------------------------------------------------------------------------------------------------------------------------------------
+Library/Cell/View               PRBdy    OtherBdy   AreaBlkg   LayerBlkg  AreaHalo   Row   Marker   CustVia   StdVia    CdsGenVia
+---------------------------------------------------------------------------------------------------------------------------------------
+tsmc18/mynmos_20_02/layout      0        0          0          0          0          0     0        0         2         0        
+tsmc18/M1_DIFF/layout           0        0          0          0          0          0     0        0         0         0        
+---------------------------------------------------------------------------------------------------------------------------------------
+
+                       Statistics of Layers 
+---------------------------------------------------------------------------------------------------------------------------------------
+Cadence         Cadence         Stream  Stream   
+Layer           Purpose         Layer   Datatype  Polygon  Rect     Path     Text     TextDisplay   Line Dot Arc Donut Ellipse Pathseg
+---------------------------------------------------------------------------------------------------------------------------------------
+CONT            drawing         15      0         0        42       0        0        0             0    0   0   0     0      0      
+DIFF            drawing         3       0         0        2        0        0        0             0    0   0   0     0      0      
+METAL1          drawing         16      0         0        1        0        0        0             0    0   0   0     0      0      
+NIMP            drawing         8       0         0        1        0        0        0             0    0   0   0     0      0      
+WELLBODY        drawing         103     0         0        1        0        0        0             0    0   0   0     0      0      
+PIMP            drawing         7       0         0        2        0        0        0             0    0   0   0     0      0      
+POLY1           drawing         13      0         0        1        0        0        0             0    0   0   0     0      0      
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Summary of Objects Translated:
+	Scalar Instances:		0
+	Array Instances:		0
+	Polygons:			0
+	Paths:				0
+	Rectangles:			50
+	Lines:				0
+	Arcs:				0
+	Donuts:				0
+	Dots:				0
+	Ellipses:			0
+	Boundaries:			0
+	Area Blockages:			0
+	Layer Blockages:		0
+	Area Halos:			0
+	Markers:			0
+	Rows:				0
+	Standard Vias:			2
+	Custom Vias:			0
+	CdsGen Vias:			0
+	Pathsegs:			0
+	Text:				0
+	TextDisplay:		0
+	Cells:				2
+Design Libraries: 
+
+DEFINE tsmc18	/eda/cadence/tsmc18_1p5m_1fF/tsmc18

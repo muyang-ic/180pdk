@@ -1,0 +1,15 @@
+capgen -C \
+ -prefixDevice "X",mt1res,mt2res,mt3res,mt4res,mt5res,nwsti,nwod,hrpo_2t,rpporpo,rnporpo,rppoipw,rppoip,rnpoipw,rnpoip,prdop,nrdop,rpodipw,rpodip,rnodipw,rnodip,ngate_mac,nrgate_mac,mvt_ngate_mac,nlgate_mac,pgate_mac,mvt_pgate_mac,bngate_mac,bnrgate_mac,bmvt_ngate_mac,bnlgate_mac,bpgate_mac,nulgate_mac,pulgate_mac,nelgate_mac,pelgate_mac,emit2_mis,emit5_mis,emit10_mis,nemit2_mis,nemit5_mis,nemit10_mis,ull_emit2_mis,ull_emit5_mis,ull_emit10_mis,ell_emit2_mis,ell_emit5_mis,ell_emit10_mis,ull_nemit2_mis,ull_nemit5_mis,ull_nemit10_mis,ell_nemit2_mis,ell_nemit5_mis,ell_nemit10_mis,pindio,prdop_nvm \
+ -blocking capm4_1p0_ud:0.4,metal4,ctm \
+ -blocking capm4_1p5_ud:0.4,metal4,ctm \
+ -blocking capm4_2p0_ud:0.4,metal4,ctm \
+ -blocking capm4_2p0_ud:0.4,metal4,ctm \
+ -blocking capm4_1p0_3t:0.4,field,metal4,ctm \
+ -blocking capm4_1p5_3t:0.4,field,metal4,ctm \
+ -blocking capm4_2p0_3t:0.4,field,metal4,ctm \
+ -blocking capm4_1p0_hl_2t:0.4,metal4,ctm \
+ -blocking capm4_1p0_hl_3t:0.4,field,metal4,ctm \
+ -blocking vargt:0.001,poly,active,field \
+ -blocking bvargt:0.001,poly,active,field \
+ -lvs lvsfile -p2lvs p2lvsfile -add_via_effect metal1,active:0.249 -lexclude poly \
+ -length_units meters -cap_unit 1 -p poly,paxgate,active -cap_ground_layer psub .

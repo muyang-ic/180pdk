@@ -1,0 +1,4 @@
+TDMCHECKPOINT="1.0"
+keepEmptyCategory type="unknown"
+tsmc18/Mosfet_4T.Cat type="category"
+tsmc18/Mosfet_mac.Cat type="category"

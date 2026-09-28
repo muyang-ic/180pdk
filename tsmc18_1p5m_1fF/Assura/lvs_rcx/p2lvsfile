@@ -1,0 +1,18 @@
+pro_layer=field  ext_layer=nxwell,psub;
+pro_layer=active  ext_layer=tndiff,tpdiff;
+pro_layer=poly  ext_layer=poly  sheet_res=(7.02222,0.16)(7.46111,0.34)(7.72444,0.88)(7.81222,1.78) TC1=0.00288 TC2=0.000000501 ;
+pro_layer=metal1  ext_layer=metal1  sheet_res=0.078 TC1=0.00343 TC2=-0.00000108 ;
+pro_layer=tfr  ext_layer=tfr  sheet_res=748.6 TC1=0.00001 TC2=0 ;
+pro_layer=metal2  ext_layer=metal2  sheet_res=0.078 TC1=0.00343 TC2=-0.00000108 ;
+pro_layer=metal3  ext_layer=metal3  sheet_res=0.078 TC1=0.00343 TC2=-0.00000108 ;
+pro_layer=metal4  ext_layer=metal4  sheet_res=0.078 TC1=0.00343 TC2=-0.00000108 ;
+pro_layer=ctm  ext_layer=ctm  sheet_res=0.307 ;
+pro_layer=metal5  ext_layer=metal5  sheet_res=0.036 TC1=0.0036 TC2=-0.000000116 ;
+ext_cont=polyCont res=7.8 pro_cont=polyCont TC1=0.00153 TC2=-0.000000057 ; 
+ext_cont=odCont res=11 pro_cont=odCont TC1=0.00131 TC2=0.000000316 ; 
+ext_cont=ctm_via res=2.54 pro_cont=ctm_via unit_area=0.1296 TC1=0.000494 TC2=0.00000119 ; 
+ext_cont=VIA4 res=2.54 pro_cont=VIA4 unit_area=0.1296 TC1=0.000494 TC2=0.00000119 ; 
+ext_cont=VIA3 res=6.4 pro_cont=VIA3 unit_area=0.0676 TC1=0.000958 TC2=-0.000000463 ; 
+ext_cont=VIA2 res=6.4 pro_cont=VIA2 unit_area=0.0676 TC1=0.000958 TC2=-0.000000463 ; 
+ext_cont=SICR_V1 res=6.4 pro_cont=SICR_V1 unit_area=0.0676 TC1=0.0000958 TC2=-0.000000463 ; 
+ext_cont=VIA1 res=6.4 pro_cont=VIA1 unit_area=0.0676 TC1=0.0000958 TC2=-0.000000463 ; 

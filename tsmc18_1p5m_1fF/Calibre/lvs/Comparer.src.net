@@ -1,0 +1,39 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  bishe
+* Top Cell Name: Comparer
+* View Name:     schematic
+* Netlisted on:  May 17 15:57:01 2021
+************************************************************************
+
+.INCLUDE  /home/designer/PDK/PDK/tsmc18_1p5m_1fF/tsmc18/../Calibre/lvs/source.added
+*.EQUATION
+*.LDD
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: bishe
+* Cell Name:    Comparer
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Comparer GND VDD Vin Vip out
+*.PININFO GND:I VDD:I Vin:I Vip:I out:O
+MM2 net015 net015 GND GND N l=200n w=2u m=1
+MM11 out net18 GND GND N l=200n w=1u m=1
+MM6 net18 net015 GND GND N l=200n w=220.00000u m=1
+MM4 net16 Vip net14 net14 N l=200n w=2u m=1
+MM3 net26 Vin net14 net14 N l=200n w=2u m=1
+MM5 net14 net015 GND GND N l=200n w=300n m=1
+MM1 net015 net015 VDD VDD P l=200n w=220.0n m=1
+MM10 out net18 VDD VDD P l=200n w=1u m=1
+MM9 net18 net16 VDD VDD P l=200n w=1u m=1
+MM8 net16 net26 VDD VDD P l=200n w=2u m=1
+MM7 net26 net26 VDD VDD P l=200n w=2u m=1
+.ENDS
+

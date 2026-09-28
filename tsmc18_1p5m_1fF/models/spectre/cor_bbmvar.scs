@@ -1,0 +1,16 @@
+library bbmvar_cor 
+
+section ff_bbmvar 
+include "cmn018_assp_v1d2.scs" section = ff_bbmvar 
+endsection ff_bbmvar 
+
+section ss_bbmvar 
+include "cmn018_assp_v1d2.scs" section = ss_bbmvar 
+endsection ss_bbmvar 
+
+section tt_bbmvar 
+include "cmn018_assp_v1d2.scs" section = tt_bbmvar 
+endsection tt_bbmvar 
+
+
+endlibrary bbmvar_cor 

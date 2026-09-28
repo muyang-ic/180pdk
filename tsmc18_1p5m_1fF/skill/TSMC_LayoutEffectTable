@@ -1,0 +1,38 @@
+[Preset1]
+    <NMOS>
+    <wpe>
+        SC_L = 0.91u
+        SC_R = 0.91u
+        SC_T = 0.43u
+        SC_B = 0.43u
+    </wpe>
+    </NMOS>
+    <PMOS>
+    <wpe>
+        SC_L = 0.91u
+        SC_R = 0.91u
+        SC_T = 0.43u
+        SC_B = 0.43u
+    </wpe>
+    </PMOS>
+[/Preset1]
+
+[Preset2]
+    <NMOS>
+    <wpe>
+        SC_L = 0.8u
+        SC_R = 0.8u
+        SC_T = 0.32u
+        SC_B = 0.32u
+    </wpe>
+    </NMOS>
+    <PMOS>
+    <wpe>
+        SC_L = 0.8u
+        SC_R = 0.8u
+        SC_T = 0.32u
+        SC_B = 0.32u
+    </wpe>
+    </PMOS>
+[/Preset2]
+

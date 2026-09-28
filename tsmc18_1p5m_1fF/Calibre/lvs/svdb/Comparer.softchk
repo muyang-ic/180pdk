@@ -1,0 +1,261 @@
+Comparer 1000
+SOFTCHK mim_term CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK poly_term CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK DPW CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK DNW CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK RFDMY_HIA_psub CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK rfdmy56 CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK hvnwpsub_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK ldpwhvnwpsub_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK psub_under_dnw CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK psub_under_hvnw CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK psub_under_nbl CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK HVNW CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK NBL CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK hvndfd CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK hvnw_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK hvnwdpwnbl_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK iso_hvnw CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK ldpwhvnwpsub_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK nhvpwdnw_4t_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK nhvpwnbl_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK nldpwhvnw_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK nlvpwnbl_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK npwnbl_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK nwhvpwnbl_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK nxwell CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK phvnwdpw_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK pwhvnwdpw_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK HVPW CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK coll CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK coll_od2 CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK ell_coll CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK hvnwdpwnbl_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK hvpdfd CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK ptsub1 CONTACT.
+4 4 8 May 17 15:57:08 2021                                      
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+p 1 10
+DN 8
+4890 -7905
+8600 -7905
+8600 -3725
+8180 -3725
+8180 -7485
+5310 -7485
+5310 -4145
+8180 -4145
+8180 -3725
+4890 -3725
+p 2 10
+DN 10
+10695 -7500
+14595 -7500
+14595 -4260
+14175 -4260
+14175 -7080
+11115 -7080
+11115 -4680
+14175 -4680
+14175 -4260
+10695 -4260
+p 3 10
+DN 8
+16960 -8405
+20200 -8405
+20200 -4225
+19780 -4225
+19780 -7985
+17380 -7985
+17380 -4645
+19780 -4645
+19780 -4225
+16960 -4225
+p 4 10
+DN 8
+22610 -7340
+26320 -7340
+26320 -4100
+25900 -4100
+25900 -6920
+23030 -6920
+23030 -4520
+25900 -4520
+25900 -4100
+22610 -4100
+SOFTCHK nhvpwdnw_4t_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK nhvpwnbl_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK nldpwhvnw_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK nlvpwnbl_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK npwnbl_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK nwhvpwnbl_base CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK phvnwdpw_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK psub CONTACT.
+4 4 8 May 17 15:57:08 2021                                      
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+p 1 10
+DN 8
+4890 -7905
+8600 -7905
+8600 -3725
+8180 -3725
+8180 -7485
+5310 -7485
+5310 -4145
+8180 -4145
+8180 -3725
+4890 -3725
+p 2 10
+DN 10
+10695 -7500
+14595 -7500
+14595 -4260
+14175 -4260
+14175 -7080
+11115 -7080
+11115 -4680
+14175 -4680
+14175 -4260
+10695 -4260
+p 3 10
+DN 8
+16960 -8405
+20200 -8405
+20200 -4225
+19780 -4225
+19780 -7985
+17380 -7985
+17380 -4645
+19780 -4645
+19780 -4225
+16960 -4225
+p 4 10
+DN 8
+22610 -7340
+26320 -7340
+26320 -4100
+25900 -4100
+25900 -6920
+23030 -6920
+23030 -4520
+25900 -4520
+25900 -4100
+22610 -4100
+SOFTCHK psub_term CONTACT.
+4 4 8 May 17 15:57:08 2021                                      
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+Net 7 is selected for stamping.
+Rejected nets: 8 10
+p 1 10
+DN 8
+4890 -7905
+8600 -7905
+8600 -3725
+8180 -3725
+8180 -7485
+5310 -7485
+5310 -4145
+8180 -4145
+8180 -3725
+4890 -3725
+p 2 10
+DN 10
+10695 -7500
+14595 -7500
+14595 -4260
+14175 -4260
+14175 -7080
+11115 -7080
+11115 -4680
+14175 -4680
+14175 -4260
+10695 -4260
+p 3 10
+DN 8
+16960 -8405
+20200 -8405
+20200 -4225
+19780 -4225
+19780 -7985
+17380 -7985
+17380 -4645
+19780 -4645
+19780 -4225
+16960 -4225
+p 4 10
+DN 8
+22610 -7340
+26320 -7340
+26320 -4100
+25900 -4100
+25900 -6920
+23030 -6920
+23030 -4520
+25900 -4520
+25900 -4100
+22610 -4100
+SOFTCHK pwhvnwdpw_col CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK rw_inside_dnw CONTACT.
+0 0 0 May 17 15:57:08 2021                                      
+SOFTCHK ull_coll CONTACT.
+0 0 0 May 17 15:57:08 2021                                      

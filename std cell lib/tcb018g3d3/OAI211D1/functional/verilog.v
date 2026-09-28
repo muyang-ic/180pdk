@@ -1,0 +1,33 @@
+// Created by ihdl
+`timescale 1ns/10ps
+
+`celldefine
+
+module OAI211D1 (A1, A2, B, C, ZN, VDD, VSS);
+    input A1, A2, B, C;
+    output ZN;
+   inout VDD, VSS;
+    or		(A, A1, A2);
+    nand		(ZN, A, B, C);
+
+  specify
+    (A1 => ZN) = (0, 0);
+    (A2 => ZN) = (0, 0);
+    if (A1 == 1'b1 && A2 == 1'b1 && C == 1'b1)
+    (B => ZN) = (0, 0);
+    if (A1 == 1'b1 && A2 == 1'b0 && C == 1'b1)
+    (B => ZN) = (0, 0);
+    if (A1 == 1'b0 && A2 == 1'b1 && C == 1'b1)
+    (B => ZN) = (0, 0);
+    ifnone (B => ZN) = (0, 0);
+    if (A1 == 1'b1 && A2 == 1'b1 && B == 1'b1)
+    (C => ZN) = (0, 0);
+    if (A1 == 1'b1 && A2 == 1'b0 && B == 1'b1)
+    (C => ZN) = (0, 0);
+    if (A1 == 1'b0 && A2 == 1'b1 && B == 1'b1)
+    (C => ZN) = (0, 0);
+    ifnone (C => ZN) = (0, 0);
+  endspecify
+endmodule
+
+`endcelldefine

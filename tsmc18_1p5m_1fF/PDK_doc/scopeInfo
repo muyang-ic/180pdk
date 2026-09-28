@@ -1,0 +1,133 @@
+1. Foundry Data
+1.1 Spice models
+
+       PROCESS : TSMC 0.18um Mixed Signal SALICIDE (1.8V/3.3V) SPICE MODEL
+       DOC. NO.: T-018-CM-SP-007
+       VERSION : 1.2
+       DATE    : 06/21/2010
+
+1.2 Design rule & DRC
+
+       PROCESS : TSMC 0.18UM CMOS LOGIC/MS/RF AND 0.16UM CMOS LOGIC/MS DESIGN RULE (CL018G/LV/LP, CM018, CR018, CL016G, CM016)
+       DOC. NO.: T-018-LO-DR-001
+       VERSION : 2.10
+       DATE    : 11/08/2012
+       
+       PROCESS : TSMC 0.18UM CMOS LOGIC/MS/RF AND 0.16UM CMOS LOGIC/MS 1P6M DRC (ASSURA) COMMAND FILE (THIRD PARTY) (CL018G/LV/LP, CM018, CR018 CL016G, CM016) 
+       DOC. NO.: T-018-LO-DR-001-U1
+       VERSION : 2.10a
+       DATE    : 01/24/2013
+
+       PROCESS : TSMC 0.18UM CMOS LOGIC/MS/RF AND 0.16UM CMOS LOGIC/MS 1P6M DRC (CALIBRE) COMMAND FILE (CL018G/LV/LP, CM018, CR018 CL016G, CM016) 
+       DOC. NO.: T-018-LO-DR-001-C1
+       VERSION : 2.10a
+       DATE    : 11/14/2012 
+
+1.3 Device Formation document & LVS
+
+       PROCESS : TSMC 0.18 UM MIXED SIGNAL GENERAL PURPOSE II 1P6M SALICIDE 1.8V/3.3V LVS (ASSURA) COMMAND FILE 
+       DOC. NO.: T-018-CM-SP-007-U1
+       VERSION : 1.2a
+       DATE    : 01/28/2013 
+
+       PROCESS : TSMC 0.18 UM MIXED SIGNAL GENERAL PURPOSE II 1P6M SALICIDE 1.8V/3.3V LVS (CALIBRE) COMMAND FILE 
+       DOC. NO.: T-018-CM-SP-007-C1
+       VERSION : 1.2a
+       DATE    : 01/28/2013
+
+1.4 RC technology files
+
+       PROCESS : TSMC 0.18 UM MIXED MODE 1P6M SALICIDE 1.8V/3.3V RC (ASSURA) TECH FILE  
+       DOC. NO.: T-018-CM-SP-007-V1
+       VERSION : 1.2b
+       DATE    : 02/13/2014 
+       
+       PROCESS : TSMC 0.18UM MIXED SIGNAL 1P6M SALICIDE 1.8V/3.3V RC(XCALIBRE) TECH. FILES. 
+       DOC. NO.: T-018-CM-SP-007-X1 
+       VERSION : 1.2b
+       DATE    : 06/17/2013 
+       
+1.5 Layer definitation document & Virtuoso techfile
+
+       PROCESS : TSMC layout editor technology file for TSMC 0.18um LO+MM/RF+FLASH+HV processes
+       DOC. NO.: T-018-LO-LE-004
+       VERSION : 2.10a
+       DATE    : 02/25/2013
+       (OA Tech File is based on this document. Cadence_Date: 03/07/2014)
+
+2. Known problems                                                                                 
+                                                                                                  
+   2.1  When the segment of resistor is larger than one, the simulation values could not be       
+        back-annotated to schematic view correctly.                                               
+                                                                                                  
+   2.2 	NMOS with DNW must be surrounded with NWELL.
+   
+   2.3 The minimum RPO area of resistors should be checked. 
+   
+   2.4 In some special length and width ranges of resistors, their resistance values shown in CDF menu have
+       differences compared with simulation results. These resistance values are for reference only, and 
+       users should run simulations to get correct results.        
+
+3. Special Notes
+
+   3.1 If polyroute direction is not set to "none", and  the finger number should be more than 2.
+
+   3.2 The mosfets with macro model ("_mac") and normal mosfets can not be used in schematic simultaneously
+       for LVS/RCX. Users need to turn on/off MACRO switch in LVS/RCX deck by themselves. 
+
+   3.3 MOS with DNW must be surrounded with NWELL.
+
+   3.4 Please read all PDK documents in /PDK_Doc/ carefully before using this PDK.         
+   
+   3.5 source.added will be added automatically in Assura Netlist File(s) and Calibre Netlist Export Setup.
+   
+   3.6 The "About this PDK tool utility" will pop-up automatically when invoking virtuoso. Please read the ReleaseNote
+       and REVISION carefully before using this PDK.
+   
+   3.7 The designs with PDK, T-018-CM-SP-007-K3 are not compatible with those of T-018-MM-SP-001 and T-018-MM-SP-002 
+       because of model and netlist behavior inconsistence. The design with T-018-MM-SP-00-K3 can not be plugged 
+       in T-018-CM-SP-007-K3, either. Users need to create new designs by themselves. 
+       
+   3.8 The capacitance value shown in crtmom CDF menu is Cab+Cap, not only Cab.
+   
+   3.9 All the cells included in this PDK are built based on current design rule documents and spice model cards. Some of rules or parameters may be changed after this release, please contact TSMC for the most up-to-date information.   
+   
+   3.10 Please do not use the devices in "do_not_use" category.   
+
+   3.11 MOS with WPE effect:
+ 	    1) WPE effect: Netlist generated from PDK contains SCA,SCB,SCC parameters for 
+ 	        Bsim4.5 simulation. For pre-simulation, users can modify these parameters in 
+ 	        MOS CDF form if they are available. For post-simulation, LPE tools will extract
+ 	        SCA,SCB,SCC from layout.
+ 	        
+ 	    * Since there is no implant on native devices, there will be no WPE effect on those devices. 
+ 	      But there are still SCA,SCB,SCC parameters in the model of native device. 
+   
+4. Utilities
+
+       In order to ease the use of this PDK, some utilities are provided below to help users.
+       Please refer to the documents in /PDK_Doc/TSMC_DOC_WM/PDK/TSMC018_Ultilty_Usage_Guide.pdf
+    
+    ***Please remember to backup your designs before running utilities(very important)***
+    
+   10.1 CDF update utility
+
+       When changes are made on a device inside PDK, these changes often affect circuit designs which 
+    have already been created. For example, a sheet resistance value change on a resistor will affect
+    the length of the device passed to the simulator and used to generate the layout.
+    These parameters will not be automatically updated in each of the designer's circuit libraries. A
+    function has been written and included as a part of the PDK to complete the update to an existing
+    library such that all modifications made in a PDK since a previous release are reflected in each 
+    of the circuit designs inside a library. There is a single argument to this fuction which represents
+    the design library which is to be updated with new CDF information. Once this routine has been run
+    , all designs in the designated library will be in sync with the latest release of PDK.
+
+    ***Please note, however, that possible DRC and LVS violations may be arised as a result of running
+    this routine depend on what changes have been made to this PDK***
+
+    For example, value change as specified earlier of sheet resistance could cause shrinkage of length
+    in resistor layout, which resulting an connection open as far as LVS is concerned. Please be sure
+    that designers re-verify each design by simulation, DRC, and LVS to insure that no unintended 
+    modifications have been overlooked.
+    
+    Users may use Update Design (Instance) CDF Utility from TSMC PDK Tools GUI.

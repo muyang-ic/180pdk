@@ -1,0 +1,1003 @@
+;********************************************************************************************
+; * 0.18um/0.16um/0.152um ASSURA ANTENNA DRC COMMAND FILE - ULM18_LM16_LM152_5M.ANT.210a (01/20/2013)
+; * FOR TSMC 0.18UM CMOS LOGIC/MS/RF AND 0.16UM/0.152UM CMOS LOGIC/MS 1P5M PROCESS DESIGN RULE*
+; *          (CL018G/LV/LP, CM018G, CR018G, CL016G, CM016G, CL0152G, CM0152)                  *
+; * (DESIGN RULE DOCUMENT: T-018-LO-DR-001 Rev 2.10)                            *
+; * (DRC COMMAND FILE DOCUMENT:  T-018-LO-DR-001-U1 Rev 2.10a)               *
+;********************************************************************************************
+;;
+;;  DISCLAIMER
+;;
+;;  The information contained herein is provided by TSMC on an "AS IS" basis
+;;  without any warranty, and TSMC has no obligation to support or otherwise
+;;  maintain the information.  TSMC disclaims any representation that the
+;;  information does not infringe any intellectual property rights or proprietary
+;;  rights of any third parties.  There are no other warranties given by TSMC,
+;;  whether express, implied or statutory, including, without limitation, implied
+;;  warranties of merchantability and fitness for a particular purpose.
+;;
+;;  STATEMENT OF USE
+;;
+;;  This information contains confidential and proprietary information of TSMC.
+;;  No part of this information may be reproduced, transmitted, transcribed,
+;;  stored in a retrieval system, or translated into any human or computer
+;;  language, in any form or by any means, electronic, mechanical, magnetic,
+;;  optical, chemical, manual, or otherwise, without the prior written permission
+;;  of TSMC.  This information was prepared for informational purpose and is for
+;;  use by TSMC's customers only.  TSMC reserves the right to make changes in the
+;;  information at any time and without notice.
+;;
+;;
+;;-------------------------------------------------------------------------------------------
+;;
+;;  * To correctly use this DRC deck, the following settings are very important in
+;;    this DRC command file:
+;;	
+;;  (0) Cadebce Assura AV41 USR1 HF13 is used to develop and QA this command file. 
+;;	Please execute the DRC with this.
+;;
+;;  (1) Variable for Thick Top Metal check:
+;;
+;;	By default, the Top Metal is Normal top Metal.   
+;;	A. If customer uses 20KA Top Metal, please see the CaseA as following:
+;;	B. If customer uses 40KA Top Metal, please see the CaseB as following:
+;;
+;;      Case A For 20KA Top Metal
+;;		THICK_40K = 0
+;;		THICK_20K = 1
+;;
+;;      Case B For 40KA Top Metal
+;;		THICK_40K = 1
+;;		THICK_20K = 0
+;;
+;;
+;;  (2) Variable for 2.0fF/um2 check:
+;;
+;;      Pls turn on only when customer want to check 2.0fF/um2 MIMCAP rule(A.R.MIM.5 ).
+;;      Others pls set the switch as below:
+;;
+;;		MIMCAP_2F = 1
+;;
+;;
+;******************************************************************************************/
+;	
+   THICK_40K   = 0;	/* set as 1 when Top Metal 40KA is used.Otherwise please set as 0  */
+   THICK_20K   = 0;	/* set as 1 when Top Metal 20KA is used.Otherwise please set as 0  */
+   MIMCAP_2F   = 0;     /* set as 1 when customer use 2fF/um2 MIMCAP. otherwise please set as 0  */
+;------------------------------------------------------------------------------------------- 
+; ENVIRONMENT SETUP
+;------------------------------------------------------------------------------------------- 
+  Mx_THICKNESS = 0.53	/* The Thickness of Inter Metal is 5.3K A */
+if((THICK_40K == 1) then
+    MT_THICKNESS = 4.6	/* The Thickness of Top Metal is 40K A  */
+    else
+     if((THICK_20K == 1) then
+         MT_THICKNESS = 2.34   /* The Thickness of Top Metal is 20K A */
+     else
+         MT_THICKNESS = 0.99
+       ) ;end of
+   ) ;end of 
+
+
+  MD_THICKNESS    = 0.99
+  PO_THICKNESS    = 0.2
+  Mx_S_1          = 0.28
+  Balance_Ratio   = 6000
+  unBalance_Ratio = 100
+  DIO_AREA        = 0.203
+
+drcExtractRules(
+	
+layerDefs( "gds2"
+            diffi   = layer( 3  )
+            pdiffi  = layer( 11 )
+            ndiffi  = layer( 12 )
+            od2i    = layer( 4  )
+            polyi   = layer( 13 )
+            coi     = layer( 15 )
+            m1i     = layer( 16 )
+            m1dmy   = layer( 16 type(1) )
+            m1sloti = layer( 16 type(2) )
+            via1i   = layer( 17 )
+            m2i     = layer( 18 type(0) )
+            m2dmy   = layer( 18 type(1) )
+            m2sloti = layer( 18 type(2) )
+            via2i   = layer( 27 )
+            m3i     = layer( 28 type(0) )
+            m3dmy   = layer( 28 type(1) )
+            m3sloti = layer( 28 type(2) )
+            via3i   = layer( 29 )
+            m4i     = layer( 31 type(0) )
+            m4dmy   = layer( 31 type(1) )
+            m4sloti = layer( 31 type(2) )
+            via4i   = layer( 32 )
+            m5i     = layer( 33 type(0) )
+            m5dmy   = layer( 33 type(1) )
+            m5sloti = layer( 33 type(2) )
+            viadi   = layer( 167 )
+            mdi     = layer( 168 type(0) )
+            mddmy   = layer( 168 type(1) )
+            mdsloti = layer( 168 type(2) )
+            ctm2i   = layer( 67 type(2) )
+            ctm3i   = layer( 67 type(3) )
+            ctm4i   = layer( 67 type(4) )
+            ctm5i   = layer( 67 type(5) )
+         ) ;end of gds2
+
+layerDefs( "df2"
+            diffi   = layer( "DIFF" )
+            pdiffi  = layer( "PDIFF" )
+            ndiffi  = layer( "NDIFF" )
+            od2i    = layer( "OD2" )
+            polyi   = layer( "POLY1" )
+            coi     = layer( "CONT" )
+            m1i     = layer( "METAL1" type("drawing") )
+            m1dmy   = layer( "METAL1" type("dummy") )
+            m1sloti = layer( "METAL1" type("slot") ) 
+            via1i   = layer( "VIA12" )
+            m2i     = layer( "METAL2" type("drawing") )
+            m2dmy   = layer( "METAL2" type("dummy") )
+            m2sloti = layer( "METAL2" type("slot") ) 
+            via2i   = layer( "VIA23" )
+            m3i     = layer( "METAL3" type("drawing") )
+            m3dmy   = layer( "METAL3" type("dummy") )
+            m3sloti = layer( "METAL3" type("slot") ) 
+            via3i   = layer( "VIA34" )
+            m4i     = layer( "METAL4" type("drawing") )
+            m4dmy   = layer( "METAL4" type("dummy") )
+            m4sloti = layer( "METAL4" type("slot") ) 
+	    via4i   = layer( "VIA45" )
+            m5i     = layer( "METAL5" type("drawing") )
+            m5dmy   = layer( "METAL5" type("dummy") )
+            m5sloti = layer( "METAL5" type("slot") ) 
+            viadi   = layer( "VIAD" )
+            mdi     = layer( "MD" type("drawing") )
+            mddmy   = layer( "MD" type("dummy") )
+            mdsloti = layer( "MD" type("slot") )
+            ctm2i   = layer( "CTM2" )
+            ctm3i   = layer( "CTM3" )
+            ctm4i   = layer( "CTM4" )
+            ctm5i   = layer( "CTM5" )
+         ) ;end of dfII
+
+odi = geomOr( diffi pdiffi ndiffi )
+
+; Metal in silicon    
+;-------------------
+m1       = geomOr( geomAndNot( m1i m1sloti ) m1dmy )
+m2       = geomOr( geomAndNot( m2i m2sloti ) m2dmy )
+m3       = geomOr( geomAndNot( m3i m3sloti ) m3dmy )
+m4       = geomOr( geomAndNot( m4i m4sloti ) m4dmy )
+m5       = geomOr( geomAndNot( m5i m5sloti ) m5dmy )
+md       = geomOr( geomAndNot( mdi mdsloti ) mddmy )
+    
+; Exclude the via upon CTM region
+;----------------------------------
+viat     = geomAndNot( via4i geomButtOrOver( via4i ctm4i ) )
+viac     = geomAnd( via4i ctm4i )
+gate     = geomAnd( odi polyi )
+sd       = geomAndNot( odi polyi ) 
+co_polyi = geomAnd( coi polyi )
+
+CTM = geomCat( ctm4i )
+CBM = geomAnd( m4 geomSizeAnd( CTM m4 Mx_S_1*0.7 2 ) )
+
+VIA_CTM = geomAnd( via4i CTM )
+VIA_CBM = geomAnd( geomAndNot(  via4i CTM) CBM )
+VIA_NO_CTM_CBM = geomAndNot( geomAndNot( via4i CTM ) CBM )
+CTMc            = geomCat( CTM )
+CTMc_g          = geomSize( CTM -0.005 )
+    
+; POLY CHECKS
+;==============
+geomConnect(
+             buttOrOver( polyi gate )
+            ) ;end of geomConnect
+
+; POLY thickness is 2000A
+processAntenna(
+               gate((gate polyi))
+               antenna( polyi )
+               ratio = polyi.perimeter*PO_THICKNESS/gate.area
+             AR1POLY = drcAntenna( polyi (gate) ratio ( keep > 200 )
+                                  suppressErrorMessage                                 
+                                 )
+              ) ;end of processAntenna
+
+A_R_1_POLY = geomOr( AR1POLY_gate )
+errorLayer( A_R_1_POLY "A.R.1.POLY Poly perim*thickness / gate area) > 200" )
+
+;==============
+; M1 CHECKS
+;==============
+geomConnect(
+            buttOrOver( gate  polyi       )
+                   via( coi   m1 polyi sd )
+           );end of geomConnect
+processAntenna(
+                gate((gate polyi))
+                antenna( m1 )
+                ratio = plusp( m1.area ) * plusp( gate.area ) * ( minusp( sd.area-DIO_AREA )  * ( m1.perimeter*Mx_THICKNESS/gate.area - 400 ) + plusp( sd.area - DIO_AREA ) * ( m1.perimeter*Mx_THICKNESS/gate.area - plusp( sd.area - DIO_AREA ) * sd.area*400 - 2200 ) )
+                AR2_AR3M1 = drcAntenna( m1 (gate) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+
+A_R_2_A_R_3_M1 = geomButtOrOver( polyi AR2_AR3M1_gate )
+geomStamp( A_R_2_A_R_3_M1  polyi )               
+A_R_2_A_R_3_M1_final = geomNodeRelate( m1 A_R_2_A_R_3_M1 conn ) 
+errorLayer( A_R_2_A_R_3_M1_final "A.R.2_A.R.3.M1 (M1 perimeter*thickness / gate area) > 400/Ratio without effective diode & (M1 perim*thickness / gate area) > Ratio with effective diode" )
+;==============
+; M2 CHECKS
+;==============
+geomConnect(
+            buttOrOver( gate  polyi       )
+                   via( coi   m1 polyi sd )
+                   via( via1i m1 m2       )
+           );end of geomConnect
+processAntenna(
+                gate((gate polyi))
+                antenna( m2 )
+                ratio = plusp( m2.area ) * plusp( gate.area ) * ( minusp( sd.area-DIO_AREA )  * ( m2.perimeter*Mx_THICKNESS/gate.area - 400 ) + plusp( sd.area - DIO_AREA ) * ( m2.perimeter*Mx_THICKNESS/gate.area - plusp( sd.area - DIO_AREA ) * sd.area*400 - 2200 ) )
+                AR2_AR3M2 = drcAntenna( m2 (gate) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+
+A_R_2_A_R_3_M2 = geomButtOrOver( polyi AR2_AR3M2_gate )
+geomStamp( A_R_2_A_R_3_M2  polyi )               
+A_R_2_A_R_3_M2_final = geomNodeRelate( m2 A_R_2_A_R_3_M2 conn ) 
+errorLayer( A_R_2_A_R_3_M2_final "A.R.2_A.R.3.M2 (M2 perimeter*thickness / gate area) > 400/Ratio without effective diode & (M2 perim*thickness / gate area) > Ratio with effective diode" )
+;==============
+; M3 CHECKS
+;==============
+geomConnect(
+            buttOrOver( gate  polyi       )
+                   via( coi   m1 polyi sd )
+                   via( via1i m1 m2       )
+                   via( via2i m2 m3       )
+           );end of geomConnect
+processAntenna(
+                gate((gate polyi))
+                antenna( m3 )
+                ratio = plusp( m3.area ) * plusp( gate.area ) * ( minusp( sd.area-DIO_AREA )  * ( m3.perimeter*Mx_THICKNESS/gate.area - 400 ) + plusp( sd.area - DIO_AREA ) * ( m3.perimeter*Mx_THICKNESS/gate.area - plusp( sd.area - DIO_AREA ) * sd.area*400 - 2200 ) )
+                AR2_AR3M3 = drcAntenna( m3 (gate) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+
+A_R_2_A_R_3_M3 = geomButtOrOver( polyi AR2_AR3M3_gate )
+geomStamp( A_R_2_A_R_3_M3  polyi )               
+A_R_2_A_R_3_M3_final = geomNodeRelate( m3 A_R_2_A_R_3_M3 conn ) 
+errorLayer( A_R_2_A_R_3_M3_final "A.R.2_A.R.3.M3 (M3 perimeter*thickness / gate area) > 400/Ratio without effective diode & (M3 perim*thickness / gate area) > Ratio with effective diode" )
+;==============
+; M4 CHECKS
+;==============
+geomConnect(
+            buttOrOver( gate  polyi       )
+                   via( coi   m1 polyi sd )
+                   via( via1i m1 m2       )
+                   via( via2i m2 m3       )
+                   via( via3i m3 m4       )
+           );end of geomConnect
+processAntenna(
+                gate((gate polyi))
+                antenna( m4 )
+                ratio = plusp( m4.area ) * plusp( gate.area ) * ( minusp( sd.area-DIO_AREA )  * ( m4.perimeter*Mx_THICKNESS/gate.area - 400 ) + plusp( sd.area - DIO_AREA ) * ( m4.perimeter*Mx_THICKNESS/gate.area - plusp( sd.area - DIO_AREA ) * sd.area*400 - 2200 ) )
+                AR2_AR3M4 = drcAntenna( m4 (gate) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+
+A_R_2_A_R_3_M4 = geomButtOrOver( polyi AR2_AR3M4_gate )
+geomStamp( A_R_2_A_R_3_M4  polyi )               
+A_R_2_A_R_3_M4_final = geomNodeRelate( m4 A_R_2_A_R_3_M4 conn ) 
+errorLayer( A_R_2_A_R_3_M4_final "A.R.2_A.R.3.M4 (M4 perimeter*thickness / gate area) > 400/Ratio without effective diode & (M4 perim*thickness / gate area) > Ratio with effective diode" )
+
+;==============
+; M5 CHECKS
+;==============
+geomConnect(
+            buttOrOver( gate polyi )
+                   via( coi m1 polyi sd )
+                   via( via1i m1 m2 )
+                   via( via2i m2 m3 )
+                   via( via3i m3 m4 )
+                    buttOrOver( CBM m4 )
+                    buttOrOver( VIA_CTM CTM )                   
+                    buttOrOver( VIA_CBM CBM )
+                    buttOrOver( CTMc CBM )
+                    buttOrOver( CTMc_g CBM)
+                    svia( via4i m5 CTM CBM m4)
+            );end of geomConnect
+
+processAntenna(
+                gate((gate polyi))
+                antenna( m5 )
+                ratio = plusp( m5.area ) * plusp( gate.area ) * ( minusp( sd.area-DIO_AREA )  * ( m5.perimeter*MT_THICKNESS/gate.area - 400 ) + plusp( sd.area - DIO_AREA ) * ( m5.perimeter*MT_THICKNESS/gate.area - plusp( sd.area - DIO_AREA ) * sd.area*8000 - 30000 ) )
+                 AR2_AR3M5 = drcAntenna( m5 (gate) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+A_R_2_A_R_3_M5 = geomButtOrOver( polyi AR2_AR3M5_gate )
+geomStamp( A_R_2_A_R_3_M5  polyi )               
+A_R_2_A_R_3_M5_final = geomNodeRelate( m5 A_R_2_A_R_3_M5 conn ) 
+errorLayer( A_R_2_A_R_3_M5_final "A.R.2_A.R.3.M5 (M5 perimeter*thickness / gate area) > 400/Ratio without effective diode & (M5 perim*thickness / gate area) > Ratio with effective diode" )
+
+
+; MIM CHECKS
+;==============
+
+CTM_M5_WI_OD = geomNodeRelate( CTM sd conn )
+CTM_M5_WO_OD = geomAndNot( CTM CTM_M5_WI_OD )
+CTM_M5_W_GATE_pre = geomNodeRelate( CTM gate conn )
+CTM_M5_W_GATE     = geomAnd( CTM_M5_W_GATE_pre CTM_M5_WO_OD )
+CTM_M5_FLOATING   = geomAndNot( CTM geomOr( CTM_M5_WI_OD CTM_M5_W_GATE ) )
+
+CBM_M5_WI_OD = geomNodeRelate( CBM sd conn )
+CBM_M5_WO_OD = geomAndNot( CBM CBM_M5_WI_OD )
+CBM_M5_W_GATE  = geomNodeRelate( CBM gate conn )
+CBM_M5_FLOATING   = geomAndNot( CBM geomOr( CBM_M5_WI_OD CBM_M5_W_GATE ) )
+
+
+BAL_CTM_M5_GROUND = geomButtOrOver( CTM_M5_WI_OD CBM_M5_WI_OD )
+BAL_CBM_M5_GROUND = geomButtOrOver( CBM_M5_WI_OD CTM_M5_WI_OD )
+BAL_CTM_M5_FLOAT  = geomButtOrOver( CTM_M5_FLOATING CBM_M5_FLOATING )
+BAL_CBM_M5_FLOAT  = geomButtOrOver( CBM_M5_FLOATING CTM_M5_FLOATING )
+
+BAL_CTM_M5   = geomOr( BAL_CTM_M5_GROUND BAL_CTM_M5_FLOAT )
+BAL_CBM_M5   = geomOr( BAL_CBM_M5_GROUND BAL_CBM_M5_FLOAT )
+unBAL_CTM_M5 = geomAndNot( CTM  geomButtOrOver( CTM BAL_CTM_M5 ) )
+unBAL_CBM_M5 = geomAndNot( CBM  geomButtOrOver( CBM BAL_CBM_M5 ) )
+unBAL_CTM_M5_FLOAT  = geomButtOrOver( CTM_M5_WO_OD unBAL_CTM_M5 )
+unBAL_CTM_M5_GROUND = geomButtOrOver( CTM_M5_WI_OD unBAL_CTM_M5 )
+unBAL_CBM_M5_FLOAT  = geomButtOrOver( CBM_M5_WO_OD unBAL_CBM_M5 )
+unBAL_CBM_M5_GROUND = geomButtOrOver( CBM_M5_WI_OD unBAL_CBM_M5 )
+
+CTM_NODE_BAL_M5_WI_OD = geomButtOrOver( CTM BAL_CTM_M5_GROUND )
+CTM_NODE_BAL_M5_WO_OD = geomButtOrOver( CTM BAL_CTM_M5_FLOAT  )
+
+geomStamp( CTM_NODE_BAL_M5_WI_OD CTM )
+geomStamp( CTM_NODE_BAL_M5_WO_OD CTM )
+
+CBM_NODE_BAL_M5_WI_OD = geomButtOrOver( CTM BAL_CBM_M5_GROUND )
+CBM_NODE_BAL_M5_WO_OD = geomButtOrOver( CTM BAL_CBM_M5_FLOAT )
+
+geomStamp( CBM_NODE_BAL_M5_WI_OD CBM )
+geomStamp( CBM_NODE_BAL_M5_WO_OD CBM )
+CTM_NODE_unBAL_M5_WI_OD = geomButtOrOver( CTM unBAL_CTM_M5_GROUND )
+CTM_NODE_unBAL_M5_WO_OD = geomButtOrOver( CTM unBAL_CTM_M5_FLOAT  )
+geomStamp( CTM_NODE_unBAL_M5_WI_OD CTM )
+geomStamp( CTM_NODE_unBAL_M5_WO_OD CTM )
+CBM_NODE_unBAL_M5_WI_OD = geomButtOrOver( CTM  unBAL_CBM_M5_GROUND )
+CBM_NODE_unBAL_M5_WO_OD = geomButtOrOver( CTM  unBAL_CBM_M5_FLOAT  )
+geomStamp( CBM_NODE_unBAL_M5_WI_OD CBM )
+geomStamp( CBM_NODE_unBAL_M5_WO_OD CBM )
+
+
+;A.R.MIM.1.M5.CBM
+processAntenna(
+                gate((CBM_NODE_BAL_M5_WO_OD CBM))
+                antenna( m5 )
+                ratio = plusp( CBM_NODE_BAL_M5_WO_OD.area ) * ( m5.perimeter*MT_THICKNESS/CBM_NODE_BAL_M5_WO_OD.area  )
+                ARMIM1M5CBM  = drcAntenna( m5 ( CBM_NODE_BAL_M5_WO_OD ) ratio ( keep > Balance_Ratio ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM1M5CBM_CBM_NODE_BAL_M5_WO_OD "A.R.MIM.1.M5.CBM Maximum ratio of M5 perimeter area to the MIM cap. when CTM is not connected to OD and Mx as MIM capacitor metal bottom metal is not connected to OD < Balance_Ratio")
+
+;A.R.MIM.1.M5.CTM
+processAntenna(
+                gate((CTM_NODE_BAL_M5_WO_OD CTM))
+                antenna( m5 )
+                ratio = plusp( CTM_NODE_BAL_M5_WO_OD.area ) * ( m5.perimeter*MT_THICKNESS/CTM_NODE_BAL_M5_WO_OD.area  )
+                ARMIM1M5CTM  = drcAntenna( m5 ( CTM_NODE_BAL_M5_WO_OD ) ratio ( keep > Balance_Ratio ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM1M5CTM_CTM_NODE_BAL_M5_WO_OD "A.R.MIM.1.M5.CTM Maximum ratio of M5 perimeter area to the MIM cap. when CTM is not connected to OD and Mx as MIM capacitor metal bottom metal is not connected to OD < Balance_Ratio")
+
+;A.R.MIM.2.M5.CTM.A
+processAntenna(
+                gate((CTM_NODE_unBAL_M5_WI_OD CTM))
+                antenna( m5 sd )
+                ratio = plusp( CTM_NODE_unBAL_M5_WI_OD.area ) * plusp( DIO_AREA - sd.area ) * ( DIO_AREA - sd.area ) 
+                ARMIM2M5CTMA = drcAntenna( m5 ( CTM_NODE_unBAL_M5_WI_OD sd ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+ A_R_MIM_2_M5_CTM_A = geomOr( ARMIM2M5CTMA_sd )
+errorLayer( A_R_MIM_2_M5_CTM_A  "A.R.MIM.2.M5.CTM.A Unbalanced MIM structure:CTM is connceted to OD with OD area < DIO_AREA and Mx as MIM capacitor metal bottom metal is not connected to OD")
+
+;A.R.MIM.2.M5.CTM.B 
+processAntenna(
+                gate((CTM_NODE_unBAL_M5_WI_OD CTM))
+                antenna( m5 )
+                DIO = if( sd.area >=DIO_AREA  then 1 else 0  )
+                ratio = plusp( CTM_NODE_unBAL_M5_WI_OD.area ) * ( m5.perimeter*MT_THICKNESS/CTM_NODE_unBAL_M5_WI_OD.area - sd.area * 400 - 2200 )
+                ARMIM2M5CTMB = drcAntenna( m5 ( CTM_NODE_unBAL_M5_WI_OD ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM2M5CTMB_CTM_NODE_unBAL_M5_WI_OD "A.R.MIM.2.M5.CTM.B Maximum ratio of the metal area to the MIM cap. when CTM is connceted to OD and Mx as MIM capacitor metal bottom metal is not connected to OD")
+
+;A.R.MIM.2.M5.CBM
+processAntenna(
+                gate((CBM_NODE_unBAL_M5_WO_OD CBM))
+                antenna( m5 )
+                ratio = plusp( CBM_NODE_unBAL_M5_WO_OD.area ) * ( m5.perimeter*MT_THICKNESS/CBM_NODE_unBAL_M5_WO_OD.area  )
+                ARMIM2M5CBM  = drcAntenna( m5 ( CBM_NODE_unBAL_M5_WO_OD ) ratio ( keep > unBalance_Ratio ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM2M5CBM_CBM_NODE_unBAL_M5_WO_OD "A.R.MIM.2.M5.CBM Maximum ratio of M5 perimeter area to the MIM cap. when CTM is connected to OD and Mx as MIM capacitor metal bottom metal is not connected to OD <  unBalance_Ratio")
+
+;A.R.MIM.3.M5.CTM
+processAntenna(
+                gate((CTM_NODE_unBAL_M5_WO_OD CTM))
+                antenna( m5 )
+                ratio = plusp( CTM_NODE_unBAL_M5_WO_OD.area ) * ( m5.perimeter*MT_THICKNESS/CTM_NODE_unBAL_M5_WO_OD.area  )
+                ARMIM3M5CTM  = drcAntenna( m5 ( CTM_NODE_unBAL_M5_WO_OD ) ratio ( keep > unBalance_Ratio ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM3M5CTM_CTM_NODE_unBAL_M5_WO_OD "A.R.MIM.3.M5.CTM Maximum ratio of M5 perimeter area to the MIM cap. when CTM is not connected to OD and Mx as MIM capacitor metal bottom metal is connected to OD <  unBalance_Ratio")
+
+;A.R.MIM.3.M5.CBM.A 
+processAntenna(
+                gate((CBM_NODE_unBAL_M5_WI_OD CBM))
+                antenna( m5 sd )
+                ;DIO = if( sd.area >=DIO_AREA  then 1 else 0  )
+                ratio = plusp( CBM_NODE_unBAL_M5_WI_OD.area ) * ( DIO_AREA - sd.area ) 
+                ARMIM3M5CBMA = drcAntenna( m5 ( CBM_NODE_unBAL_M5_WI_OD  sd) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+A_R_MIM_3_M5_CBM_A = geomOr( ARMIM3M5CBMA_sd )
+errorLayer( A_R_MIM_3_M5_CBM_A "A.R.MIM.3.M5.CBM.A Unbalanced MIM structure:CTM is not connceted to OD and Mx as MIM capacitor metal bottom metal is connected to OD with OD area < DIO_AREA")
+
+;A.R.MIM.3.M5.CTM.B 
+processAntenna(
+                gate((CBM_NODE_unBAL_M5_WI_OD CBM))
+                antenna( m5 )
+                DIO = if( sd.area >=DIO_AREA  then 1 else 0  )
+                ratio = plusp( CBM_NODE_unBAL_M5_WI_OD.area ) * DIO * ( m5.perimeter*MT_THICKNESS/CBM_NODE_unBAL_M5_WI_OD.area - sd.area *400 - 2200 )
+                ARMIM3M5CBMB = drcAntenna( m5 ( CBM_NODE_unBAL_M5_WI_OD ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM3M5CBMB_CBM_NODE_unBAL_M5_WI_OD "A.R.MIM.3.M5.CBM.B Maximum ratio of the metal area to the MIM cap. when CTM is not connceted to OD and Mx as MIM capacitor metal bottom metal is connected to OD")
+
+;A.R.MIM.4.M5.CTM.A
+processAntenna(
+                gate((CTM_NODE_BAL_M5_WI_OD CTM))
+                antenna( m5 sd )
+                ratio = plusp( CTM_NODE_BAL_M5_WI_OD.area ) * plusp( DIO_AREA - sd.area ) * ( DIO_AREA - sd.area )
+                ARMIM4M5CTMA = drcAntenna( m5 ( CTM_NODE_BAL_M5_WI_OD sd ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+
+A_R_MIM_4_M5_CTM_A = geomOr( ARMIM4M5CTMA_sd )
+errorLayer( A_R_MIM_4_M5_CTM_A "A.R.MIM.4.M5.CTM.A Balanced MIM structure but the OD area connected to CTM < DIO_AREA")
+
+;A.R.MIM.4.M5.CTM.B
+processAntenna(
+                gate((CTM_NODE_BAL_M5_WI_OD CTM))
+                antenna( m5 )
+                DIO = if( sd.area >=DIO_AREA  then 1 else 0  )
+                ratio = plusp( CTM_NODE_BAL_M5_WI_OD.area ) * ( m5.perimeter*MT_THICKNESS/CTM_NODE_BAL_M5_WI_OD.area - sd.area * DIO * 400 - 2200 )
+                ARMIM4M5CTMB = drcAntenna( m5 ( CTM_NODE_BAL_M5_WI_OD ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM4M5CTMB_CTM_NODE_BAL_M5_WI_OD "A.R.MIM.4.M5.CTM.B Max. ratio of M5 metal side-wall area to CTM area.Both CTM and CBM associated M4 are connected to OD.")
+
+
+;A.R.MIM.4.M5.CBM.A
+processAntenna(
+                gate((CBM_NODE_BAL_M5_WI_OD CBM))
+                antenna( m5 sd)
+                ratio = plusp( CBM_NODE_BAL_M5_WI_OD.area ) * plusp( DIO_AREA - sd.area ) * ( DIO_AREA - sd.area ) 
+                 ARMIM4M5CBMA = drcAntenna( m5 ( CBM_NODE_BAL_M5_WI_OD sd ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+
+A_R_MIM_4_M5_CBM_A = geomOr( ARMIM4M5CBMA_sd )
+errorLayer( A_R_MIM_4_M5_CBM_A "A.R.MIM.4.M5.CBM.A Balanced MIM structure but the OD area connected to Mx as capacitor bottom metal < DIO_AREA")
+
+;A.R.MIM.4.M5.CBM.B
+processAntenna(
+                gate((CBM_NODE_BAL_M5_WI_OD CBM))
+                antenna( m5 )
+                DIO = if( sd.area >=DIO_AREA  then 1 else 0  ) 
+                ratio = plusp( CBM_NODE_BAL_M5_WI_OD.area ) * ( m5.perimeter*MT_THICKNESS/CBM_NODE_BAL_M5_WI_OD.area - sd.area * DIO * 400 - 2200 )
+                ARMIM4M5CBMB = drcAntenna( m5 ( CBM_NODE_BAL_M5_WI_OD ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM4M5CBMB_CBM_NODE_BAL_M5_WI_OD "A.R.MIM.4.M5.CBM.B Max. ratio of M5 metal side-wall area to CBM area.Both CTM and CBM associated M4 are connected to OD.")
+
+if(( MIMCAP_2F == 1  ) then
+;A.R.MIM.5.M5_CTM
+processAntenna(
+                gate((CTM_NODE_unBAL_M5_WO_OD CTM))
+                antenna( m5 )
+                ratio = plusp( CTM_NODE_unBAL_M5_WO_OD.area ) * plusp( m5.area ) * zerop( sd.area ) 
+                ARMIM5M5CTM = drcAntenna( m5 ( CTM_NODE_unBAL_M5_WO_OD ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM5M5CTM_CTM_NODE_unBAL_M5_WO_OD "A.R.MIM.5.M5_CTM Below condition is not allowed for 2fF/um2 MIM capacitance CTM is connected to OD and M5 as capacitor bottom metal is not connected to OD")
+
+;A.R.MIM.5.M5_CBM
+processAntenna(
+                gate((CBM_NODE_unBAL_M5_WO_OD CBM))
+                antenna( m5 )
+                ratio = plusp( CBM_NODE_unBAL_M5_WO_OD.area ) * plusp( m5.area ) * zerop( sd.area ) 
+                ARMIM5M5CBM = drcAntenna( m5 ( CBM_NODE_unBAL_M5_WO_OD ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM5M5CBM_CBM_NODE_unBAL_M5_WO_OD "A.R.MIM.5.M5_CBM Below condition is not allowed for 2fF/um2 MIM capacitance CBM is connected to OD and M5 as capacitor bottom metal is not connected to OD")
+
+  ); end of if
+
+
+processAntenna(
+                gate(( CTM m5 ))
+                antenna( cumulative m5 )
+			    ratio = plusp( m5.area ) * m5.perimeter * MT_THICKNESS/CTM.area	
+                ACCM5CTM = drcAntenna( m5 ( CTM ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+
+ACC_M5_CTM = geomOr( ACCM5CTM_CTM )
+
+
+
+
+processAntenna(
+                gate((CTMc_g m5))
+                antenna( cumulative m5 CTMc )
+			    ratio = plusp( CTMc_g.area )*plusp( m5.area ) * ( m5.perimeter * MT_THICKNESS)/CTMc.area
+                ACCM5CTMc = drcAntenna( m5 ( CTMc_g ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+ACC_M5_CTMc = geomOverlap( CTMc ACCM5CTMc_CTMc_g )
+keepLayer(ACC_M5_CTMc)
+
+
+
+if(( THICK_40K == 0 ) && ( THICK_20K == 0 )  then
+geomConnect(
+            buttOrOver( gate polyi )
+                   via( coi m1 polyi sd )
+                   via( via1i m1 m2 )
+                   via( via2i m2 m3 )
+                   via( via3i m3 m4 )
+                    via( viadi m5 md )
+                    buttOrOver( CBM m4 )
+                    buttOrOver( VIA_CTM CTM )                   
+                    buttOrOver( VIA_CBM CBM )
+                    buttOrOver( CTMc CBM )
+                    buttOrOver( CTMc_g CBM )
+                    svia( via4i m5 CTM CBM m4)
+            );end of geomConnect
+
+;===================
+;== MD MIM CHECKS ==
+;===================
+CTM_MD_WI_OD = geomNodeRelate( CTM sd conn )
+CTM_MD_WO_OD = geomAndNot( CTM CTM_MD_WI_OD )
+CTM_MD_W_GATE_pre = geomNodeRelate( CTM gate conn )
+CTM_MD_W_GATE     = geomAnd( CTM_MD_W_GATE_pre CTM_MD_WO_OD )
+CTM_MD_FLOATING   = geomAndNot( CTM geomOr( CTM_MD_WI_OD CTM_MD_W_GATE ) )
+
+CBM_MD_WI_OD = geomNodeRelate( CBM sd conn )
+CBM_MD_WO_OD = geomAndNot( CBM CBM_MD_WI_OD )
+CBM_MD_W_GATE  = geomNodeRelate( CBM gate conn )
+CBM_MD_FLOATING   = geomAndNot( CBM geomOr( CBM_MD_WI_OD CBM_MD_W_GATE ) )
+
+
+BAL_CTM_MD_GROUND = geomButtOrOver( CTM_MD_WI_OD CBM_MD_WI_OD )
+BAL_CBM_MD_GROUND = geomButtOrOver( CBM_MD_WI_OD CTM_MD_WI_OD )
+BAL_CTM_MD_FLOAT  = geomButtOrOver( CTM_MD_FLOATING CBM_MD_FLOATING )
+BAL_CBM_MD_FLOAT  = geomButtOrOver( CBM_MD_FLOATING CTM_MD_FLOATING )
+
+BAL_CTM_MD   = geomOr( BAL_CTM_MD_GROUND BAL_CTM_MD_FLOAT )
+BAL_CBM_MD   = geomOr( BAL_CBM_MD_GROUND BAL_CBM_MD_FLOAT )
+unBAL_CTM_MD = geomAndNot( CTM  geomButtOrOver( CTM BAL_CTM_MD ) )
+unBAL_CBM_MD = geomAndNot( CBM  geomButtOrOver( CBM BAL_CBM_MD ) )
+unBAL_CTM_MD_FLOAT  = geomButtOrOver( CTM_MD_WO_OD unBAL_CTM_MD )
+unBAL_CTM_MD_GROUND = geomButtOrOver( CTM_MD_WI_OD unBAL_CTM_MD )
+unBAL_CBM_MD_FLOAT  = geomButtOrOver( CBM_MD_WO_OD unBAL_CBM_MD )
+unBAL_CBM_MD_GROUND = geomButtOrOver( CBM_MD_WI_OD unBAL_CBM_MD )
+
+CTM_NODE_BAL_MD_WI_OD = geomButtOrOver( CTM BAL_CTM_MD_GROUND )
+CTM_NODE_BAL_MD_WO_OD = geomButtOrOver( CTM BAL_CTM_MD_FLOAT  )
+
+geomStamp( CTM_NODE_BAL_MD_WI_OD CTM )
+geomStamp( CTM_NODE_BAL_MD_WO_OD CTM )
+
+CBM_NODE_BAL_MD_WI_OD = geomButtOrOver( CTM BAL_CBM_MD_GROUND )
+CBM_NODE_BAL_MD_WO_OD = geomButtOrOver( CTM BAL_CBM_MD_FLOAT )
+
+geomStamp( CBM_NODE_BAL_MD_WI_OD CBM )
+geomStamp( CBM_NODE_BAL_MD_WO_OD CBM )
+CTM_NODE_unBAL_MD_WI_OD = geomButtOrOver( CTM unBAL_CTM_MD_GROUND )
+CTM_NODE_unBAL_MD_WO_OD = geomButtOrOver( CTM unBAL_CTM_MD_FLOAT  )
+geomStamp( CTM_NODE_unBAL_MD_WI_OD CTM )
+geomStamp( CTM_NODE_unBAL_MD_WO_OD CTM )
+CBM_NODE_unBAL_MD_WI_OD = geomButtOrOver( CTM  unBAL_CBM_MD_GROUND )
+CBM_NODE_unBAL_MD_WO_OD = geomButtOrOver( CTM  unBAL_CBM_MD_FLOAT  )
+geomStamp( CBM_NODE_unBAL_MD_WI_OD CBM )
+geomStamp( CBM_NODE_unBAL_MD_WO_OD CBM )
+
+
+;A.R.MIM.1.MD.CBM
+processAntenna(
+                gate(( CTMc_g CBM_NODE_BAL_MD_WO_OD ))
+                antenna( cumulative CBM_NODE_BAL_MD_WO_OD )
+                ratio = plusp( CTMc_g.area ) * plusp( CBM_NODE_BAL_MD_WO_OD.area ) * ( md.perimeter*MD_THICKNESS/CBM_NODE_BAL_MD_WO_OD.area )
+                ARMIM1MDCBM  = drcAntenna( CBM_NODE_BAL_MD_WO_OD ( CTMc_g ) ratio ( keep > Balance_Ratio ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( geomOverlap( CBM_NODE_BAL_MD_WO_OD ARMIM1MDCBM_CTMc_g ) "A.R.MIM.1.MD.CBM Maximum ratio of MD perimeter area to the MIM cap. when CTM is not connected to OD and Mx as MIM capacitor metal bottom metal is not connected to OD < Balance_Ratio")
+
+;A.R.MIM.1.MD.CTM
+processAntenna(
+                gate(( CTM CTM_NODE_BAL_MD_WO_OD ))
+                antenna( cumulative CTM_NODE_BAL_MD_WO_OD )
+                ratio = plusp( CTM.area ) * plusp( CTM_NODE_BAL_MD_WO_OD.area ) * ( ( md.perimeter*MD_THICKNESS)/CTM_NODE_BAL_MD_WO_OD.area  )
+                ARMIM1MDCTM  = drcAntenna( CTM_NODE_BAL_MD_WO_OD ( CTM ) ratio ( keep > Balance_Ratio ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM1MDCTM_CTM "A.R.MIM.1.MD.CTM Maximum ratio of MD perimeter area to the MIM cap. when CTM is not connected to OD and Mx as MIM capacitor metal bottom metal is not connected to OD < Balance_Ratio")
+
+;A.R.MIM.2.MD.CTM.A
+processAntenna(
+                gate((CTM CTM_NODE_unBAL_MD_WI_OD ))
+                antenna( CTM_NODE_unBAL_MD_WI_OD sd )
+                ratio = plusp( CTM.area ) * plusp( CTM_NODE_unBAL_MD_WI_OD.area ) * ( DIO_AREA - sd.area ) 
+                ARMIM2MDCTMA = drcAntenna( CTM_NODE_unBAL_MD_WI_OD ( CTM CTM_NODE_unBAL_MD_WI_OD sd ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM2MDCTMA_sd "A.R.MIM.2.MD.CTM.A Unbalanced MIM structure:CTM is connceted to OD with OD area < DIO_AREA and Mx as MIM capacitor metal bottom metal is not connected to OD")
+
+;A.R.MIM.2.MD.CTM.B 
+processAntenna(
+                gate((CTM CTM_NODE_unBAL_MD_WI_OD ))
+                antenna( cumulative CTM_NODE_unBAL_MD_WI_OD )
+                DIO = if( sd.area >=DIO_AREA  then 1 else 0  )                
+                ratio = plusp( CTM.area ) * DIO * plusp( CTM_NODE_unBAL_MD_WI_OD.area ) * ( ( md.perimeter*MD_THICKNESS )/CTM_NODE_unBAL_MD_WI_OD.area - sd.area * DIO * 400 - 2200 )
+                ARMIM2MDCTMB = drcAntenna( CTM_NODE_unBAL_MD_WI_OD ( CTM ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM2MDCTMB_CTM "A.R.MIM.2.MD.CTM.B Maximum ratio of the metal area to the MIM cap. when CTM is connceted to OD and Mx as MIM capacitor metal bottom metal is not connected to OD")
+
+;A.R.MIM.2.MD.CBM
+processAntenna(
+                gate((CTMc_g CBM_NODE_unBAL_MD_WO_OD ))
+                antenna( cumulative CBM_NODE_unBAL_MD_WO_OD )
+                ratio = plusp( CTMc_g.area ) * plusp( CBM_NODE_unBAL_MD_WO_OD.area ) * ( ( md.perimeter*MD_THICKNESS )/CBM_NODE_unBAL_MD_WO_OD.area  )
+                ARMIM2MDCBM  = drcAntenna( CBM_NODE_unBAL_MD_WO_OD ( CTMc_g ) ratio ( keep > unBalance_Ratio ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( geomOverlap( CBM_NODE_unBAL_MD_WO_OD ARMIM2MDCBM_CTMc_g ) "A.R.MIM.2.MD.CBM Maximum ratio of MD perimeter area to the MIM cap. when CTM is connected to OD and Mx as MIM capacitor metal bottom metal is not connected to OD <  unBalance_Ratio")
+
+;A.R.MIM.3.MD.CTM
+processAntenna(
+                gate((CTM CTM_NODE_unBAL_MD_WO_OD))
+                antenna( cumulative CTM_NODE_unBAL_MD_WO_OD )
+                ratio = plusp( CTM.area ) * plusp( CTM_NODE_unBAL_MD_WO_OD.area ) * ( ( md.perimeter*MD_THICKNESS )/CTM_NODE_unBAL_MD_WO_OD.area  )                
+                ARMIM3MDCTM  = drcAntenna( CTM_NODE_unBAL_MD_WO_OD ( CTM ) ratio ( keep > unBalance_Ratio ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM3MDCTM_CTM "A.R.MIM.3.MD.CTM Maximum ratio of MD perimeter area to the MIM cap. when CTM is not connected to OD and Mx as MIM capacitor metal bottom metal is connected to OD <  unBalance_Ratio")
+
+;A.R.MIM.3.MD.CBM.A 
+processAntenna(
+                gate((CBM_NODE_unBAL_MD_WI_OD CBM))
+                antenna( CBM_NODE_unBAL_MD_WI_OD sd )
+                ratio = plusp( CBM_NODE_unBAL_MD_WI_OD.area ) * ( DIO_AREA - sd.area ) 
+                ARMIM3MDCBMA = drcAntenna( CBM_NODE_unBAL_MD_WI_OD ( CBM_NODE_unBAL_MD_WI_OD sd ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM3MDCBMA_sd "A.R.MIM.3.MD.CBM.A Unbalanced MIM structure:CTM is not connceted to OD and Mx as MIM capacitor metal bottom metal is connected to OD with OD area < DIO_AREA")
+
+;A.R.MIM.3.MD.CBM.B 
+processAntenna(
+                gate((CTMc_g CBM_NODE_unBAL_MD_WI_OD))
+                antenna( cumulative CBM_NODE_unBAL_MD_WI_OD )
+                DIO = if( sd.area >=DIO_AREA  then 1 else 0  )
+                ratio = plusp( CTMc_g.area ) * DIO * plusp( CBM_NODE_unBAL_MD_WI_OD.area ) *  ( ( md.perimeter*MD_THICKNESS )/CBM_NODE_unBAL_MD_WI_OD.area - sd.area * DIO *400 - 2200 )
+                ARMIM3MDCBMB = drcAntenna( CBM_NODE_unBAL_MD_WI_OD ( CTMc_g ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( geomOverlap( CBM_NODE_unBAL_MD_WI_OD ARMIM3MDCBMB_CTMc_g ) "A.R.MIM.3.MD.CBM.B Maximum ratio of the metal area to the MIM cap. when CTM is not connceted to OD and Mx as MIM capacitor metal bottom metal is connected to OD")
+
+;A.R.MIM.4.MD.CTM.A
+processAntenna(
+                gate(( CTM CTM_NODE_BAL_MD_WI_OD ))
+                antenna( CTM_NODE_BAL_MD_WI_OD sd )
+                ratio = plusp( CTM_NODE_BAL_MD_WI_OD.area ) * ( DIO_AREA - sd.area )
+                ARMIM4MDCTMA = drcAntenna( CTM_NODE_BAL_MD_WI_OD ( CTM CTM_NODE_BAL_MD_WI_OD sd ) ratio ( keep > 0 )                                         
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM4MDCTMA_sd "A.R.MIM.4.MD.CTM.A Balanced MIM structure but the OD area connected to CTM < DIO_AREA")
+
+;A.R.MIM.4.MD.CTM.B
+processAntenna(
+                gate(( CTM CTM_NODE_BAL_MD_WI_OD))
+                antenna( cumulative CTM_NODE_BAL_MD_WI_OD )
+                DIO = if( sd.area >=DIO_AREA  then 1 else 0  )
+                ratio = plusp( CTM.area ) * plusp( CTM_NODE_BAL_MD_WI_OD.area ) * ( ( md.perimeter*MD_THICKNESS )/CTM_NODE_BAL_MD_WI_OD.area - sd.area * DIO * 400 - 2200 )                
+                ARMIM4MDCTMB = drcAntenna( CTM_NODE_BAL_MD_WI_OD ( CTM ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM4MDCTMB_CTM "A.R.MIM.4.MD.CTM.B Max. ratio of MD metal side-wall area to CTM area.Both CTM and CBM associated M5 are connected to OD.")
+
+;A.R.MIM.4.MD.CBM.A
+processAntenna(
+                gate((CBM_NODE_BAL_MD_WI_OD CBM))
+                antenna( CBM_NODE_BAL_MD_WI_OD sd )
+                ratio = plusp( CBM_NODE_BAL_MD_WI_OD.area ) * ( DIO_AREA - sd.area )                 
+                ARMIM4MDCBMA = drcAntenna( CBM_NODE_BAL_MD_WI_OD ( CBM_NODE_BAL_MD_WI_OD sd ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM4MDCBMA_sd "A.R.MIM.4.MD.CBM.A Balanced MIM structure but the OD area connected to Mx as capacitor bottom metal < DIO_AREA")
+
+;A.R.MIM.4.MD.CBM.B
+processAntenna(
+                gate((CTMc_g CBM_NODE_BAL_MD_WI_OD ))
+                antenna( cumulative CBM_NODE_BAL_MD_WI_OD )
+                DIO = if( sd.area >=DIO_AREA  then 1 else 0  ) 
+                ratio = plusp( CTMc_g.area ) * plusp( CBM_NODE_BAL_MD_WI_OD.area ) * ( ( md.perimeter*MD_THICKNESS )/CBM_NODE_BAL_MD_WI_OD.area - sd.area * DIO * 400 - 2200 )
+                ARMIM4MDCBMB = drcAntenna( CBM_NODE_BAL_MD_WI_OD ( CTMc_g ) ratio ( keep > 0 )                   
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( geomOverlap( CBM_NODE_BAL_MD_WI_OD ARMIM4MDCBMB_CTMc_g ) "A.R.MIM.4.MD.CBM.B Max. ratio of MD metal side-wall area to CBM area.Both CTM and CBM associated M5 are connected to OD.")
+
+if(( MIMCAP_2F == 1  ) then
+;A.R.MIM.5.MD_CTM
+processAntenna(
+                gate((CTM_NODE_unBAL_MD_WO_OD CTM))
+                antenna( md )
+                ratio = plusp( CTM_NODE_unBAL_MD_WO_OD.area ) * plusp( md.area ) * zerop( sd.area ) 
+                ARMIM5MDCTM = drcAntenna( md ( CTM_NODE_unBAL_MD_WO_OD ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM5MDCTM_CTM_NODE_unBAL_MD_WO_OD "A.R.MIM.5.MD_CTM Below condition is not allowed for 2fF/um2 MIM capacitance CTM is connected to OD and M5 as capacitor bottom metal is not connected to OD")
+
+;A.R.MIM.5.MD_CBM
+processAntenna(
+                gate((CBM_NODE_unBAL_MD_WO_OD CBM))
+                antenna( md )
+                ratio = plusp( CBM_NODE_unBAL_MD_WO_OD.area ) * plusp( md.area ) * zerop( sd.area ) 
+                ARMIM5MDCBM = drcAntenna( md ( CBM_NODE_unBAL_MD_WO_OD ) ratio ( keep > 0 ) 
+                                        suppressErrorMessage
+                                       )
+               ) ;end of processAntenna
+errorLayer( ARMIM5MDCBM_CBM_NODE_unBAL_MD_WO_OD "A.R.MIM.5.MD_CBM Below condition is not allowed for 2fF/um2 MIM capacitance CBM is connected to OD and M5 as capacitor bottom metal is not connected to OD")
+
+  ); end of if
+
+
+
+   
+; MD CHECKS
+;==============
+geomConnect(
+            buttOrOver( gate polyi )
+                   via( coi m1 polyi sd )
+                   via( via1i m1 m2 )
+                   via( via2i m2 m3 )
+                   via( via3i m3 m4 )
+                   via( viadi m5 md )
+                   buttOrOver( CBM m4 )
+                   buttOrOver( VIA_CTM CTM )                   
+                   buttOrOver( VIA_CBM CBM )
+                   buttOrOver( CTMc CBM )
+                   svia( via4i m5 CTM CBM m4)
+ 	          ) ;end of geomConnect
+
+processAntenna(
+	              gate((gate polyi))
+	              antenna( md )
+				  ratio =  md.perimeter*MD_THICKNESS/gate.area
+	              diode = sd.area-0.2029
+	              factor1 = (diode-abs(diode))/(2*diode)*400 ; without diode
+	              factor2 = (diode+abs(diode))/(2*diode)*(sd.area*8000+30000) ; with diode 
+	              ant_value = factor1 + factor2 
+	              AR2_AR3MD = drcAntenna( md (gate) ratio ( keep > ant_value ) 
+                                            suppressErrorMessage
+                                             )
+	             );end of processAntenna
+A_R_2_A_R_3_MD = geomButtOrOver( polyi AR2_AR3MD_gate )
+geomStamp( A_R_2_A_R_3_MD  polyi )               
+A_R_2_A_R_3_MD_final = geomNodeRelate( md A_R_2_A_R_3_MD conn ) 
+errorLayer( A_R_2_A_R_3_MD_final "A.R.2_A.R.3.MD (MD perimeter*thickness / gate area) > 400/Ratio ( wo/wi effective diode)")
+) ;end of if
+
+resetCumulative()
+
+; CO CHECKS
+;==============
+geomConnect( 
+	           buttOrOver( gate polyi )
+	           buttOrOver( co_polyi polyi )
+           ) ;end of geomConnect
+
+processAntenna(
+               	gate((gate polyi))
+               	antenna( co_polyi )
+               	ratio = co_polyi.area/gate.area
+                AR4CO = drcAntenna( co_polyi (gate) ratio ( keep > 10 ) 
+                                   suppressErrorMessage       
+                                   )
+	            );end of processAntenna
+A_R_4_CO = geomOr( AR4CO_gate )
+errorLayer( A_R_4_CO "A.R.4.CO (contact area / gate area) > 10" )
+
+; VIA1 CHECKS
+;==============
+geomConnect( 
+	           buttOrOver( gate polyi )
+                    via( coi m1 polyi sd )
+             buttOrOver( via1i m1 )
+	          ) ;end of geomConnect
+
+processAntenna(
+              	gate((gate polyi))
+              	antenna( via1i ) 
+                ratio = plusp( m1.area ) * plusp( gate.area ) * ( minusp( sd.area-DIO_AREA )  * ( via1i.area/gate.area - 20 ) + plusp( sd.area - DIO_AREA ) * ( via1i.area/gate.area - plusp( sd.area - DIO_AREA ) * sd.area*83.33 - 75 ) )
+              	AR5_AR6VIA1 = drcAntenna( via1i (gate) ratio ( keep > 0 )  
+                                          suppressErrorMessage 
+                                         )
+              	) ;end of processAntenna
+A_R_5_A_R_6_VIA1 = geomButtOrOver( polyi AR5_AR6VIA1_gate )
+geomStamp( A_R_5_A_R_6_VIA1  polyi )               
+A_R_5_A_R_6_VIA1_final = geomNodeRelate( m1 A_R_5_A_R_6_VIA1 conn ) 
+
+errorLayer( A_R_5_A_R_6_VIA1_final "A.R.5_A.R.6.VIA1i (VIA1 area / gate area) > 20 (without effective diode) and (VIA1 area / gate area) > Ratio (with effective diode)")
+
+
+; VIA2 CHECKS
+;==============
+geomConnect( 
+	           buttOrOver( gate polyi )
+                    via( coi m1 polyi sd )
+                    via( via1i m1 m2 )
+             buttOrOver( via2i m2 )
+	          ) ;end of geomConnect
+
+processAntenna(
+              	gate((gate polyi))
+              	antenna( via2i ) 
+                ratio = plusp( m2.area ) * plusp( gate.area ) * ( minusp( sd.area-DIO_AREA )  * ( via2i.area/gate.area - 20 ) + plusp( sd.area - DIO_AREA ) * ( via2i.area/gate.area - plusp( sd.area - DIO_AREA ) * sd.area*83.33 - 75 ) )
+              	AR5_AR6VIA2 = drcAntenna( via2i (gate) ratio ( keep > 0 )  
+                                          suppressErrorMessage 
+                                         )
+              	) ;end of processAntenna
+A_R_5_A_R_6_VIA2 = geomButtOrOver( polyi AR5_AR6VIA2_gate )
+geomStamp( A_R_5_A_R_6_VIA2  polyi )               
+A_R_5_A_R_6_VIA2_final = geomNodeRelate( m2 A_R_5_A_R_6_VIA2 conn ) 
+
+errorLayer( A_R_5_A_R_6_VIA2_final "A.R.5_A.R.6.VIA2i (VIA2 area / gate area) > 20 (without effective diode) and (VIA2 area / gate area) > Ratio (with effective diode)")
+
+
+; VIA3 CHECKS
+;==============
+geomConnect( 
+	           buttOrOver( gate polyi )
+                    via( coi m1 polyi sd )
+                    via( via1i m1 m2 )
+                    via( via2i m2 m3 )
+             buttOrOver( via3i m3 )
+	          ) ;end of geomConnect
+
+processAntenna(
+              	gate((gate polyi))
+              	antenna( via3i ) 
+                ratio = plusp( m3.area ) * plusp( gate.area ) * ( minusp( sd.area-DIO_AREA )  * ( via3i.area/gate.area - 20 ) + plusp( sd.area - DIO_AREA ) * ( via3i.area/gate.area - plusp( sd.area - DIO_AREA ) * sd.area*83.33 - 75 ) )
+              	AR5_AR6VIA3 = drcAntenna( via3i (gate) ratio ( keep > 0 )  
+                                          suppressErrorMessage 
+                                         )
+              	) ;end of processAntenna
+A_R_5_A_R_6_VIA3 = geomButtOrOver( polyi AR5_AR6VIA3_gate )
+geomStamp( A_R_5_A_R_6_VIA3  polyi )               
+A_R_5_A_R_6_VIA3_final = geomNodeRelate( m3 A_R_5_A_R_6_VIA3 conn ) 
+
+errorLayer( A_R_5_A_R_6_VIA3_final "A.R.5_A.R.6.VIA3i (VIA3 area / gate area) > 20 (without effective diode) and (VIA3 area / gate area) > Ratio (with effective diode)")
+
+
+;; VIA4 CHECKS
+;;==============
+geomConnect( 
+	           buttOrOver( gate polyi )
+                    via( coi m1 polyi sd )
+		    via( via1i m1 m2 )
+                    via( via2i m2 m3 )
+                    via( via3i m3 m4 )
+             buttOrOver( CBM m4 )
+	          ) ;end of geomConnect
+if(( MIMCAP_2F == 1  ) then
+     ARMIM5M4_CBM = geomNodeRelate( CBM sd conn ) 
+     errorLayer( ARMIM5M4_CBM "A.R.MIM.5.M4_CBM  Mx as MIM capacitor bottom metal directly connecting to OD through underneath VIA is not allowed")
+) ;end of if
+
+; VIA4 CHECKS
+;==============
+geomConnect( 
+	           buttOrOver( gate polyi )
+                    via( coi m1 polyi sd )
+                    via( via1i m1 m2 )
+                    via( via2i m2 m3 )
+                    via( via3i m3 m4 )
+             buttOrOver( viat m4 )
+	   ) ;end of geomConnect
+
+processAntenna(
+              	gate((gate polyi))
+              	antenna( viat ) 
+                ratio = plusp( m4.area ) * plusp( gate.area ) * ( minusp( sd.area-DIO_AREA )  * ( viat.area/gate.area - 20 ) + plusp( sd.area - DIO_AREA ) * ( viat.area/gate.area - plusp( sd.area - DIO_AREA ) * sd.area*83.33 - 75 ) )
+              	AR5_AR6VIAt = drcAntenna( viat (gate) ratio ( keep > 0 )  
+                                          suppressErrorMessage 
+                                         )
+              	) ;end of processAntenna
+A_R_5_A_R_6_VIAt = geomButtOrOver( polyi AR5_AR6VIAt_gate )
+geomStamp( A_R_5_A_R_6_VIAt  polyi )               
+A_R_5_A_R_6_VIAt_final = geomNodeRelate( m4 A_R_5_A_R_6_VIAt conn )
+errorLayer( A_R_5_A_R_6_VIAt_final "A.R.5_A.R.6.VIAt (VIAt area / gate area) > 20 (without effective diode) and (VIAt area / gate area) > Ratio (with effective diode)") 
+
+
+if(( THICK_40K == 0 ) && ( THICK_20K == 0 ) then 
+; VIAD CHECKS
+;==============
+geomConnect( 
+	           buttOrOver( gate polyi )
+                    via( coi m1 polyi sd )
+                    via( via1i m1 m2 )
+                    via( via2i m2 m3 )
+                    via( via3i m3 m4 )
+		    via( viat m4 m5 )
+                    via( viac m5 ctm4i )
+                    buttOrOver( viadi m5 )
+            );end of geomConnect
+
+processAntenna(
+	              gate((gate polyi))
+	              antenna( viadi ) 
+	                ratio = viadi.area/gate.area
+	                diode = sd.area-0.2029
+	              factor1 = (diode-abs(diode))/(2*diode)*20 ; without diode
+	              factor2 = (diode+abs(diode))/(2*diode)*(sd.area*83.33+75) ; with diode
+	            ant_value = factor1 + factor2
+	             AR5_AR6VIAD =  drcAntenna( viadi (gate) ratio ( keep > ant_value ) 
+                                              suppressErrorMessage
+                                               )
+	             ) ;end of processAntenna
+
+A_R_5_A_R_6_VIAD = geomButtOrOver( polyi AR5_AR6VIAD_gate )
+geomStamp( A_R_5_A_R_6_VIAD  polyi )
+A_R_5_A_R_6_VIAD_final = geomNodeRelate( m5 A_R_5_A_R_6_VIAD conn )
+errorLayer( A_R_5_A_R_6_VIAD_final "A.R.5_A.R.6.VIAD (VIAD area / gate area) > 20/Ratio ( wo/wi effective diode)") 
+) ;end of if
+) ;end of drcExtract

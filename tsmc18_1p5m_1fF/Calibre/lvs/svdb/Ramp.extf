@@ -1,0 +1,13 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1621222877 1621222883
+lvs_ExtOutFile RUNDIR /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs
+lvs_ExtOutFile RULES_FILE /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs/_calibre.lvs_
+lvs_ExtInfoExtSummary {0 0 0 0 0 3 0 0 0 0 0}
+lvs_ExtInfoErcSummary {12 0 0 0 0 0 0 0 0 1 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs/Ramp.sp
+lvs_ExtOutFile EXTRACTION_REPORT Ramp.lvs.report.ext
+lvs_ExtOutFile SOFTCHK_DATABASE svdb/Ramp.softchk
+lvs_ExtOutFile ERC_DATABASE Ramp.erc.results
+lvs_ExtOutFile ERC_SUMMARY Ramp.erc.summary

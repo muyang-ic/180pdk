@@ -1,0 +1,59 @@
+; sample RSF for running Assura RCX from UNIX
+; Change the parameters for your specific requirement
+; Assura LVS should have been run already on the cell
+;   with results in the "rundir" directory
+
+; !!! Important Note: If you are running GDS2/CDL flow
+; then ensure that the correct measurement switch has 
+; been applied in both the lvsfile.rsf 
+; The Second capgen step ( submit_capgenC ) does not
+; require -length_units meters unless PDK DF2 flow was
+; used for LVS. Refer to notes in RCX.README
+
+avParameters(
+	?workingDirectory "rundir"
+	?runName "lvs_top"
+	?inputLayout ( "gds2" "lvs_top.gds" )
+	?cellName "lvs_top"
+)
+
+rcxParameters(
+	?rcxSetupDir "./"    
+
+; outputFormat can be a Spice netlist or av_extracted view
+;  for av_extracted view use "dfII" 
+;  for Spice netlist use "spice" 
+	?outputFormat  "spice"
+	
+; Give a spice output name if the format is spice:
+	?output  "lvs_top.sp"
+
+	?extract  "both"
+	?netNameSpace  "layout"
+	
+; For parasitic capacitors, set ?capExtractMode to: 
+;  "decoupled" for lumped caps to ground,
+;  "coupled" to retain caps between nets
+	?capExtractMode  "decoupled"
+
+; If extracting caps, 
+; the name of the ground node must be included
+	?capGround  "NT1"
+
+; capCouplingFactor needed only for decoupled caps
+	?capCouplingFactor  1.0
+	?type  "full"
+	?rcxfsType  "none"
+	?capModels  "yes"
+	?parasiticCapModels  "comment"
+	?resModels  "yes"
+	?parasiticResModels  "comment"
+	?outputNetNameSpace  "schematic"
+	?subNodeChar  "#"
+	?hierarchyDelimiter  "/"
+	?deviceFingerDelimiter  "@"
+	?runName "lvs_top"
+	?parasiticBlockingDeviceCellsFile "./hcell"
+)
+avRCX() 
+

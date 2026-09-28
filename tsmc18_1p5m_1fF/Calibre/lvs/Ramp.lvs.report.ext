@@ -1,0 +1,36 @@
+
+
+       #############################################################
+       ##                                                         ##
+       ##               C A L I B R E    S Y S T E M              ##
+       ##                                                         ##
+       ##    C I R C U I T   E X T R A C T I O N   R E P O R T    ##
+       ##                                                         ##
+       #############################################################
+
+
+REPORT FILE NAME:         Ramp.lvs.report.ext
+LAYOUT NAME:              Ramp.calibre.db ('Ramp')
+CREATION TIME:            Mon May 17 11:41:17 2021
+CURRENT DIRECTORY:        /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs
+USER NAME:                designer
+CALIBRE VERSION:          v2012.1_19.13    Thu Feb 9 14:55:59 PST 2012
+
+
+
+Extraction Errors and Warnings for cell "Ramp"
+----------------------------------------------
+
+WARNING:  Stamping conflict in SCONNECT - Multiple source nets stamp one target net.
+          Use LVS REPORT OPTION S or LVS SOFTCHK statement to obtain detailed information.
+
+
+
+WARNING: Invalid PATHCHK request "! POWER": no POWER nets present, operation aborted.
+
+
+WARNING: Invalid PATHCHK request "! POWER": no POWER nets present, operation aborted.
+
+
+WARNING: Invalid PATHCHK request "! GROUND": no GROUND nets present, operation aborted.
+

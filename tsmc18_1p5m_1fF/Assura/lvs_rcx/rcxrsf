@@ -1,0 +1,3 @@
+rcxParameters(
+    ?parasiticBlockingDeviceCellsFile "./Assura/hcell"
+)

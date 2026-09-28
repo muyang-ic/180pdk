@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_LvsOutFile RUNDIR /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs
+lvs_LvsfVersion 2
+lvs_LvsInputSummary {0 0 0}
+lvs_LvsComparisonSummary {5 0 5 0}
+lvs_LvsOutFile LVS_REPORT Ramp.lvs.report
+lvs_LvsOutFile SOURCE_NETLIST /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs/Ramp.src.net
+lvs_LvsOutFile RULES_FILE /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs/_calibre.lvs_
+lvs_LvsRunTimes 1621222883 1621222888

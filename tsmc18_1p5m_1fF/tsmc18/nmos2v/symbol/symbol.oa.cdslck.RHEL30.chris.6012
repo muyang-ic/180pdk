@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      chris
+HostName                       chris
+ProcessIdentifier              6012
+ProcessCreationTime_UTC        1569549314
+ProcessCreationTime_Readable   Fri Sep 27 09:55:14 2019 CST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /eda/cadence/tsmc18_1p5m_1fF/tsmc18/nmos2v/symbol/symbol.oa.cdslck.dirlck
+TimeEditLocked                 Fri Sep 27 11:08:19 2019 CST

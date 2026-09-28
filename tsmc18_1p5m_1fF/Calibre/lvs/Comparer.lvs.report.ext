@@ -1,0 +1,36 @@
+
+
+       #############################################################
+       ##                                                         ##
+       ##               C A L I B R E    S Y S T E M              ##
+       ##                                                         ##
+       ##    C I R C U I T   E X T R A C T I O N   R E P O R T    ##
+       ##                                                         ##
+       #############################################################
+
+
+REPORT FILE NAME:         Comparer.lvs.report.ext
+LAYOUT NAME:              Comparer.calibre.db ('Comparer')
+CREATION TIME:            Mon May 17 15:57:03 2021
+CURRENT DIRECTORY:        /home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs
+USER NAME:                designer
+CALIBRE VERSION:          v2012.1_19.13    Thu Feb 9 14:55:59 PST 2012
+
+
+
+Extraction Errors and Warnings for cell "Comparer"
+--------------------------------------------------
+
+WARNING:  Stamping conflict in SCONNECT - Multiple source nets stamp one target net.
+          Use LVS REPORT OPTION S or LVS SOFTCHK statement to obtain detailed information.
+
+
+
+WARNING: Invalid PATHCHK request "! POWER": no POWER nets present, operation aborted.
+
+
+WARNING: Invalid PATHCHK request "! POWER": no POWER nets present, operation aborted.
+
+
+WARNING: Invalid PATHCHK request "! GROUND": no GROUND nets present, operation aborted.
+

@@ -1,0 +1,8 @@
+TDMCHECKPOINT="1.0"
+keepEmptyCategory type="unknown"
+tsmc18/rm1 type="cell"
+tsmc18/rm2 type="cell"
+tsmc18/rm3 type="cell"
+tsmc18/rm4 type="cell"
+tsmc18/rm5 type="cell"
+tsmc18/rmt type="cell"

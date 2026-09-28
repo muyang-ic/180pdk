@@ -1,0 +1,24 @@
+library 3v_cor 
+
+section ff_3v 
+include "cmn018_assp_v1d2.scs" section = ff_3v 
+endsection ff_3v 
+
+section fs_3v 
+include "cmn018_assp_v1d2.scs" section = fs_3v 
+endsection fs_3v 
+
+section sf_3v 
+include "cmn018_assp_v1d2.scs" section = sf_3v 
+endsection sf_3v 
+
+section ss_3v 
+include "cmn018_assp_v1d2.scs" section = ss_3v 
+endsection ss_3v 
+
+section tt_3v 
+include "cmn018_assp_v1d2.scs" section = tt_3v 
+endsection tt_3v 
+
+
+endlibrary 3v_cor 

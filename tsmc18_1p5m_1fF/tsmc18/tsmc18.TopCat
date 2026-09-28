@@ -1,0 +1,13 @@
+TDMCHECKPOINT="1.0"
+keepEmptyCategory type="unknown"
+tsmc18/Bipolar.Cat type="category"
+tsmc18/Capacitor.Cat type="category"
+tsmc18/Mosfet.Cat type="category"
+tsmc18/Resistor.Cat type="category"
+tsmc18/Varactor.Cat type="category"
+tsmc18/do_not_use.Cat type="category"
+tsmc18/Diode.Cat type="category"
+tsmc18/Parasitic_Device.Cat type="category"
+tsmc18/Special_Device.Cat type="category"
+tsmc18/Symbolic.Cat type="category"
+

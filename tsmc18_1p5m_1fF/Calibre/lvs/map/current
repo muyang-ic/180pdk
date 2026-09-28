@@ -1,0 +1,24 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "Comparer"
+  repList "auCdl schematic"
+  stopList "auCdl"
+  hierDelim "."
+  netlistDir "/home/designer/PDK/PDK/tsmc18_1p5m_1fF/Calibre/lvs"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "bishe/Comparer/schematic" "Comparer" )
+ )
+( term
+ )
+( param
+ )
+( "Comparer" "ihnl/cds0/map" )
+ )

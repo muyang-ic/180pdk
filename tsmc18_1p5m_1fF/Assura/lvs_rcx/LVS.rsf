@@ -1,0 +1,95 @@
+;
+; sample RSF for running Assura LVS from UNIX
+; Change the parameters for your specific requirement
+
+avParameters(
+; GDS2 Data - use the next line for GDS2 input
+; ?inputLayout ( "GDS2" "<file_name>" )  ; specify full path to gds file
+  ?inputLayout ( "GDS2" "./ts_allcelllvs.gds" )
+
+; DFII Data - use the next line for DFII input .....(DFII not support now)
+;  ?inputLayout ( "df2" "<library>" )
+
+; Top cell name
+; ?cellName  "<cell_name>"
+  ?cellName  "ts_allcelllvs"
+
+; NOTE, viewName needed only for DFII input ....(DFII not support now)
+;  ?viewName  "<view_name>"
+
+  ?rulesFile "./extract.rul"
+  ?runName   "ts_allcelllvs"		;PRINTFILE dev_018s
+  ?workingDirectory "./rundir"
+  ?avrpt t			;run avrpt at end of job
+  ?textPriOnly t	;TEXT-PRI-ONLY YES
+  ?joinPins    top	;nil|top|allLevels :virtual connection is on @top level
+  ?flagNon45   t
+
+; uncomment the following line to set nrd=0 and nrs=0 when run RCX extraction flow
+; ?set ("ZERO_NRDS")
+
+; ?set ("STD_LIB")
+
+; ?set ("MACRO")
+
+  ?set ("CDL_input")  
+; Below switch is controlled by LVS installation program, not recommend to change it by manual
+; ?set ("top2_thick")
+; uncomment the following line to use copper RDL, only support in thickness 8k
+; ?set ("Cu_RDL")
+; Below switch is controlled by LVS installation program, not recommend to change it by manual
+; ?set ("GP_PROCESS")  
+
+; Below switch is controlled by LVS installation program, not recommend to change it by manual
+; ?set ("PROCESS_WI_PURE5V_RES")
+
+; Below switch is controlled by LVS installation program, not recommend to change it by manual
+; ?set ("PROCESS_WO_MVTMOS_MACRO") 
+; uncomment the following line to enable the NW ring to separate the node from BULK
+; ?set ("NW_RING")
+
+; ?set ("Skip_Soft_Connect_Checks")
+
+; uncomment the following line to filter MOS with D, G and S tied together (default filter MOS with all pins tied)
+; ?set ("FILTER_DGS_TIED_MOS")
+
+; WELL_TO_PG_CHECK : Default is on. Turn on to highlight if nwell connects to ground or psub connects to power.
+  ?set ("WELL_TO_PG_CHECK")
+  
+; GATE_TO_PG_CHECK : Default is off. Turn on to highlight if a mos gate directly connects to power or ground.
+; ?set ("GATE_TO_PG_CHECK")
+
+; DS_TO_PG_CHECK   : Default is on. Turn on to highlight if drain connects to power and source connects to ground.
+  ?set ("DS_TO_PG_CHECK")
+  
+; FLOATING_GATE_CHECK : Default is on. Turn on to highlight if there are floating gates.
+  ?set ("FLOATING_GATE_CHECK")
+  
+; FLOATING_WELL_CHECK : Default is on. Turn on to highlight if well does not connect to power or ground.
+;                       The nwell of moscaps and nwell-resistor are excluded. 
+  ?set ("FLOATING_WELL_CHECK")
+
+; ?set ("CELL_BULK")
+
+; uncomment the following line to apply the extraction of parasitical diodes
+; ?set ("extract_parasitic_diodes")
+
+; uncomment the following line to apply the comparison of parasitical diodes
+; ?set ("compare_parasitic_diodes")
+
+; uncomment the following line during extracting RCX spice netlist.
+; ?set ("spice_extraction")
+
+; Point to the Assura RCX technology directory
+;  ?technology "tsmc18lo_rcx_tech"
+;  ?techLib    "./assura_tech.lib"
+) ;end of avParameters
+
+
+; To load ASSURA LVS COMPARE FILE
+load( "./compare.rul" )
+
+
+
+avLVS()
+

@@ -1,0 +1,617 @@
+
+TSMC 0.18 UM MIXED SIGNAL GENERAL PURPOSE II 1P6M/1P5M/1P4M SALICIDE 1.8V/3.3V PDK
+
+	                    Version : 1.2a
+	                    Doc. #  : T-018-CM-SP-007-K3
+	                    Date    : Apr. 22, 2014
+
+*******************************************************************************
+  DISCLAIMER
+
+  This PDK is provided to you "AS IS" and you should not distribute it to any 
+  other third party. This PDK is created by "Cadence". TSMC only performs Layout 
+  versus Layout (LVL) and Schematic versus Schematic (SVS) quality check. TSMC 
+  also disclaims any representation that this PDK, other than TSMC Confidential 
+  Information contained within, does not infringe any intellectual property 
+  rights of any third parties. There are no warranties given by TSMC, whether 
+  express, implied or statutory, including, without limitation, implied 
+  warranties of merchant ability and fitness for particular purposes.
+
+  STATEMENT OF USE
+
+  This information contains confidential and proprietary information of TSMC.
+  No part of this information may be reproduced, transmitted, transcribed,
+  stored in a retrieval system, or translated into any human or computer
+  language, in any form or by any means, electronic, mechanical, magnetic,
+  optical, chemical, manual, or otherwise, without the prior written permission
+  of TSMC.  This information was prepared for informational purpose and is for
+  use by TSMC's customers only.  TSMC reserves the right to make changes in the
+  information at any time and without notice.
+*******************************************************************************
+
+0. Overview
+
+  This PDK requires the following environmental variables:
+
+	"CDS_Netlisting_Mode" to be set to "Analog"
+	"CDSHOME" to be set to Cadence DFII installation path
+
+  Moreover, this PDK has been tested to work with the following software
+  versions:
+
+  Stream               Build           Version           Date
+  
+  Cadence IC  -	IC6.1.5.500.13
+  Calibre     - 2010.4_26.16
+  Assura      - 4.1_USR2_HF9
+  Hspice      - G-2012.06 
+  Verilog     - 08.20.027
+  Eldo        - 2010.1
+  QRC         - EXT914_HF1  
+  MMSIM       - 7.2.0.477.isr16   
+
+1. Foundry Data
+1.1 Spice models
+
+       PROCESS : TSMC 0.18um Mixed Signal SALICIDE (1.8V/3.3V) SPICE MODEL
+       DOC. NO.: T-018-CM-SP-007
+       VERSION : 1.2
+       DATE    : 06/21/2010
+
+1.2 Design rule & DRC
+
+       PROCESS : TSMC 0.18UM CMOS LOGIC/MS/RF AND 0.16UM CMOS LOGIC/MS DESIGN RULE (CL018G/LV/LP, CM018, CR018, CL016G, CM016)
+       DOC. NO.: T-018-LO-DR-001
+       VERSION : 2.10
+       DATE    : 11/08/2012
+       
+       PROCESS : TSMC 0.18UM CMOS LOGIC/MS/RF AND 0.16UM CMOS LOGIC/MS 1P6M DRC (ASSURA) COMMAND FILE (THIRD PARTY) (CL018G/LV/LP, CM018, CR018 CL016G, CM016) 
+       DOC. NO.: T-018-LO-DR-001-U1
+       VERSION : 2.10a
+       DATE    : 01/24/2013
+
+       PROCESS : TSMC 0.18UM CMOS LOGIC/MS/RF AND 0.16UM CMOS LOGIC/MS 1P6M DRC (CALIBRE) COMMAND FILE (CL018G/LV/LP, CM018, CR018 CL016G, CM016) 
+       DOC. NO.: T-018-LO-DR-001-C1
+       VERSION : 2.10a
+       DATE    : 11/14/2012 
+
+1.3 Device Formation document & LVS
+
+       PROCESS : TSMC 0.18 UM MIXED SIGNAL GENERAL PURPOSE II 1P6M SALICIDE 1.8V/3.3V LVS (ASSURA) COMMAND FILE 
+       DOC. NO.: T-018-CM-SP-007-U1
+       VERSION : 1.2a 
+       DATE    : 01/28/2013 
+
+       PROCESS : TSMC 0.18 UM MIXED SIGNAL GENERAL PURPOSE II 1P6M SALICIDE 1.8V/3.3V LVS (CALIBRE) COMMAND FILE 
+       DOC. NO.: T-018-CM-SP-007-C1
+       VERSION : 1.2a 
+       DATE    : 01/28/2013
+
+1.4 RC technology files
+
+       PROCESS : TSMC 0.18 UM MIXED MODE 1P6M SALICIDE 1.8V/3.3V RC (ASSURA) TECH FILE  
+       DOC. NO.: T-018-CM-SP-007-V1
+       VERSION : 1.2b
+       DATE    : 02/13/2014 
+       
+       PROCESS : TSMC 0.18UM MIXED SIGNAL 1P6M SALICIDE 1.8V/3.3V RC(XCALIBRE) TECH. FILES. 
+       DOC. NO.: T-018-CM-SP-007-X1 
+       VERSION : 1.2b
+       DATE    : 06/17/2013 
+       
+1.5 Layer definitation document & Virtuoso techfile
+
+       PROCESS : TSMC layout editor technology file for TSMC 0.18um LO+MM/RF+FLASH+HV processes
+       DOC. NO.: T-018-LO-LE-004
+       VERSION : 2.10a
+       DATE    : 02/25/2013
+       (OA Tech File is based on this document. Cadence_Date: 03/07/2014)
+
+2. Installation of the PDK
+
+  This section will guide you to install the PDK into the design environment
+  step by step and help users to set up their environment properply.
+
+  [PDK owner]
+
+    Step A: Download the PDK archive from TSMC website
+
+    Step B: Logon into the computer as the owner who will own and maintain the
+            PDK
+
+    Step C: Choose a directory that are exported to all client machines to
+            install the PDK
+
+    Step D: Install the PDK by execute "pdkInstall.pl" script and follow the
+	    instructions displayed on screen step by step
+
+(***for tradition installation procedures. If it is no need, remove it !!!****)
+    Step D: Install the PDK with the following unix commands:
+
+	    a. %mkdir <pdk_install_directory>
+	    b. %cd <pdk_install_directory>
+	    c. %gzip -d <pdk_tar_file.gz>
+	    d. %tar xvf <pdk_tar_file>
+
+    ***Only the owner who will maintain the PDK has the read,write and execute
+    permission. Other users will have only read and execute access***.
+
+
+  [PDK users]
+
+        In the client parts(the PDK users),there are also some procedures to be
+    followed to set up the environment properply.
+
+    Step 1: Logon into the computer as the user that will use the PDK to design
+            a Project (circuit).
+
+    Step 2: Setting the environment variable "CDS_Netlisting_Mode" to "Analog"
+            and "CDSHOME" to Cadence DFII installation path.
+
+		setenv CDS_Netlisting_Mode "Analog"
+		setenv CDSHOME <Cadence DFII installation path>
+
+    Step 3: Make a directory for your design project.
+		EX: %mkdir ~/my_circuit
+		    %cd ~/my_circuit
+
+    Step 4: Create a new library for your design and add the PDK library into
+            your reference path by adding the following line in your "cds.lib"
+	    file located in the working directory.
+
+	        INCLUDE <pdk_install_directory>/cds.lib
+
+
+3. PDK Install Directory Structure
+
+  Assura/                      : Assura technology file directory
+  Calibre/                     : Calibre technology file directory
+  ReleaseNote.txt              : This file
+  REVISION                     : Revision history
+  assura_tech.lib              : Assura tech file definition
+  cds.lib                      : File containing the Cadence initialization file
+  display.drf                  : Display resources file
+  models/                      : Directory containing spice/spectre models
+  skill/                       : Directory containing callback and utilities skill code
+  font.map                     : TSMC Virtuoso Layout Editor Text Font Map File
+  techfile                     : PDK technolog file
+  tsmc18/                      : TSMC PDK library
+
+4. Supported Devices
+
+  - Diode
+
+    dioden            : N+/PW 1.8V diode
+    dioden3v          : N+/PW 3.3V diode
+    diodenw           : Nwell/PSUB 1.8V diode
+    diodenw3v         : Nwell/PSUB 3.3V diode
+    diodep            : P+/NW 1.8V diode
+    diodep3v          : P+/NW 3.3V diode
+    ndio_m            : N+/PW 1.8V diode
+    pdio_m            : P+/NW 1.8V diode
+    ndio_3m           : N+/PW 3.3V diode
+
+  - Mosfet
+
+    nmos2v            : 1.8V nominal VT NMOS transistor
+    nmos2v_mac        : 1.8V nominal VT macro NMOS transistor
+    nmos2vdnw         : 1.8V nominal VT NMOS transistor with DNW
+    nmos2vdnw_mac         : 1.8V nominal VT macro NMOS transistor with DNW
+    nmos3v            : 3.3V nominal VT NMOS transistor
+    nmos3v_mac        : 3.3V nominal VT macro NMOS transistor
+    nmos3vdnw         : 3.3V nominal VT NMOS transistor with DNW
+    nmos3vdnw_mac         : 3.3V nominal VT macro NMOS transistor with DNW
+    nmosmvt2v         : 1.8V medium VT NMOS transistor
+    nmosmvt2v_mac     : 1.8V medium VT macro NMOS transistor
+    nmosmvt3v         : 3.3V medium VT NMOS transistor
+    nmosmvt3v_mac     : 3.3V medium VT macro NMOS transistor
+    nmosnvt2v         : 1.8V native VT NMOS transistor
+    nmosnvt2v_mac     : 3.3V native VT macro NMOS transistor
+    nmosnvt3v         : 3.3V native VT NMOS transistor
+    nmosnvt3v_mac     : 3.3V native VT macro NMOS transistor
+    pmos2v            : 1.8V nominal VT PMOS transistor
+    pmos2v_mac        : 1.8V nominal VT macro PMOS transistor
+    pmos3v            : 3.3V nominal VT PMOS transistor
+    pmos3v_mac        : 3.3V nominal VT macro PMOS transistor
+    pmosmvt2v         : 1.8V medium VT PMOS transistor
+    pmosmvt2v_mac     : 1.8V medium VT macro PMOS transistor
+
+  - Special_Device
+
+    dio_dnwpsub       : Junction diode between DNW to PSUB 
+    dio_pwdnw         : Junction diode between PW(inside DNW) and DNW
+    diodesd3v         : 3.3V ESD Diode
+
+  - Capacitor
+
+    mimcap_1p0_sin_3t : 1.0 fF base band MIM capacitor (3 terminal) 
+    mimcap_1p0_sin    : 1.0 fF base band MIM capacitor 
+    mimcap_2p0_sin_3t : 2.0 fF base band MIM capacitor (3 terminal) 
+    mimcap_2p0_sin    : 2.0 fF base band MIM capacitor 
+    crtmom            : RTMOM capacitor  
+    cfmom             :  CFMOM capacitor
+    cfmom_mx          :  MULTI_X_COUPLE_CFMOM capacitor
+
+
+  - Varactor
+
+    mos_var_b         : 2-terminal 1.8V NMOS base band varactor  
+    mos_var_b3        : 2-terminal 3.3V NMOS base band varactor 
+
+  - Bipolar
+
+    npn               : 1.8V N+/PW/DNW VERTICAL NPN BIPOLAR
+    npn_mis           : 1.8V N+/PW/DNW VERTICAL NPN BIPOLAR (mismatch device) 
+    vpnp              : 1.8V Vertical substrate PNP
+    vpnp3             : 3.3V Vertical substrate PNP
+    vpnp_mis          : 1.8V Vertical substrate PNP (mismatch device)      
+
+  - Resistor
+
+    rm1               : Metal 1 resistor
+    rm2               : Metal 2 resistor
+    rm3               : Metal 3 resistor
+    rm4               : Metal 4 resistor
+    rm5               : Metal 5 resistor
+    rmt               : Top Metal resistor
+    rnhpoly           : N+ poly resistor without salicide
+    rnhpoly_dis       : N+ poly resistor without salicide (3 terminal)
+    rnlplus           : N+ diffusion resistor with salicide (3 terminal)
+    rnlpoly           : N+ poly resistor with salicide
+    rnlpoly_dis       : N+ poly resistor with salicide (3 terminal)
+    rnplus            : N+ diffusion resistor without salicide (3 terminal)
+    rnwell            : NWell resistor under STI
+    rnwod             : NWell resistor under OD (3 terminal)
+    rnwsti_m          : NWell resistor under STI (3 terminal)
+    rphpoly           : P+ poly resistor without salicide
+    rphpoly_dis       : P+ poly resistor without salicide (3 terminal)
+    rphripoly         : P+ Poly HRI resistor without salicide 
+    rphripoly_dis     : P+ Poly HRI resistor without salicide (3 terminal)
+    rplplus           : P+ diffusion resistor with salicide (3 terminal)
+    rplpoly           : P+ poly resistor without salicide
+    rplpoly_dis       : P+ poly resistor without salicide (3 terminal)
+    rpplus            : P+ diffusion resistor without salicide (3 terminal)
+    rplplus_2t        : P+ diffusion resistor with salicide
+    rnplus_2t         : N+ diffusion resistor without salicide
+    rnlplus_2t        : N+ diffusion resistor with salicide
+    rnwod_2t          : NWell resistor under OD
+    rpplus_2t         : P+ diffusion resistor without salicide
+
+
+5. CDF parameters
+
+   Parameters in every device
+ 
+      "Model Name"	             : model name for circuit simulation
+      "Hard_constrain"		     : Off : Once the input value is over device limitation, callback function only give warning 
+                                       message instead of change values back. Default is On.
+      "Multiplier"		     : Multiplier fact to simulate multiple devices.
+      
+  - Mosfet
+ 
+      "l (M)"                        : Length of mos
+      "w (M)"                        : Width of mos
+      "total_width(M)"               : Total width of mos, equal to width x Fingers
+      "Number of Fingers"            : Number of mos fingers
+      "S D swap"	             : to swap source/drain pin
+      "Calc Diff Params"             : User can input parasitic of mos if the option is inactive.
+      "Source_area"                  : The area of source region
+      "Drain_area"                   : The area of drain  region
+      "Source_periphery_(M)"         : The periphery length of source region
+      "Drain_periphery_(M)"          : The periphery length of drain  region 
+      "NRS"                          : Number of squares drain resistance.
+      "NRD"                          : Number of squares source resistance.
+      "SA(LOD_effect)_(M)"           : The area of source region
+      "SB(LOD_effect)_(M)"           : The area of drain  region
+      "SD(Fingers_Spacing)_(M)"      : The spacing between poly gates 
+      "fingers_SP_INC(M)"            : Increment of multi-finger spacing.
+      "Well_Proximity_Effect"        : off        : the WPE values are assigned with 0
+                                       customized : customer could input the values
+      "leftCnt"                      : Switch cont/metal of left side mos.
+      "rightCnt"                     : Switch cont/metal of right side mos.
+      "interCnt"                     : Switch cont/metal of inter side mos.
+      "polyContacts"	               : Choose if there are poly contacts on the routed poly
+      "routePolydir"                 : (None,Top,Bottom,Both) It connect multi-finger gate from top, bottom or both by poly.
+      "routeUPoly_SP_INC(M)"         : Increment of upper poly connection spacing
+      "routeDPoly_SP_INC(M)"         : Increment of lower poly connection spacing.
+      "route_Source_Drain"           : (None,Source,Drain,Both) It connects multi-finger source, drain or both by cont/metal1. 
+      "routeS_SP_INC(M)"             : Increment of source router spacing.
+      "routeD_SP_INC(M)"             : Increment of drain router spacing.
+      "bodytie_typeL"                : Select the type of left bodytie
+      "bodytie_typeR"                : Select the type of right bodytie
+      "Upper_PO_EX_INC(M)"           : Increment of upper poly gate extension.
+      "Lower_PO_EX_INC(M)"           : Increment of lower poly gate extension.
+      "GA_GA_SP_INC(M)"              : Increment of gate to gate spacing, only happens at abutment with the same width.
+      "GA_CO_SP_INC(M)"              : Increment of gate to contact spacing.
+      "OD_CO_EN_INC(M)"              : Increment of OD enclosure to contact.
+      "M1_CO_EN_INC(M)"              : Increment of Metal1 enclosure to contact.
+      "GA_OD_SP_INC(M)"              : Increment of Gate to OD spacing, only happens at abutment with different width.
+      "OD_GA_EN_INC(M)"              : Increment of OD enclosure to gate, only happens at abutment with different width.
+      "CO_CO_SP_INC(M)"              : Increment of CO to CO spacing.
+      "Imp layer"                    : Implement layer removing option
+
+  - Capacitor
+
+      "Entry_mode"
+      "Capacitance(F)"               : The capacitance of capacitor
+      "Width(M)"                     : Width of capacitor
+      "Length(M)"                    : Length of capacitor
+      "Number of horizontal fingers" : Number of horizontal fingers
+      "Number of vertical fingers"   : Number of vertical fingers
+      "RTMOM Bottom Metal Layer"     : The bottom layer
+      "RTMOM Top Metal Layer"        : The top layer  
+      "Register_number"              : customer must contact TSMC Marketing Department to 
+                                       get the register code from TSMC. If this CDF is not 
+				       inputted correctly, the RTMOM layout will not be shown.
+
+  - Diode
+
+      "Length (M)"                   : Length of diode
+      "Width (M)"                    : Width of diode
+
+  - Varactor
+
+      "Width_per_Finger(M)"          : Ffinger width
+      "Length_per_Finger(M)"         : Finger length
+      "Fingers_per_Group(mr)"        : Finger number in the same group
+
+  - Resistor
+
+      "Total resistance(ohms)"       : Total resistance
+      "Segment width(M)"             : Width of every segment
+      "Segment length(M)"            : Length of every segment
+      "Resistor connection"          : Series or parallel 
+      "Number of segments"           : Number of segments
+      "Segement spacing(M)"          : Segment of spacing
+      "Cont columns"                 : The number of contact
+      "With Mismatch Effect"
+
+  - Bipolar
+
+      "Emitter Size"                 : The emitter size of bipolar.
+      "lxUseCell"                    : The layout is selected in this option
+
+6. Views Provided
+
+  - Diode
+
+    Terminals (PLUS MINUS) 
+    ADVance_MS, ams, symbol, spectre, hspiceD, eldoD, auLVS, auCDL, ivpcell, layout
+
+  - Mosfet
+
+    Terminals (D G S B) 
+    ADVance_MS, ams, symbol, spectre, hspiceD, eldoD, auLVS, auCDL, ivpcell, layout
+
+  - Special_Device
+
+    Terminals (PLUS MINUS) 
+    ADVance_MS, ams, symbol, spectre, hspiceD, eldoD, auLVS, auCDL, ivpcell
+
+  - Capacitor
+
+    Terminals (PLUS MINUS BULK)  (TOP BOT) 
+    ADVance_MS, ams, symbol, spectre, hspiceD, eldoD, auLVS, auCDL, ivpcell, layout
+
+  - Varactor
+
+    Terminals (PLUS MINUS) 
+    ADVance_MS, ams, symbol, spectre, hspiceD, eldoD, auLVS, auCDL, ivpcell, layout
+
+  - Bipolar
+
+    Terminals (C B E) 
+    ADVance_MS, ams, symbol, spectre, hspiceD, eldoD, auLVS, auCDL, ivpcell, layout
+
+  - Parasitic_Device
+
+    Terminals (PLUS MINUS) 
+    ams, symbol, spectre, hspiceD, eldoD, auLVS, auCDL, ivpcell, layout
+
+  - Resistor
+
+    Terminals (PLUS MINUS)  (PLUS MINUS B) 
+    ADVance_MS, ams, symbol, spectre, hspiceD, eldoD, auLVS, auCDL, ivpcell, layout
+
+  - Symbolic
+
+    Terminals
+    symbolic
+
+7. Device Specifications
+
+         Device            Terminals         Spectre          Hspice           auCdl           auLvs
+                                               Model           Model           Model           Model
+Bipolar
+            npn              (C B E)           npn10           npn10              NV             npn
+                                                npn2            npn2              NV
+                                                npn5            npn5              NV
+        npn_mis              (C B E)       npn10_mis       npn10_mis        NV10_mis         npn_mis
+                                            npn2_mis        npn2_mis         NV2_mis
+                                            npn5_mis        npn5_mis         NV5_mis
+           vpnp              (C B E)           pnp10           pnp10              PV            vpnp
+                                                pnp2            pnp2              PV
+                                                pnp5            pnp5              PV
+          vpnp3              (C B E)         pnp10_3         pnp10_3              P1           vpnp3
+                                              pnp2_3          pnp2_3              P1
+                                              pnp5_3          pnp5_3              P1
+       vpnp_mis              (C B E)       pnp10_mis       pnp10_mis        PV10_mis        vpnp_mis
+                                            pnp2_mis        pnp2_mis         PV2_mis
+                                            pnp5_mis        pnp5_mis         PV5_mis
+
+Capacitor
+         crtmom    (PLUS MINUS BULK)          crtmom          crtmom          crtmom          crtmom
+ mimcap_1p0_sin            (TOP BOT)  mimcap_1p0_sin  mimcap_1p0_sin  mimcap_1p0_sin  mimcap_1p0_sin
+mimcap_1p0_sin_3t    (PLUS MINUS BULK) mimcap_1p0_sin_3t mimcap_1p0_sin_3t mimcap_1p0_sin_3t mimcap_1p0_sin_3t
+ mimcap_2p0_sin            (TOP BOT)  mimcap_2p0_sin  mimcap_2p0_sin  mimcap_2p0_sin  mimcap_2p0_sin
+mimcap_2p0_sin_3t    (PLUS MINUS BULK) mimcap_2p0_sin_3t mimcap_2p0_sin_3t mimcap_2p0_sin_3t mimcap_2p0_sin_3t
+cfmom               (PLUS MINUS BULK)           cfmom           cfmom           cfmom           cfmom
+cfmom_mx            (PLUS1 MINUS1 PLUS2 MINUS2 BULK) cfmom_mx   cfmom_mx        cfmom_mx        cfmom_mx
+
+Diode
+         dioden         (PLUS MINUS)            ndio            ndio              DN          dioden
+       dioden3v         (PLUS MINUS)          ndio_3          ndio_3              D2        dioden3v
+        diodenw         (PLUS MINUS)           nwdio           nwdio              DW         diodenw
+      diodenw3v         (PLUS MINUS)         nwdio_3         nwdio_3              D3       diodenw3v
+         diodep         (PLUS MINUS)            pdio            pdio              DP          diodep
+       diodep3v         (PLUS MINUS)          pdio_3          pdio_3              D1        diodep3v
+        ndio_3m         (PLUS MINUS)         ndio_3m         ndio_3m         ndio_3m         ndio_3m
+         ndio_m         (PLUS MINUS)          ndio_m          ndio_m          ndio_m          ndio_m
+         pdio_m         (PLUS MINUS)          pdio_m          pdio_m          pdio_m          pdio_m
+
+Mosfet
+         nmos2v            (D G S B)             nch             nch               N          nmos2v
+      nmos2vdnw            (D G S B)             nch             nch              N1       nmos2vdnw
+         nmos3v            (D G S B)            nch3            nch3              ND          nmos3v
+      nmos3vdnw            (D G S B)            nch3            nch3              N2       nmos3vdnw
+      nmosmvt2v            (D G S B)           mench           mench              NA       nmosmvt2v
+      nmosmvt3v            (D G S B)          mench3          mench3              NB       nmosmvt3v
+      nmosnvt2v            (D G S B)           nanch           nanch              NL       nmosnvt2v
+      nmosnvt3v            (D G S B)          nanch3          nanch3              NN       nmosnvt3v
+         pmos2v            (D G S B)             pch             pch               P          pmos2v
+         pmos3v            (D G S B)            pch3            pch3              PD          pmos3v
+      pmosmvt2v            (D G S B)           mepch           mepch              PA       pmosmvt2v
+     nmos2v_mac            (D G S B)         nch_mac         nch_mac               N      nmos2v_mac
+     nmos2vdnw_mac            (D G S B)    nch_mac        nch_mac              N1       nmos2vdnw_mac
+     nmos3v_mac            (D G S B)        nch3_mac        nch3_mac              ND      nmos3v_mac
+     nmos3vdnw_mac            (D G S B)        nch3_mac        nch3_mac              N2      nmos3vdnw_mac     
+  nmosmvt2v_mac            (D G S B)       mench_mac       mench_mac              NA   nmosmvt2v_mac
+  nmosmvt3v_mac            (D G S B)      mench3_mac      mench3_mac              NB   nmosmvt3v_mac
+  nmosnvt2v_mac            (D G S B)       nanch_mac       nanch_mac              NL   nmosnvt2v_mac
+  nmosnvt3v_mac            (D G S B)      nanch3_mac      nanch3_mac              NN   nmosnvt3v_mac
+     pmos2v_mac            (D G S B)         pch_mac         pch_mac               P      pmos2v_mac
+     pmos3v_mac            (D G S B)        pch3_mac        pch3_mac              PD      pmos3v_mac
+  pmosmvt2v_mac            (D G S B)       mepch_mac       mepch_mac              PA   pmosmvt2v_mac      
+
+Resistor
+            rm1         (PLUS MINUS)             rm1             rm1              M1             rm1
+            rm2         (PLUS MINUS)             rm2             rm2              M2             rm2
+            rm3         (PLUS MINUS)             rm3             rm3              M3             rm3
+            rm4         (PLUS MINUS)             rm4             rm4              M4             rm4
+            rm5         (PLUS MINUS)             rm5             rm5              M5             rm5
+            rmt         (PLUS MINUS)             rm6             rm6              MT             rmt
+        rnhpoly         (PLUS MINUS)        rnpo1rpo        rnpo1rpo              NR         rnhpoly
+    rnhpoly_dis       (PLUS MINUS B)    rnpo1rpo_dis    rnpo1rpo_dis    rnpo1rpo_dis     rnhpoly_dis
+        rnlplus       (PLUS MINUS B)          rnod_m          rnod_m          rnod_m         rnlplus
+                                             rnodw_m         rnodw_m         rnodw_m
+     rnlplus_2t         (PLUS MINUS)            rnod            rnod              NI      rnlplus_2t
+                                               rnodw           rnodw              NI
+        rnlpoly         (PLUS MINUS)           rnpo1           rnpo1              NS         rnlpoly
+                                              rnpo1w          rnpo1w              NS
+    rnlpoly_dis       (PLUS MINUS B)       rnpo1_dis       rnpo1_dis       rnpo1_dis     rnlpoly_dis
+                                          rnpo1w_dis      rnpo1w_dis      rnpo1w_dis
+         rnplus       (PLUS MINUS B)       rnodrpo_m       rnodrpo_m       rnodrpo_m          rnplus
+      rnplus_2t         (PLUS MINUS)         rnodrpo         rnodrpo              ND       rnplus_2t
+         rnwell         (PLUS MINUS)          rnwsti          rnwsti              WR          rnwell
+          rnwod       (PLUS MINUS B)         rnwod_m         rnwod_m         rnwod_m           rnwod
+       rnwod_2t         (PLUS MINUS)           rnwod           rnwod              WO        rnwod_2t
+       rnwsti_m       (PLUS MINUS B)        rnwsti_m        rnwsti_m        rnwsti_m        rnwsti_m
+        rphpoly         (PLUS MINUS)        rppo1rpo        rppo1rpo              PR         rphpoly
+    rphpoly_dis       (PLUS MINUS B)    rppo1rpo_dis    rppo1rpo_dis    rppo1rpo_dis     rphpoly_dis
+      rphripoly         (PLUS MINUS)       rppolyhri       rppolyhri              LR       rphripoly
+  rphripoly_dis       (PLUS MINUS B)   rppolyhri_dis   rppolyhri_dis   rppolyhri_dis   rphripoly_dis
+        rplplus       (PLUS MINUS B)          rpod_m          rpod_m          rpod_m         rplplus
+                                             rpodw_m         rpodw_m         rpodw_m
+     rplplus_2t         (PLUS MINUS)            rpod            rpod              PI      rplplus_2t
+                                               rpodw           rpodw              PI
+        rplpoly         (PLUS MINUS)           rppo1           rppo1              PS         rplpoly
+                                              rppo1w          rppo1w              PS
+    rplpoly_dis       (PLUS MINUS B)       rppo1_dis       rppo1_dis       rppo1_dis     rplpoly_dis
+                                          rppo1w_dis      rppo1w_dis      rppo1w_dis
+         rpplus       (PLUS MINUS B)       rpodrpo_m       rpodrpo_m       rpodrpo_m          rpplus
+      rpplus_2t         (PLUS MINUS)         rpodrpo         rpodrpo              PD       rpplus_2t
+
+Varactor
+      mos_var_b         (PLUS MINUS)         nmoscap         nmoscap         nmoscap       mos_var_b
+     mos_var_b3         (PLUS MINUS)      nmoscap_33      nmoscap_33      nmoscap_33      mos_var_b3
+     
+Special_Device                                                                                       
+                                                                                                     
+    dio_dnwpsub         (PLUS MINUS)     dio_dnwpsub     dio_dnwpsub     dio_dnwpsub      dio_dnwpsub
+      dio_pwdnw         (PLUS MINUS)       dio_pwdnw       dio_pwdnw       dio_pwdnw        dio_pwdnw
+      diodesd3v         (PLUS MINUS)       diodesd3v       diodesd3v       diodesd3v        diodesd3v
+
+8. Known problems                                                                                 
+                                                                                                  
+   8.1  When the segment of resistor is larger than one, the simulation values could not be       
+        back-annotated to schematic view correctly.                                               
+                                                                                                  
+   8.2 	NMOS with DNW must be surrounded with NWELL.
+       
+   8.3 The minimum RPO area of resistors should be checked. 
+   
+   8.4 In some special length and width ranges of resistors, their resistance values shown in CDF menu have
+       differences compared with simulation results. These resistance values are for reference only, and 
+       users should run simulations to get correct results.        
+
+9. Special Notes
+
+   9.1 If polyroute direction is not set to "none", and  the finger number should be more than 2.
+
+   9.2 The mosfets with macro model ("_mac") and normal mosfets can not be used in schematic simultaneously
+       for LVS/RCX. Users need to turn on/off MACRO switch in LVS/RCX deck by themselves. 
+
+   9.3 MOS with DNW must be surrounded with NWELL.
+
+   9.4 Please read all PDK documents in /PDK_Doc/ carefully before using this PDK.         
+   
+   9.5 source.added will be added automatically in Assura Netlist File(s) and Calibre Netlist Export Setup.
+   
+   9.6 The "About this PDK tool utility" will pop-up automatically when invoking virtuoso. Please read the ReleaseNote
+       and REVISION carefully before using this PDK.
+   
+   9.7 The designs with PDK, T-018-CM-SP-007-K3 are not compatible with those of T-018-MM-SP-001 and T-018-MM-SP-002 
+       because of model and netlist behavior inconsistence. The design with T-018-MM-SP-00-K3 can not be plugged 
+       in T-018-CM-SP-007-K3, either. Users need to create new designs by themselves. 
+       
+   9.8 The capacitance value shown in crtmom, cfmom, and cfmom_mx CDF menu is Cab+Cap, not only Cab.
+   
+   9.9 All the cells included in this PDK are built based on current design rule documents and spice model cards. Some of rules or parameters may be changed after this release, please contact TSMC for the most up-to-date information.   
+   
+   9.10 Please do not use the devices in "do_not_use" category.   
+   9.11 MOS with WPE effect:
+ 	    1) WPE effect: Netlist generated from PDK contains SCA,SCB,SCC parameters for 
+ 	        Bsim4.5 simulation. For pre-simulation, users can modify these parameters in 
+ 	        MOS CDF form if they are available. For post-simulation, LPE tools will extract
+ 	        SCA,SCB,SCC from layout.
+ 	        
+	    * Since there is no implant on native devices, there will be no WPE effect on those devices. 
+	      But there are still SCA,SCB,SCC parameters in the model of native device. However, PDK does 
+              not support SCA,SCB,SCC parameters in the netlist of native device. 
+ 
+   
+10. Utilities
+
+       In order to ease the use of this PDK, some utilities are provided below to help users.
+       Please refer to the documents in /PDK_Doc/TSMC_DOC_WM/PDK/TSMC018_Ultilty_Usage_Guide.pdf
+    
+    ***Please remember to backup your designs before running utilities(very important)***
+    
+   10.1 CDF update utility
+
+       When changes are made on a device inside PDK, these changes often affect circuit designs which 
+    have already been created. For example, a sheet resistance value change on a resistor will affect
+    the length of the device passed to the simulator and used to generate the layout.
+    These parameters will not be automatically updated in each of the designer's circuit libraries. A
+    function has been written and included as a part of the PDK to complete the update to an existing
+    library such that all modifications made in a PDK since a previous release are reflected in each 
+    of the circuit designs inside a library. There is a single argument to this fuction which represents
+    the design library which is to be updated with new CDF information. Once this routine has been run
+    , all designs in the designated library will be in sync with the latest release of PDK.
+
+    ***Please note, however, that possible DRC and LVS violations may be arised as a result of running
+    this routine depend on what changes have been made to this PDK***
+
+    For example, value change as specified earlier of sheet resistance could cause shrinkage of length
+    in resistor layout, which resulting an connection open as far as LVS is concerned. Please be sure
+    that designers re-verify each design by simulation, DRC, and LVS to insure that no unintended 
+    modifications have been overlooked.
+    
+    Users may use Update Design (Instance) CDF Utility from TSMC PDK Tools GUI.
+
+    
+    
+                                                                                                      
+                                                                                                  
+
+

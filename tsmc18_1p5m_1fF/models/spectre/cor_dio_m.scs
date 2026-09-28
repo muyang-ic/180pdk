@@ -1,0 +1,16 @@
+library dio_m_cor 
+
+section ff_dio_m 
+include "cmn018_assp_v1d2.scs" section = ff_dio_m 
+endsection ff_dio_m 
+
+section ss_dio_m 
+include "cmn018_assp_v1d2.scs" section = ss_dio_m 
+endsection ss_dio_m 
+
+section tt_dio_m 
+include "cmn018_assp_v1d2.scs" section = tt_dio_m 
+endsection tt_dio_m 
+
+
+endlibrary dio_m_cor 

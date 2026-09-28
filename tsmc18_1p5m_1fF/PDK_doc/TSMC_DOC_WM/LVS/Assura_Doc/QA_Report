@@ -1,0 +1,241 @@
+  @(#) TSMC 0.152UM ASSURA LVS/RC COMMAND FILE VERSION V1.1A  10/01/2008 
+  @(#) TSMC 0.18um CMOS MIXED-SIGNAL 1P6M SALICIDE 1.8V/3.3V  
+  @(#) SPICE MODEL DOCUMENT: T-018-CM-SP-007  V1.1    
+  @(#) COMMAND FILE DOCUMNET: T-018-CM-SP-007-U1 
+  @(#) EDA TOOL VERSION: Assura 317 USR2 HF7 
+  @(#)  
+  @(#) COMMAND FILE DOCUMENT: T-018-CM-SP-007-U1  
+  @(#) COMMAND FILE VERSION: 1.1A 
+  @(#) COMMAND FILE METAL SCHEME: 1P6M  
+  @(#) COMMAND FILE DATE: 10/01/2008  
+
+
+*********************************************************************************************** 
+				ASSURA QA REPORT FILE 
+*********************************************************************************************** 
+Reduce Statistics
+=================                               Filtered             Reduced
+Cell/Device                               schematic  layout   schematic  layout
+(N) MOS                                           4       4           0       0
+(DB) DIO                                          1       1           1       1
+(N:SerMos2#1) MosBlk                              -       -           1       1
+                                             ------  ------      ------  ------
+Reduce Statistics
+=================                               Filtered             Reduced
+Cell/Device                               schematic  layout   schematic  layout
+(dio_DB) Cell                                     1       1           1       1
+(N) MOS                                           1       1           1       1
+(N1) MOS                                          1       1           1       1
+(N2) MOS                                          1       1           1       1
+(NA) MOS                                          1       1           1       1
+(NB) MOS                                          1       1           1       1
+(ND) MOS                                          1       1           1       1
+(NL) MOS                                          1       1           1       1
+(NN) MOS                                          1       1           1       1
+(P) MOS                                           1       1           1       1
+(PA) MOS                                          1       1           1       1
+(PD) MOS                                          1       1           1       1
+(LR) RES                                          1       1           1       1
+(M1) RES                                          1       1           1       1
+(M2) RES                                          1       1           1       1
+(M3) RES                                          1       1           1       1
+(M4) RES                                          1       1           1       1
+(MT) RES                                          1       1           1       1
+(ND) RES                                          1       1           1       1
+(NI) RES                                          2       2           2       2
+(NR) RES                                          1       1           1       1
+(NS) RES                                          2       2           2       2
+(PD) RES                                          1       1           1       1
+(PI) RES                                          2       2           2       2
+(PR) RES                                          1       1           1       1
+(PS) RES                                          2       2           2       2
+(WO) RES                                          1       1           1       1
+(WR) RES                                          1       1           1       1
+(D1) DIO                                          1       1           1       1
+(D2) DIO                                          1       1           1       1
+(D3) DIO                                          1       1           1       1
+(DN) DIO                                          1       1           1       1
+(DP) DIO                                          1       1           1       1
+(DW) DIO                                          1       1           1       1
+(NDIO_3M, ndio_3m) DIO                            1       1           1       1
+(NDIO_M, ndio_m) DIO                              1       1           1       1
+(PDIO_M, pdio_m) DIO                              1       1           1       1
+(NV) BJT                                          3       3           3       3
+(NV_mis) BJT                                      3       3           3       3
+(P1) BJT                                          3       3           3       3
+(PV) BJT                                          3       3           3       3
+(PV_mis) BJT                                      3       3           3       3
+(crtmom) Generic                                  6       6           6       6
+(mimcap_2p0_sin) Generic                          1       1           1       1
+(mimcap_2p0_sin_3t) Generic                       1       1           1       1
+(nmoscap) Generic                                 1       1           1       1
+(nmoscap_33) Generic                              1       1           1       1
+(rnod_m) Generic                                  1       1           1       1
+(rnodrpo_m) Generic                               1       1           1       1
+(rnodw_m) Generic                                 1       1           1       1
+(rnpo1_dis) Generic                               1       1           1       1
+(rnpo1rpo_dis) Generic                            1       1           1       1
+(rnpo1w_dis) Generic                              1       1           1       1
+(rnwod_m) Generic                                 1       1           1       1
+(rnwsti_m) Generic                                1       1           1       1
+(rpod_m) Generic                                  1       1           1       1
+(rpodrpo_m) Generic                               1       1           1       1
+(rpodw_m) Generic                                 1       1           1       1
+(rppo1_dis) Generic                               1       1           1       1
+(rppo1rpo_dis) Generic                            1       1           1       1
+(rppo1w_dis) Generic                              1       1           1       1
+(rppolyhri_dis) Generic                           1       1           1       1
+                                             ------  ------      ------  ------
+Reduce Statistics
+=================                               Filtered             Reduced
+Cell/Device                               schematic  layout   schematic  layout
+(N) MOS                                           4       4           0       0
+(DB) DIO                                          1       1           1       1
+(N:SerMos2#1) MosBlk                              -       -           1       1
+                                             ------  ------      ------  ------
+Reduce Statistics
+=================                               Filtered             Reduced
+Cell/Device                               schematic  layout   schematic  layout
+(dio_DB) Cell                                     1       1           1       1
+(N) MOS                                           1       1           1       1
+(N1) MOS                                          1       1           1       1
+(N2) MOS                                          1       1           1       1
+(NA) MOS                                          1       1           1       1
+(NB) MOS                                          1       1           1       1
+(ND) MOS                                          1       1           1       1
+(NL) MOS                                          1       1           1       1
+(NN) MOS                                          1       1           1       1
+(P) MOS                                           1       1           1       1
+(PA) MOS                                          1       1           1       1
+(PD) MOS                                          1       1           1       1
+(LR) RES                                          1       1           1       1
+(M1) RES                                          1       1           1       1
+(M2) RES                                          1       1           1       1
+(M3) RES                                          1       1           1       1
+(M4) RES                                          1       1           1       1
+(M5) RES                                          1       1           1       1
+(MT) RES                                          1       1           1       1
+(ND) RES                                          1       1           1       1
+(NI) RES                                          2       2           2       2
+(NR) RES                                          1       1           1       1
+(NS) RES                                          2       2           2       2
+(PD) RES                                          1       1           1       1
+(PI) RES                                          2       2           2       2
+(PR) RES                                          1       1           1       1
+(PS) RES                                          2       2           2       2
+(WO) RES                                          1       1           1       1
+(WR) RES                                          1       1           1       1
+(D1) DIO                                          1       1           1       1
+(D2) DIO                                          1       1           1       1
+(D3) DIO                                          1       1           1       1
+(DN) DIO                                          1       1           1       1
+(DP) DIO                                          1       1           1       1
+(DW) DIO                                          1       1           1       1
+(NDIO_3M, ndio_3m) DIO                            1       1           1       1
+(NDIO_M, ndio_m) DIO                              1       1           1       1
+(PDIO_M, pdio_m) DIO                              1       1           1       1
+(NV) BJT                                          3       3           3       3
+(NV_mis) BJT                                      3       3           3       3
+(P1) BJT                                          3       3           3       3
+(PV) BJT                                          3       3           3       3
+(PV_mis) BJT                                      3       3           3       3
+(crtmom) Generic                                 12      12          12      12
+(mimcap_1p0_sin) Generic                          1       1           1       1
+(mimcap_1p0_sin_3t) Generic                       1       1           1       1
+(nmoscap) Generic                                 1       1           1       1
+(nmoscap_33) Generic                              1       1           1       1
+(rnod_m) Generic                                  1       1           1       1
+(rnodrpo_m) Generic                               1       1           1       1
+(rnodw_m) Generic                                 1       1           1       1
+(rnpo1_dis) Generic                               1       1           1       1
+(rnpo1rpo_dis) Generic                            1       1           1       1
+(rnpo1w_dis) Generic                              1       1           1       1
+(rnwod_m) Generic                                 1       1           1       1
+(rnwsti_m) Generic                                1       1           1       1
+(rpod_m) Generic                                  1       1           1       1
+(rpodrpo_m) Generic                               1       1           1       1
+(rpodw_m) Generic                                 1       1           1       1
+(rppo1_dis) Generic                               1       1           1       1
+(rppo1rpo_dis) Generic                            1       1           1       1
+(rppo1w_dis) Generic                              1       1           1       1
+(rppolyhri_dis) Generic                           1       1           1       1
+                                             ------  ------      ------  ------
+Reduce Statistics
+=================                               Filtered             Reduced
+Cell/Device                               schematic  layout   schematic  layout
+(DNWPSUB, dnwpsub) DIO                            1       1           1       1
+(PWDNW, pwdnw) DIO                                1       1           1       1
+                                             ------  ------      ------  ------
+
+
+************************************************************** 
+DECK_DEVICE_LIST             REP_DEVICE_LIST             
+************************************************************** 
+(NV) BJT                     (NV) BJT                    	OK
+(NV_mis) BJT                 (NV_mis) BJT                	OK
+(P1) BJT                     (P1) BJT                    	OK
+(PV) BJT                     (PV) BJT                    	OK
+(PV_mis) BJT                 (PV_mis) BJT                	OK
+(D1) DIO                     (D1) DIO                    	OK
+(D2) DIO                     (D2) DIO                    	OK
+(D3) DIO                     (D3) DIO                    	OK
+(DB) DIO                     (DB) DIO                    	OK
+(DN) DIO                     (DN) DIO                    	OK
+(DP) DIO                     (DP) DIO                    	OK
+(DW) DIO                     (DW) DIO                    	OK
+(dnwpsub) DIO                (dnwpsub) DIO               	OK
+(ndio_3m) DIO                (ndio_3m) DIO               	OK
+(ndio_m) DIO                 (ndio_m) DIO                	OK
+(pdio_m) DIO                 (pdio_m) DIO                	OK
+(pwdnw) DIO                  (pwdnw) DIO                 	OK
+(crtmom) Generic             (crtmom) Generic            	OK
+(mimcap_1p0_sin) Generic     (mimcap_1p0_sin) Generic    	OK
+(mimcap_1p0_sin_3t) Generic  (mimcap_1p0_sin_3t) Generic 	OK
+(mimcap_2p0_sin) Generic     (mimcap_2p0_sin) Generic    	OK
+(mimcap_2p0_sin_3t) Generic  (mimcap_2p0_sin_3t) Generic 	OK
+(nmoscap) Generic            (nmoscap) Generic           	OK
+(nmoscap_33) Generic         (nmoscap_33) Generic        	OK
+(rnod_m) Generic             (rnod_m) Generic            	OK
+(rnodrpo_m) Generic          (rnodrpo_m) Generic         	OK
+(rnodw_m) Generic            (rnodw_m) Generic           	OK
+(rnpo1_dis) Generic          (rnpo1_dis) Generic         	OK
+(rnpo1rpo_dis) Generic       (rnpo1rpo_dis) Generic      	OK
+(rnpo1w_dis) Generic         (rnpo1w_dis) Generic        	OK
+(rnwod_m) Generic            (rnwod_m) Generic           	OK
+(rnwsti_m) Generic           (rnwsti_m) Generic          	OK
+(rpod_m) Generic             (rpod_m) Generic            	OK
+(rpodrpo_m) Generic          (rpodrpo_m) Generic         	OK
+(rpodw_m) Generic            (rpodw_m) Generic           	OK
+(rppo1_dis) Generic          (rppo1_dis) Generic         	OK
+(rppo1rpo_dis) Generic       (rppo1rpo_dis) Generic      	OK
+(rppo1w_dis) Generic         (rppo1w_dis) Generic        	OK
+(rppolyhri_dis) Generic      (rppolyhri_dis) Generic     	OK
+(N) MOS                      (N) MOS                     	OK
+(N1) MOS                     (N1) MOS                    	OK
+(N2) MOS                     (N2) MOS                    	OK
+(NA) MOS                     (NA) MOS                    	OK
+(NB) MOS                     (NB) MOS                    	OK
+(ND) MOS                     (ND) MOS                    	OK
+(NL) MOS                     (NL) MOS                    	OK
+(NN) MOS                     (NN) MOS                    	OK
+(P) MOS                      (P) MOS                     	OK
+(PA) MOS                     (PA) MOS                    	OK
+(PD) MOS                     (PD) MOS                    	OK
+(LR) RES                     (LR) RES                    	OK
+(M1) RES                     (M1) RES                    	OK
+(M2) RES                     (M2) RES                    	OK
+(M3) RES                     (M3) RES                    	OK
+(M4) RES                     (M4) RES                    	OK
+(M5) RES                     (M5) RES                    	OK
+(MT) RES                     (MT) RES                    	OK
+(ND) RES                     (ND) RES                    	OK
+(NI) RES                     (NI) RES                    	OK
+(NR) RES                     (NR) RES                    	OK
+(NS) RES                     (NS) RES                    	OK
+(PD) RES                     (PD) RES                    	OK
+(PI) RES                     (PI) RES                    	OK
+(PR) RES                     (PR) RES                    	OK
+(PS) RES                     (PS) RES                    	OK
+(WO) RES                     (WO) RES                    	OK
+(WR) RES                     (WR) RES                    	OK
+--------------------------------------------------------------

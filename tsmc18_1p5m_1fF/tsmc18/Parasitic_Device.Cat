@@ -1,0 +1,6 @@
+TDMCHECKPOINT="1.0"
+keepEmptyCategory type="unknown"
+tsmc18/pcapacitor type="cell"
+tsmc18/presistor type="cell"
+tsmc18/parasitic_rc type="cell"
+tsmc18/parasitic_rc_3T type="cell"

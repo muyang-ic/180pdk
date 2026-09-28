@@ -1,0 +1,5 @@
+TDMCHECKPOINT="1.0"
+keepEmptyCategory type="unknown"
+tsmc18/dio_dnwpsub type="cell"
+tsmc18/dio_pwdnw type="cell"
+tsmc18/diodesd3v type="cell"

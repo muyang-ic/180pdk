@@ -1,0 +1,158 @@
+<!DOCTYPE LAM_FILE>
+<LIBRARY_DATA>
+  <VERSION NUMBER="0.3" />
+  <PHYSICAL>
+    <COMPONENT_TYPE_GROUPS>
+      <LIB NAME="tsmc18" >
+        <COMPONENT_TYPE_GROUP NAME="nmos" >
+          <COMP_CLASS>NMOS</COMP_CLASS>
+          <WIDTH>w</WIDTH>
+          <ACTIVE_LP>OD drawing</ACTIVE_LP>
+          <FOLD_THRESH>1e-05</FOLD_THRESH>
+        </COMPONENT_TYPE_GROUP>
+        <COMPONENT_TYPE_GROUP NAME="pmos" >
+          <COMP_CLASS>PMOS</COMP_CLASS>
+          <WIDTH>w</WIDTH>
+          <ACTIVE_LP>OD drawing</ACTIVE_LP>
+          <FOLD_THRESH>1e-05</FOLD_THRESH>
+        </COMPONENT_TYPE_GROUP>
+      </LIB>
+    </COMPONENT_TYPE_GROUPS>
+    <MAPPINGS>
+      <LIB NAME="tsmc18" >
+        <CELL NAME="nmos2v" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmos2v_mac" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmos2vdnw" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmos2vdnw_mac" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmos3v" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmos3v_mac" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmos3vdnw" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmos3vdnw_mac" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmosmvt2v" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmosmvt2v_mac" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmosmvt3v" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmosmvt3v_mac" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmosnvt2v" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmosnvt2v_mac" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmosnvt3v" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="nmosnvt3v_mac" >
+          <COMPONENT_TYPE>
+            <NAME>nmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="pmos2v" >
+          <COMPONENT_TYPE>
+            <NAME>pmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="pmos2v_mac" >
+          <COMPONENT_TYPE>
+            <NAME>pmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="pmos3v" >
+          <COMPONENT_TYPE>
+            <NAME>pmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="pmos3v_mac" >
+          <COMPONENT_TYPE>
+            <NAME>pmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="pmosmvt2v" >
+          <COMPONENT_TYPE>
+            <NAME>pmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+        <CELL NAME="pmosmvt2v_mac" >
+          <COMPONENT_TYPE>
+            <NAME>pmos</NAME>
+            <LIB>tsmc18</LIB>
+          </COMPONENT_TYPE>
+        </CELL>
+      </LIB>
+    </MAPPINGS>
+  </PHYSICAL>
+</LIBRARY_DATA>

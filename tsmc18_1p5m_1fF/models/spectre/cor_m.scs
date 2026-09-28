@@ -1,0 +1,24 @@
+library m_cor 
+
+section ff_m 
+include "cmn018_assp_v1d2.scs" section = ff_m 
+endsection ff_m 
+
+section fs_m 
+include "cmn018_assp_v1d2.scs" section = fs_m 
+endsection fs_m 
+
+section sf_m 
+include "cmn018_assp_v1d2.scs" section = sf_m 
+endsection sf_m 
+
+section ss_m 
+include "cmn018_assp_v1d2.scs" section = ss_m 
+endsection ss_m 
+
+section tt_m 
+include "cmn018_assp_v1d2.scs" section = tt_m 
+endsection tt_m 
+
+
+endlibrary m_cor 

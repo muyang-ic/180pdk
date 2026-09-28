@@ -1,0 +1,98 @@
+
+                         README File for Assura LVS/RCX
+		     =====================================
+
+ I. Files/Directories related ;
+    This deck is general LVS and RCX combo deck which for 018 MMRF process.
+
+     *Following are the descriptions for files of each directory:
+
+   - LVS related
+  	extract.rul     - Device extraction file 
+  	compare.rul     - LVS compare rule file
+  	LVS.rsf         - sample RSF 
+	source.add	- subckt netlist to prepend to output of CDL netlist
+			  for LVS checking (used in CDL flow only)
+			  
+   - RCX related (RC techfiles)  
+	  p2lvsfile         - layer mapping file for procfile 
+	  capgen.cmd	    - script for capagen -C
+
+
+*************************************************************************
+II. How to create a new RCX reference file 
+
+   Step1: To get the lvsfile:
+          After finished the LVS check, the rundir/runame.xcn file is for RCX lvsfile.
+	  %> copy rundir/runame.xcn lvsfile
+
+   Step2: run capgen.cmd file
+          %> capgen.cmd
+
+*************************************************************************
+III. Assura switch setting:
+     avSwitch( "Skip_Soft_Connect_Checks") : Do not check Soft-connect error.
+     avSwitch( "extract_dnwdio") : Extract DNW diode devices.
+     avSwitch( "spice_extraction" ) : when RCX extract spice netlist, turn-on this switch.
+     avSwitch( "ZERO_NRDS" ) : set nrd=nrs=0 when run RCX extraction flow .
+     avSwitch( "NW_RING" ) : If turn on it, it will not check soft-connect check for nwell ring 
+                             and psub(rwell) inside.
+
+     You can set switch in LVS.rsf (for batch mode) or choose switch button(for gui mode).
+
+     example: (in LVS.rsf)
+
+     ?set ("spice_extraction") --> turn on switch by take off ";"
+     ;?set ("spice_extraction") --> turn off switch by put on ";"
+
+*************************************************************************
+IV. Selecting Proper LVS Deck 
+
+    The Main_Deck directory is based on user-defined process settings to eliminate any unnecessary 
+    switch setting during LVS. These settings include:
+      Mimcap: 1P0, 1P5, 2P0
+      Top Metal Thickness: 8K, 20K, 40K
+      MOS model: MAC, nonMac
+    Since user can only use only one of these settings at any given time, the LVS deck has been 
+    preset based on the desired user settings. For example, if design utilizes 2.0fF mimcaps and
+    MOS macro models, then user can just obtain files in the 2P0_MAC folder and directly run LVS.
+    If design utilizes 1.0fF mimcaps and ultra thick 40k top metal, then user can use the LVS 
+    files in the 1P0_40K folder. It may be that only one or two settings are available for the user
+    to select from. Please use the key above to identify proper LVS deck.
+
+*************************************************************************
+
+
+Common Note: 
+     1. First refer to the notice messages and status logs in the head of 
+	each command file.
+
+     2. The sample RSF file is provided as a template to run Assura LVS 
+	from Unix command line. Users are encouraged to edit this file 
+	as needed.
+
+     3. If you find you CDL netlist already contains 'empty subcircuit' statments,
+        please don't prepend the 'source.added' file again. Otherwise, LVS tools
+        will complian those subckt names are duplicate defined!
+
+     4. In some Assura version (under 314), if you select "res blocking" choice when you run Assura
+        RC extraction of RF devices (ex: mimcap_rf), it will occur an error that the connectivity of
+	RC extraction is incorrect. And this open connectivity situation will cause wrong 
+	post-simulation. And this error will be fixed on updated Assura version. 
+
+     5. Please do not give minus or zero value in parameters of devices, or it will be failed or crash 
+        when LVS run.
+ 
+*******************************************************************************
+Usage of 'source.added' file:
+
+  Before running LVS (for cdl flow only, if need):
+
+1. netlist your circuit as 'out.cdl' (cdl format)
+2. cat source.added out.cdl > chip.cdl ;makes the final netlist for LVS checking
+
+
+*******************************************************************************
+Special NOTE:
+
+
